@@ -1,6 +1,9 @@
 <template>
   <v-container id="home">
-    <v-row class="justify-center align-center">
+    <v-row
+      class="align-center"
+      :class="screenWidth > 1500 ? 'justify-space-between' : 'justify-center'"
+    >
       <v-col v-if="!isTablet" cols="12">
         <img src="@/assets/saturn.svg" alt="" />
       </v-col>
@@ -25,6 +28,10 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class Home extends Vue {
+  get screenWidth(): number {
+    return this.$store.state.screenWidth;
+  }
+
   get isTablet(): boolean {
     return this.$store.state.screenWidth > 700;
   }
@@ -34,6 +41,7 @@ export default class Home extends Vue {
 #home {
   padding: 0 28px;
   height: 80vh;
+  max-width: 1400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,13 +58,14 @@ export default class Home extends Vue {
     h1 {
       font-size: 50px;
       margin: 0;
+      letter-spacing: 0.2rem;
     }
 
     h3 {
       font-size: 16px;
       font-weight: 400;
       margin: 0;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2rem;
     }
   }
 
