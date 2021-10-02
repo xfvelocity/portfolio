@@ -1,5 +1,5 @@
 <template>
-  <v-container id="home">
+  <v-container id="home-page">
     <v-row
       class="align-center"
       :class="screenWidth > 1500 ? 'justify-space-between' : 'justify-center'"
@@ -38,7 +38,7 @@ export default class Home extends Vue {
 }
 </script>
 <style lang="scss">
-#home {
+#home-page {
   padding: 0 28px;
   height: 80vh;
   max-width: 1400px;

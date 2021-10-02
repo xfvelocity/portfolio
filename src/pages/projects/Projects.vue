@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6" id="projects">
+  <div class="px-6" id="projects-page">
     <div v-for="(project, i) in projects" :key="i">
       <img style="width: 100%" :src="project.img" alt="" />
       <h2 class="my-3">{{ project.name }}</h2>
@@ -74,7 +74,7 @@ export default class Projects extends Vue {
 }
 </script>
 <style lang="scss">
-#projects {
+#projects-page {
   h2 {
     font-size: 32px;
   }

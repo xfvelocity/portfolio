@@ -1,5 +1,5 @@
 <template>
-  <div id="about" class="d-flex align-center">
+  <div id="about-page" class="d-flex align-center">
     <div class="text px-6">
       <h2 class="mb-2 text-center">About Me</h2>
       <p>
@@ -32,7 +32,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default class About extends Vue {}
 </script>
 <style lang="scss">
-#about {
+#about-page {
   height: 80vh;
   .text {
     h2 {
