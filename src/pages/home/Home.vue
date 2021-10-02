@@ -53,7 +53,7 @@ export default class Home extends Vue {
     margin: 0 auto;
   }
   .text {
-    max-width: 250px;
+    max-width: 275px;
     margin: 0 auto;
     h1 {
       font-size: 50px;
