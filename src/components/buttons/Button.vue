@@ -13,7 +13,7 @@
         >
           <img
             v-if="customIcon"
-            :style="`width: ${iconSize}`"
+            :style="`width: ${imgSize}`"
             :src="iconName"
             alt=""
           />
@@ -32,7 +32,7 @@
     >
       <img
         v-if="customIcon"
-        :style="`width: ${iconSize}`"
+        :style="`width: ${imgSize}`"
         :src="iconName"
         alt=""
       />
@@ -50,7 +50,7 @@ export default class Button extends Vue {
   icon!: boolean;
   @Prop({ default: false })
   customIcon!: boolean;
-  @Prop({ default: "black" })
+  @Prop({ default: "transparent" })
   color!: string;
   @Prop({ default: "white" })
   iconColor!: string;
@@ -59,7 +59,7 @@ export default class Button extends Vue {
   @Prop()
   iconName!: string;
   @Prop({ default: "24px" })
-  iconSize!: string;
+  imgSize!: string;
   @Prop({ default: "32px" })
   buttonSize!: string;
 }

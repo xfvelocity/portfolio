@@ -8,13 +8,11 @@
     <div class="d-flex">
       <Button
         class="mr-2"
-        color="transparent"
         :iconName="require('@/assets/icons/github.svg')"
         :customIcon="true"
         @click="goToLink('https://github.com/xfvelocity')"
       />
       <Button
-        color="transparent"
         :iconName="require('@/assets/icons/linkedin.svg')"
         :customIcon="true"
         @click="goToLink('https://www.linkedin.com/in/alex-long-31339a15a/')"
