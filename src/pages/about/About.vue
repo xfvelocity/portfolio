@@ -1,7 +1,7 @@
 <template>
   <div id="about-page" class="d-flex align-center">
     <div class="text px-6">
-      <h2 class="mb-2 text-center">About Me</h2>
+      <h2 class="mb-6 text-center">About Me</h2>
       <p>
         I'm, a self-taught developer with over
         <span class="light-blue--text text--lighten-2">2 years</span> experience

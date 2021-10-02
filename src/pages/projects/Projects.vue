@@ -1,38 +1,51 @@
 <template>
-  <div class="px-6" id="projects-page">
-    <div v-for="(project, i) in projects" :key="i">
-      <img style="width: 100%" :src="project.img" alt="" />
-      <h2 class="my-3">{{ project.name }}</h2>
-      <p>{{ project.desc }}</p>
-      <div class="d-flex mt-8">
-        <span class="d-flex align-center">
-          <Button
-            class="mr-1"
-            iconName="launch"
-            :icon="true"
-            @click="goToLink(project.link)"
-          />
-          <Button
-            imgSize="22px"
-            :iconName="require('@/assets/icons/github.svg')"
-            :customIcon="true"
-            @click="goToLink(project.github)"
-          />
-        </span>
-        <v-spacer></v-spacer>
-        <span>
-          <img
-            width="20px"
-            style="max-height: 20px"
-            class="mr-1"
-            v-for="(tech, i) in project.technologies"
-            :key="`tech-${i}`"
-            :src="require(`@/assets/skills/${tech}.svg`)"
-            alt=""
-          />
-        </span>
-      </div>
-    </div>
+  <div class="px-6 d-flex align-center" id="projects-page">
+    <v-carousel height="580px" :show-arrows="false" hide-delimiter-background>
+      <v-carousel-item
+        v-for="(project, i) in projects"
+        :key="i"
+        reverse-transition="slide-x-reverse-transition"
+        transition="slide-x-transition"
+        eager
+      >
+        <img
+          style="width: 100%"
+          :src="project.img"
+          alt=""
+          @click="goToLink(project.link)"
+        />
+        <h2 class="my-3">{{ project.name }}</h2>
+        <p>{{ project.desc }}</p>
+        <div class="d-flex mt-8">
+          <span class="d-flex align-center">
+            <Button
+              class="mr-1"
+              iconName="launch"
+              :icon="true"
+              @click="goToLink(project.link)"
+            />
+            <Button
+              imgSize="22px"
+              :iconName="require('@/assets/icons/github.svg')"
+              :customIcon="true"
+              @click="goToLink(project.github)"
+            />
+          </span>
+          <v-spacer></v-spacer>
+          <span>
+            <img
+              width="20px"
+              style="max-height: 20px"
+              class="mr-1"
+              v-for="(tech, i) in project.technologies"
+              :key="`tech-${i}`"
+              :src="require(`@/assets/skills/${tech}.svg`)"
+              alt=""
+            />
+          </span>
+        </div>
+      </v-carousel-item>
+    </v-carousel>
   </div>
 </template>
  
@@ -75,6 +88,7 @@ export default class Projects extends Vue {
 </script>
 <style lang="scss">
 #projects-page {
+  height: 85vh;
   h2 {
     font-size: 32px;
   }
