@@ -2,7 +2,7 @@
   <v-app id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
-        <div>
+        <template>
           <Nav style="width: 100%" :showName="page !== 'Home'" />
           <component :is="page" />
           <!-- <NextPage
@@ -10,7 +10,7 @@
             :index="i"
             @click="$refs.fullpage.api.moveSectionDown()"
           /> -->
-        </div>
+        </template>
       </div>
     </full-page>
   </v-app>
@@ -66,6 +66,7 @@ body {
   p,
   a {
     color: white;
+    letter-spacing: 0.1rem;
   }
 }
 
