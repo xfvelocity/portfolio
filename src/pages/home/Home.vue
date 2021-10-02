@@ -41,22 +41,34 @@ export default class Home extends Vue {
   img {
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 250px;
     margin: 0 auto;
   }
   .text {
-    max-width: 350px;
+    max-width: 200px;
     margin: 0 auto;
     h1 {
-      font-size: 60px;
+      font-size: 40px;
       margin: 0;
     }
 
     h3 {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 400;
       margin: 0;
       letter-spacing: 0.15em;
+    }
+  }
+
+  @media (min-width: 550px) {
+    .text {
+      max-width: 300px;
+      h1 {
+        font-size: 60px;
+      }
+      h3 {
+        font-size: 20px;
+      }
     }
   }
 
