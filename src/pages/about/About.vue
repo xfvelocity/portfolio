@@ -1,15 +1,11 @@
 <template>
   <v-container id="about-page" class="d-flex align-center px-6">
     <v-row>
-      <v-col cols="12">
-        <img
-          style="width: 200px; display: block; margin: 0 auto"
-          src="@/assets/solar-system.svg"
-          alt=""
-        />
+      <v-col class="mobile-img" cols="12">
+        <img src="@/assets/solar-system.svg" alt="" />
       </v-col>
       <v-col class="text" cols="12">
-        <h2 class="mb-4 text-center">About Me</h2>
+        <h2 class="mb-2 text-center">About Me</h2>
         <p>
           I'm, a self-taught developer with over
           <span class="light-blue--text text--lighten-2">2 years</span>
@@ -31,6 +27,7 @@
         </p>
 
         <div
+          v-if="1 == 0"
           class="d-flex mt-8"
           @click="goToLink('/src/assets/alexlong-cv.pdf')"
         >
@@ -50,6 +47,10 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class About extends Vue {
+  get screenWidth(): number {
+    return this.$store.state.screenWidth;
+  }
+
   goToLink(link: string): void {
     window.open(link);
   }
@@ -60,11 +61,17 @@ export default class About extends Vue {
   height: 80vh;
   margin: 0 auto;
 
+  .mobile-img img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
   .text {
     max-width: 450px;
     margin: 0 auto;
     h2 {
-      font-size: 44px;
+      font-size: 40px;
     }
   }
 }
