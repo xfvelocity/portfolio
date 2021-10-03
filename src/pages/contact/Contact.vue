@@ -41,7 +41,7 @@ export default class Contact extends Vue {
   ];
 
   goToLink(link: string): void {
-    window.open(link);
+    window.location.href = link;
   }
 }
 </script>
