@@ -1,6 +1,6 @@
 <template>
   <div class="px-6 d-flex align-center" id="projects-page">
-    <v-carousel height="580px" :show-arrows="false" hide-delimiter-background>
+    <v-carousel height="530px" :show-arrows="false" hide-delimiter-background>
       <v-carousel-item
         v-for="(project, i) in projects"
         :key="i"

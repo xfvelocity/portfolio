@@ -21,6 +21,16 @@
         <span class="light-blue--text text--lighten-2">MongoDB</span> to help
         support these.
       </p>
+
+      <div class="mt-8">
+        <a
+          class="white--text font-weight-medium text-decoration-none mr-1"
+          href="/alexlong-cv.pdf"
+        >
+          CV / Resume
+        </a>
+        <v-icon color="white">file_download</v-icon>
+      </div>
     </div>
   </div>
 </template>

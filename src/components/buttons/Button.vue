@@ -4,10 +4,12 @@
       <template v-slot:activator="{ on }">
         <v-btn
           v-if="icon || customIcon"
+          :class="buttonClass"
           :color="color"
           v-on="on"
           :width="buttonSize"
           :height="buttonSize"
+          :outlined="outlined"
           icon
           @click="$emit('click')"
         >
@@ -17,16 +19,20 @@
             :src="iconName"
             alt=""
           />
-          <v-icon v-else :color="iconColor">{{ iconName }}</v-icon>
+          <v-icon v-else :large="largeIcon" :color="iconColor">{{
+            iconName
+          }}</v-icon>
         </v-btn>
       </template>
       <span>{{ tooltipMessage }}</span>
     </v-tooltip>
     <v-btn
       v-else-if="icon || customIcon"
+      :class="buttonClass"
       :color="color"
       :width="buttonSize"
       :height="buttonSize"
+      :outlined="outlined"
       icon
       @click="$emit('click')"
     >
@@ -36,7 +42,9 @@
         :src="iconName"
         alt=""
       />
-      <v-icon v-else :color="iconColor">{{ iconName }}</v-icon>
+      <v-icon v-else :large="largeIcon" :color="iconColor">{{
+        iconName
+      }}</v-icon>
     </v-btn>
   </div>
 </template>
@@ -56,11 +64,17 @@ export default class Button extends Vue {
   iconColor!: string;
   @Prop({ default: "" })
   tooltipMessage!: string;
-  @Prop()
-  iconName!: string;
   @Prop({ default: "24px" })
   imgSize!: string;
   @Prop({ default: "32px" })
   buttonSize!: string;
+  @Prop({ default: false })
+  outlined!: boolean;
+  @Prop({ default: false })
+  largeIcon!: boolean;
+  @Prop()
+  buttonClass!: string;
+  @Prop()
+  iconName!: string;
 }
 </script>

@@ -68,6 +68,11 @@ body {
     color: white;
     letter-spacing: 0.1rem;
   }
+
+  p,
+  a {
+    font-size: 14px;
+  }
 }
 
 #app {
