@@ -2,7 +2,14 @@
   <v-container id="about-page" class="d-flex align-center px-6">
     <v-row>
       <v-col class="mobile-img" cols="12">
-        <img src="@/assets/solar-system.svg" alt="" />
+        <SolarSystemSVG
+          style="
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto;
+          "
+        />
       </v-col>
       <v-col class="text" cols="12">
         <h2 class="mb-2 text-center">About Me</h2>
@@ -44,8 +51,13 @@
  
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import SolarSystemSVG from "./SolarSytemSVG.vue";
 
-@Component
+@Component({
+  components: {
+    SolarSystemSVG,
+  },
+})
 export default class About extends Vue {
   get screenWidth(): number {
     return this.$store.state.screenWidth;
@@ -61,7 +73,7 @@ export default class About extends Vue {
   height: 80vh;
   margin: 0 auto;
 
-  .mobile-img img {
+  .mobile-img {
     width: 150px;
     display: block;
     margin: 0 auto;
