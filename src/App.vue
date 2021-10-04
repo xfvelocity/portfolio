@@ -3,7 +3,9 @@
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
         <template>
-          <Nav style="width: 100%" :showName="page !== 'Home'" />
+          <transition name="slide-fade-top" appear>
+            <Nav style="width: 100%" :showName="page !== 'Home'" />
+          </transition>
           <component :is="page" />
           <!-- <NextPage
             :pages="pages"
@@ -53,6 +55,8 @@ export default class App extends Vue {
 }
 </script>
 <style lang="scss">
+@import "./scss/main.scss";
+
 body {
   margin: 0;
   padding: 0;

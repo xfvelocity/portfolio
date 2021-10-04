@@ -1,0 +1,89 @@
+.slide-fade-right-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-fade-right-leave-active {
+  transition: all 2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-right-enter,
+.slide-fade-right-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+//  Slide Left Fade
+.slide-fade-left-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-fade-left-leave-active {
+  transition: all 2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-left-enter,
+.slide-fade-left-leave-to {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+//  Slide Top Fade
+.slide-fade-top-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-fade-top-leave-active {
+  transition: all 2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-top-enter,
+.slide-fade-top-leave-to {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+//  Slide Bottom Fade
+.slide-fade-bottom-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-fade-bottom-leave-active {
+  transition: all 2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-bottom-enter,
+.slide-fade-bottom-leave-to {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+// Type Writer
+.typewriter {
+  max-width: 200px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
