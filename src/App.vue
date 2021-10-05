@@ -4,9 +4,9 @@
       <div v-for="(page, i) in pages" :key="i" class="section">
         <template>
           <transition name="slide-fade-top" appear>
-            <Nav style="width: 100%" :showName="page !== 'Home'" />
+            <Nav style="width: 100%" :showName="page.component !== 'Home'" />
           </transition>
-          <component :is="page" />
+          <component :is="page.component" :inView="page.inView" />
           <!-- <NextPage
             :pages="pages"
             :index="i"
@@ -38,12 +38,21 @@ import NextPage from "@/components/next-page/NextPage.vue";
   },
 })
 export default class App extends Vue {
-  pages: string[] = ["Home", "About", "Projects", "Contact"];
+  pages: any[] = [
+    { component: "Home", inView: false },
+    { component: "About", inView: false },
+    { component: "Projects", inView: false },
+    { component: "Contact", inView: false },
+  ];
   options: any = {
     anchors: ["home", "about", "projects", "contact"],
+    scrollingSpeed: 1000,
+    onLeave: (origin: any, destination: any, direction: any) =>
+      this.setCurrentPage(origin, destination),
   };
 
   mounted(): void {
+    this.setLoadedPage();
     let width: number = 0;
     width = window.innerWidth;
     this.$store.commit("setScreenWidth", width);
@@ -51,6 +60,27 @@ export default class App extends Vue {
       width = window.innerWidth;
       this.$store.commit("setScreenWidth", width);
     });
+  }
+
+  setLoadedPage(): void {
+    const loadedPage = this.pages.find(
+      (x) =>
+        x.component.toUpperCase() ===
+        window.location.hash.substr(1).toUpperCase()
+    );
+    this.pages.forEach((x) => (x.inView = false));
+    loadedPage.inView = true;
+  }
+
+  setCurrentPage(origin: any, destination: any): void {
+    const destinationPage = this.pages.find(
+      (x) => x.component.toUpperCase() === destination.anchor.toUpperCase()
+    );
+    destinationPage.inView = true;
+    const originPage = this.pages.find(
+      (x) => x.component.toUpperCase() === origin.anchor.toUpperCase()
+    );
+    originPage.inView = false;
   }
 }
 </script>

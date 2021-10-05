@@ -5,14 +5,14 @@
       :class="screenWidth > 1500 ? 'justify-space-between' : 'justify-center'"
     >
       <v-col v-if="!isTablet" cols="12">
-        <transition name="slide-fade-right" appear>
-          <img class="test" src="@/assets/saturn.svg" alt="" />
+        <transition name="slide-fade-right">
+          <img v-show="show" class="test" src="@/assets/saturn.svg" alt="" />
         </transition>
       </v-col>
 
       <v-col class="justify-center mt-10" :cols="isTablet ? 'auto' : 12">
-        <transition name="slide-fade-left" appear>
-          <div class="text">
+        <transition name="slide-fade-left">
+          <div v-show="show" class="text">
             <h1>Alex Long</h1>
             <div>
               <h3>front end</h3>
@@ -22,8 +22,8 @@
         </transition>
       </v-col>
       <v-col v-if="isTablet" cols="6">
-        <transition name="slide-fade-right" appear>
-          <img src="@/assets/saturn.svg" alt="" />
+        <transition name="slide-fade-right">
+          <img v-show="show" src="@/assets/saturn.svg" alt="" />
         </transition>
       </v-col>
     </v-row>
@@ -31,11 +31,19 @@
 </template>
  
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
 export default class Home extends Vue {
+  @Prop()
+  inView!: any;
+
   show: boolean = false;
+
+  @Watch("inView")
+  setContentVisible(): void {
+    setTimeout(() => (this.show = this.inView), 400);
+  }
 
   get screenWidth(): number {
     return this.$store.state.screenWidth;
@@ -43,10 +51,6 @@ export default class Home extends Vue {
 
   get isTablet(): boolean {
     return this.$store.state.screenWidth > 700;
-  }
-
-  mounted(): void {
-    this.show = true;
   }
 }
 </script>

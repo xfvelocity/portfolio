@@ -1,34 +1,46 @@
 <template>
   <div class="px-6 d-flex align-center" id="contact-page">
-    <div>
-      <h2 class="text-center">Get in touch</h2>
-      <p class="text-center">
-        Like what you see? or want to ask more questions, feel free to contact
-        me.
-      </p>
-      <div class="d-flex align-center justify-center mt-12">
-        <Button
-          v-for="(icon, i) in icons"
-          :key="i"
-          class="mx-2"
-          color="white"
-          buttonClass="pa-8"
-          :largeIcon="true"
-          :iconName="icon.name"
-          :outlined="true"
-          :icon="true"
-          @click="goToLink(icon.value)"
-        />
+    <transition name="pop-up-fade">
+      <div v-show="show">
+        <h2 class="text-center">Get in touch</h2>
+        <p class="text-center">
+          Like what you see? or want to ask more questions, feel free to contact
+          me.
+        </p>
+        <div class="d-flex align-center justify-center mt-12">
+          <Button
+            v-for="(icon, i) in icons"
+            :key="i"
+            class="mx-2"
+            color="white"
+            buttonClass="pa-8"
+            :largeIcon="true"
+            :iconName="icon.name"
+            :outlined="true"
+            :icon="true"
+            @click="goToLink(icon.value)"
+          />
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
  
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
 export default class Contact extends Vue {
+  @Prop()
+  inView!: any;
+
+  show: boolean = false;
+
+  @Watch("inView")
+  setContentVisible(): void {
+    setTimeout(() => (this.show = this.inView), 600);
+  }
+
   icons: any[] = [
     {
       name: "phone",

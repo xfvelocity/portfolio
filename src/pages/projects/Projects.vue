@@ -1,85 +1,77 @@
 <template>
   <div class="px-6 d-flex align-center" id="projects-page">
-    <v-carousel height="530px" :show-arrows="false" hide-delimiter-background>
-      <v-carousel-item
-        v-for="(project, i) in projects"
-        :key="i"
-        reverse-transition="slide-x-reverse-transition"
-        transition="slide-x-transition"
-        eager
+    <transition name="slide-fade-left">
+      <v-carousel
+        v-show="show"
+        height="530px"
+        :show-arrows="false"
+        hide-delimiter-background
       >
-        <img
-          style="width: 100%"
-          :src="project.img"
-          alt=""
-          @click="goToLink(project.link)"
-        />
-        <h2 class="my-3">{{ project.name }}</h2>
-        <p>{{ project.desc }}</p>
-        <div class="d-flex mt-8">
-          <span class="d-flex align-center">
-            <Button
-              class="mr-1"
-              iconName="launch"
-              :icon="true"
-              @click="goToLink(project.link)"
-            />
-            <Button
-              imgSize="22px"
-              :iconName="require('@/assets/icons/github.svg')"
-              :customIcon="true"
-              @click="goToLink(project.github)"
-            />
-          </span>
-          <v-spacer></v-spacer>
-          <span>
-            <img
-              width="20px"
-              style="max-height: 20px"
-              class="mr-1"
-              v-for="(tech, i) in project.technologies"
-              :key="`tech-${i}`"
-              :src="require(`@/assets/skills/${tech}.svg`)"
-              alt=""
-            />
-          </span>
-        </div>
-      </v-carousel-item>
-    </v-carousel>
+        <v-carousel-item
+          v-for="(project, i) in projects"
+          :key="i"
+          reverse-transition="slide-x-reverse-transition"
+          transition="slide-x-transition"
+          eager
+        >
+          <img
+            style="width: 100%"
+            :src="project.img"
+            alt=""
+            @click="goToLink(project.link)"
+          />
+          <h2 class="my-3">{{ project.name }}</h2>
+          <p>{{ project.desc }}</p>
+          <div class="d-flex mt-8">
+            <span class="d-flex align-center">
+              <Button
+                class="mr-1"
+                iconName="launch"
+                :icon="true"
+                @click="goToLink(project.link)"
+              />
+              <Button
+                imgSize="22px"
+                :iconName="require('@/assets/icons/github.svg')"
+                :customIcon="true"
+                @click="goToLink(project.github)"
+              />
+            </span>
+            <v-spacer></v-spacer>
+            <span>
+              <img
+                width="20px"
+                style="max-height: 20px"
+                class="mr-1"
+                v-for="(tech, i) in project.technologies"
+                :key="`tech-${i}`"
+                :src="require(`@/assets/skills/${tech}.svg`)"
+                alt=""
+              />
+            </span>
+          </div>
+        </v-carousel-item>
+      </v-carousel>
+    </transition>
   </div>
 </template>
  
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { projects } from "./projects.data";
 
 @Component
 export default class Projects extends Vue {
-  projects: any = [
-    {
-      name: "Build A-Dream",
-      desc: "This was one of my first projects that I started working on and its been re-worked multiple times, currently using vue & nuxtjs. This is a website to help promote a family members landscaping business.",
-      github: "https://github.com/xfvelocity/build-a-dream",
-      link: "https://buildadream.co.uk/",
-      technologies: ["typescript", "vue", "vuetify", "nuxt"],
-      img: require("@/assets/buildadream.png"),
-    },
-    {
-      name: "Hosting Solutions",
-      desc: "HostingSolutions was a website in which I wanted to challenge my base html/css skills. This is one of my favourite websites i’ve created and tought me a lot about svg animations. v3",
-      github: "https://github.com/xfvelocity/hosting-solutions",
-      link: "",
-      technologies: ["html", "css", "javascript", "sass"],
-      img: require("@/assets/hostingsolutions.png"),
-    },
-    {
-      name: "Gym Tracker",
-      desc: " I wanted to try my hand at a full-stack project which I could use everyday so I created the gym tracker, orignally used for meal prep it’s developed into a seamless gym tracking program",
-      github: "https://github.com/xfvelocity/gym-progress-tracker",
-      link: "https://www.gymprogresstracker.com",
-      technologies: ["typescript", "vue", "vuetify", "mongodb", "nodejs"],
-      img: require("@/assets/gymtracker.png"),
-    },
-  ];
+  @Prop()
+  inView!: any;
+
+  show: boolean = false;
+  projects: any = projects;
+
+  @Watch("inView")
+  setContentVisible(): void {
+    setTimeout(() => (this.show = this.inView), 400);
+  }
 
   goToLink(link: string): void {
     window.open(link);
