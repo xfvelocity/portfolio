@@ -69,7 +69,8 @@ export default class App extends Vue {
         window.location.hash.substr(1).toUpperCase()
     );
     this.pages.forEach((x) => (x.inView = false));
-    loadedPage.inView = true;
+    if (loadedPage) loadedPage.inView = true;
+    else this.pages[0].inView = true;
   }
 
   setCurrentPage(origin: any, destination: any): void {

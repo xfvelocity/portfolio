@@ -1,6 +1,6 @@
 <template>
   <div class="px-6 d-flex align-center" id="contact-page">
-    <transition name="pop-up-fade">
+    <transition name="slide-fade-bottom">
       <div v-show="show">
         <h2 class="text-center">Get in touch</h2>
         <p class="text-center">
