@@ -1,4 +1,6 @@
-export const projects: any[] = [
+import { Project } from "@/types/projects.types";
+
+export const projects: Project[] = [
   {
     name: "Build A-Dream",
     desc:

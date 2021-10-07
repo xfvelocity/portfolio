@@ -36,7 +36,7 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 @Component
 export default class Home extends Vue {
   @Prop()
-  inView!: any;
+  inView!: boolean;
 
   show: boolean = false;
 

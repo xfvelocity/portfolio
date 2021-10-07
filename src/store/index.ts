@@ -8,7 +8,7 @@ export default new Vuex.Store({
     screenWidth: 0,
   },
   mutations: {
-    setScreenWidth(state, val) {
+    setScreenWidth(state, val: number) {
       state.screenWidth = val;
     },
   },

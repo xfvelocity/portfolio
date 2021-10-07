@@ -68,7 +68,7 @@ import SolarSystemSVG from "./SolarSytemSVG.vue";
 })
 export default class About extends Vue {
   @Prop()
-  inView!: any;
+  inView!: boolean;
 
   show: boolean = false;
 

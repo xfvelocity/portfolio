@@ -1,0 +1,26 @@
+export type Page = {
+  component: string;
+  inView: boolean;
+};
+
+export type FullPageOptions = {
+  anchors: string[];
+  scrollingSpeed: number;
+  onLeave: (origin: OnLeaveOrigin, destination: OnLeaveDestination) => void;
+};
+
+export type OnLeaveOrigin = {
+  anchor: string;
+  index: number;
+  isFirst: boolean;
+  isLast: boolean;
+  item: HTMLElement;
+};
+
+export type OnLeaveDestination = {
+  anchor: string;
+  index: number;
+  isFirst: boolean;
+  isLast: boolean;
+  item: HTMLElement;
+};

@@ -20,6 +20,12 @@
  
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import {
+  FullPageOptions,
+  OnLeaveDestination,
+  OnLeaveOrigin,
+  Page,
+} from "./types/app.types";
 import Home from "./pages/home/Home.vue";
 import About from "./pages/about/About.vue";
 import Projects from "./pages/projects/Projects.vue";
@@ -38,17 +44,16 @@ import NextPage from "@/components/next-page/NextPage.vue";
   },
 })
 export default class App extends Vue {
-  pages: any[] = [
+  pages: Page[] = [
     { component: "Home", inView: false },
     { component: "About", inView: false },
     { component: "Projects", inView: false },
     { component: "Contact", inView: false },
   ];
-  options: any = {
+  options: FullPageOptions = {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
-    onLeave: (origin: any, destination: any, direction: any) =>
-      this.setCurrentPage(origin, destination),
+    onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
 
   mounted(): void {
@@ -63,7 +68,7 @@ export default class App extends Vue {
   }
 
   setLoadedPage(): void {
-    const loadedPage = this.pages.find(
+    const loadedPage: Page | undefined = this.pages.find(
       (x) =>
         x.component.toUpperCase() ===
         window.location.hash.substr(1).toUpperCase()
@@ -73,15 +78,15 @@ export default class App extends Vue {
     else this.pages[0].inView = true;
   }
 
-  setCurrentPage(origin: any, destination: any): void {
-    const destinationPage = this.pages.find(
+  setCurrentPage(origin: OnLeaveOrigin, destination: OnLeaveDestination): void {
+    const destinationPage: Page | undefined = this.pages.find(
       (x) => x.component.toUpperCase() === destination.anchor.toUpperCase()
     );
-    destinationPage.inView = true;
-    const originPage = this.pages.find(
+    const originPage: Page | undefined = this.pages.find(
       (x) => x.component.toUpperCase() === origin.anchor.toUpperCase()
     );
-    originPage.inView = false;
+    if (destinationPage) destinationPage.inView = true;
+    if (originPage) originPage.inView = false;
   }
 }
 </script>

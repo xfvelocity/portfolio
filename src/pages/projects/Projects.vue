@@ -58,15 +58,16 @@
  
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Project } from "@/types/projects.types";
 import { projects } from "./projects.data";
 
 @Component
 export default class Projects extends Vue {
   @Prop()
-  inView!: any;
+  inView!: boolean;
 
   show: boolean = false;
-  projects: any = projects;
+  projects: Project[] = projects;
 
   @Watch("inView")
   setContentVisible(): void {

@@ -9,16 +9,16 @@
         </p>
         <div class="d-flex align-center justify-center mt-12">
           <Button
-            v-for="(icon, i) in icons"
+            v-for="(option, i) in contactOptions"
             :key="i"
             class="mx-2"
             color="white"
             buttonClass="pa-8"
             :largeIcon="true"
-            :iconName="icon.name"
+            :iconName="option.name"
             :outlined="true"
             :icon="true"
-            @click="goToLink(icon.value)"
+            @click="goToLink(option.value)"
           />
         </div>
       </div>
@@ -28,6 +28,7 @@
  
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { ContactOptions } from "@/types/contact.types";
 
 @Component
 export default class Contact extends Vue {
@@ -35,13 +36,7 @@ export default class Contact extends Vue {
   inView!: any;
 
   show: boolean = false;
-
-  @Watch("inView")
-  setContentVisible(): void {
-    setTimeout(() => (this.show = this.inView), 600);
-  }
-
-  icons: any[] = [
+  contactOptions: ContactOptions[] = [
     {
       name: "phone",
       value: "tel:07411820679",
@@ -51,6 +46,11 @@ export default class Contact extends Vue {
       value: "mailto:alexlong2001@outlook.com",
     },
   ];
+
+  @Watch("inView")
+  setContentVisible(): void {
+    setTimeout(() => (this.show = this.inView), 600);
+  }
 
   goToLink(link: string): void {
     window.location.href = link;
