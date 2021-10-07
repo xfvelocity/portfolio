@@ -1,7 +1,7 @@
 <template>
   <v-container id="about-page" class="d-flex align-center px-6">
     <v-row>
-      <v-col class="mobile-img" cols="12">
+      <v-col class="mobile-img pa-0" cols="12">
         <transition name="slide-fade-top">
           <SolarSystemSVG
             v-show="show"
@@ -17,7 +17,7 @@
       <v-col cols="12">
         <transition name="slide-fade-bottom">
           <div v-show="show" class="text">
-            <h2 class="mb-2 text-center">About Me</h2>
+            <h2 class="mb-1 text-center">About Me</h2>
             <p>
               I'm, a self-taught developer with over
               <span class="light-blue--text text--lighten-2">2 years</span>

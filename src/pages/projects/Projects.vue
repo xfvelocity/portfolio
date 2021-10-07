@@ -80,7 +80,7 @@ export default class Projects extends Vue {
 </script>
 <style lang="scss">
 #projects-page {
-  height: 85vh;
+  height: 75vh;
   h2 {
     font-size: 32px;
   }
