@@ -1,23 +1,15 @@
 <template>
   <v-container id="about-page" class="d-flex align-center px-6">
-    <v-row>
-      <v-col class="mobile-img pa-0" cols="12">
+    <v-row class="align-center">
+      <v-col v-if="screenWidth < 740" class="pa-0" cols="12">
         <transition name="slide-fade-top">
-          <SolarSystemSVG
-            v-show="show"
-            style="
-              max-width: 200px;
-              max-height: 200px;
-              display: block;
-              margin: 0 auto;
-            "
-          />
+          <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
         </transition>
       </v-col>
-      <v-col cols="12">
+      <v-col :cols="screenWidth > 740 ? '6' : 12">
         <transition name="slide-fade-bottom">
           <div v-show="show" class="text">
-            <h2 class="mb-1 text-center">About Me</h2>
+            <h2 class="mb-1">About Me</h2>
             <p>
               I'm, a self-taught developer with over
               <span class="light-blue--text text--lighten-2">2 years</span>
@@ -40,7 +32,7 @@
             </p>
 
             <div
-              v-if="1 == 0"
+              v-if="screenWidth > 740"
               class="d-flex mt-8"
               @click="goToLink('/src/assets/alexlong-cv.pdf')"
             >
@@ -50,9 +42,11 @@
           </div>
         </transition>
       </v-col>
-      <!-- <v-col cols="12">
-        <img style="width: 100%" src="@/assets/solar-system.svg" alt="" />
-      </v-col> -->
+      <v-col v-if="screenWidth > 740" cols="6">
+        <transition name="slide-fade-top">
+          <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
+        </transition>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -91,8 +85,9 @@ export default class About extends Vue {
   height: 80vh;
   margin: 0 auto;
 
-  .mobile-img {
-    width: 150px;
+  .solar-system_svg {
+    max-height: 200px;
+    max-width: 200px;
     display: block;
     margin: 0 auto;
   }
@@ -102,6 +97,65 @@ export default class About extends Vue {
     margin: 0 auto;
     h2 {
       font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .solar-system_svg {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+
+  @media (min-width: 740px) {
+    .solar-system_svg {
+      max-width: 350px;
+      max-height: 350px;
+    }
+
+    .text {
+      h2 {
+        text-align: left;
+        font-size: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .solar-system_svg {
+      max-width: 450px;
+      max-height: 450px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .row {
+      justify-content: center;
+    }
+    .solar-system_svg {
+      max-width: 550px;
+      max-height: 550px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .text {
+      max-width: 550px;
+      p {
+        font-size: 18px;
+      }
+    }
+    .solar-system_svg {
+      max-width: 700px;
+      max-height: 700px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    .solar-system_svg {
+      max-width: 800px;
+      max-height: 800px;
     }
   }
 }

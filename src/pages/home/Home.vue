@@ -50,7 +50,7 @@ export default class Home extends Vue {
   }
 
   get isTablet(): boolean {
-    return this.$store.state.screenWidth > 700;
+    return this.$store.state.screenWidth > 740;
   }
 }
 </script>
@@ -88,17 +88,20 @@ export default class Home extends Vue {
 
   @media (min-width: 550px) {
     .text {
-      max-width: 300px;
+      max-width: 350px;
       h1 {
         font-size: 60px;
       }
       h3 {
         font-size: 20px;
       }
+      .typewriter {
+        max-width: 235px;
+      }
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 740px) {
     img {
       max-width: 650px;
     }
