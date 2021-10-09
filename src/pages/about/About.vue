@@ -80,10 +80,12 @@ export default class About extends Vue {
   }
 }
 </script>
+
 <style lang="scss">
 #about-page {
   height: 80vh;
   margin: 0 auto;
+  max-width: 1400px;
 
   .solar-system_svg {
     max-height: 200px;

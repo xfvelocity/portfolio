@@ -1,59 +1,60 @@
 <template>
-  <div class="px-6 d-flex align-center" id="projects-page">
+  <v-container class="px-6 d-flex align-center" id="projects-page">
     <transition name="slide-fade-left">
-      <v-carousel
-        v-show="show"
-        height="530px"
-        :show-arrows="false"
-        hide-delimiter-background
-      >
-        <v-carousel-item
-          v-for="(project, i) in projects"
-          :key="i"
-          reverse-transition="slide-x-reverse-transition"
-          transition="slide-x-transition"
-          eager
-        >
+      <v-row class="project align-center" v-show="show">
+        <v-col v-if="screenWidth < 1200" cols="12">
           <img
             style="width: 100%"
-            :src="project.img"
+            :src="projects[0].img"
             alt=""
-            @click="goToLink(project.link)"
+            @click="goToLink(projects[0].link)"
           />
-          <h2 class="my-3">{{ project.name }}</h2>
-          <p>{{ project.desc }}</p>
-          <div class="d-flex mt-8">
-            <span class="d-flex align-center">
-              <Button
-                class="mr-1"
-                iconName="launch"
-                :icon="true"
-                @click="goToLink(project.link)"
-              />
-              <Button
-                imgSize="22px"
-                :iconName="require('@/assets/icons/github.svg')"
-                :customIcon="true"
-                @click="goToLink(project.github)"
-              />
-            </span>
-            <v-spacer></v-spacer>
-            <span>
-              <img
-                width="20px"
-                style="max-height: 20px"
-                class="mr-1"
-                v-for="(tech, i) in project.technologies"
-                :key="`tech-${i}`"
-                :src="require(`@/assets/skills/${tech}.svg`)"
-                alt=""
-              />
-            </span>
+        </v-col>
+        <v-col :cols="screenWidth > 1200 ? 'auto' : '12'">
+          <h2 class="my-3">{{ projects[0].name }}</h2>
+          <div class="desc-container">
+            <p>{{ projects[0].desc }}</p>
+            <div class="d-flex mt-8">
+              <span class="d-flex align-center">
+                <Button
+                  class="mr-1"
+                  iconName="launch"
+                  :icon="true"
+                  @click="goToLink(projects[0].link)"
+                />
+                <Button
+                  imgSize="22px"
+                  :iconName="require('@/assets/icons/github.svg')"
+                  :customIcon="true"
+                  @click="goToLink(projects[0].github)"
+                />
+              </span>
+              <v-spacer></v-spacer>
+              <span>
+                <img
+                  width="20px"
+                  style="max-height: 20px"
+                  class="mr-1"
+                  v-for="(tech, i) in projects[0].technologies"
+                  :key="`tech-${i}`"
+                  :src="require(`@/assets/skills/${tech}.svg`)"
+                  alt=""
+                />
+              </span>
+            </div>
           </div>
-        </v-carousel-item>
-      </v-carousel>
+        </v-col>
+        <v-col v-if="screenWidth > 1200" cols="6">
+          <img
+            style="width: 100%"
+            :src="projects[0].img"
+            alt=""
+            @click="goToLink(projects[0].link)"
+          />
+        </v-col>
+      </v-row>
     </transition>
-  </div>
+  </v-container>
 </template>
  
 <script lang="ts">
@@ -74,6 +75,10 @@ export default class Projects extends Vue {
     setTimeout(() => (this.show = this.inView), 400);
   }
 
+  get screenWidth(): number {
+    return this.$store.state.screenWidth;
+  }
+
   goToLink(link: string): void {
     window.open(link);
   }
@@ -81,9 +86,34 @@ export default class Projects extends Vue {
 </script>
 <style lang="scss">
 #projects-page {
-  height: 75vh;
+  height: 80vh;
+  max-width: 450px;
+  margin: 0 auto;
+
   h2 {
     font-size: 32px;
+  }
+
+  @media (min-width: 740px) {
+    max-width: 600px;
+
+    h2 {
+      font-size: 60px;
+      margin-top: 0 !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1400px;
+
+    .project {
+      justify-content: center;
+      align-content: center;
+
+      .desc-container {
+        max-width: 400px;
+      }
+    }
   }
 }
 </style>

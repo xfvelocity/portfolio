@@ -54,6 +54,7 @@ export default class Home extends Vue {
   }
 }
 </script>
+
 <style lang="scss">
 #home-page {
   padding: 0 28px;
