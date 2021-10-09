@@ -116,7 +116,8 @@ body {
 }
 
 #app {
-  background: url("./assets/bg.png") !important;
   font-family: "Poppins", sans-serif;
+  background-image: url("./assets/bg.png");
+  background-repeat: no-repeat;
 }
 </style>
