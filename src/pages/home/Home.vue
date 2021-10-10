@@ -2,7 +2,7 @@
   <v-container id="home-page">
     <v-row
       class="align-center"
-      :class="screenWidth > 1500 ? 'justify-space-between' : 'justify-center'"
+      :class="screenWidth >= 1500 ? 'justify-space-between' : 'justify-center'"
     >
       <v-col v-if="!isTablet" cols="12">
         <transition name="slide-fade-right">
@@ -50,7 +50,7 @@ export default class Home extends Vue {
   }
 
   get isTablet(): boolean {
-    return this.$store.state.screenWidth > 740;
+    return this.$store.state.screenWidth >= 740;
   }
 }
 </script>

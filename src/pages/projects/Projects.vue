@@ -10,9 +10,9 @@
             @click="goToLink(projects[0].link)"
           />
         </v-col>
-        <v-col :cols="screenWidth > 1200 ? 'auto' : '12'">
+        <v-col class="text" :cols="screenWidth >= 1200 ? 'auto' : '12'">
           <h2 class="my-3">{{ projects[0].name }}</h2>
-          <div class="desc-container">
+          <div class="text-desc">
             <p>{{ projects[0].desc }}</p>
             <div class="d-flex mt-8">
               <span class="d-flex align-center">
@@ -44,7 +44,7 @@
             </div>
           </div>
         </v-col>
-        <v-col v-if="screenWidth > 1200" cols="6">
+        <v-col v-if="screenWidth >= 1200" cols="6">
           <img
             style="width: 100%"
             :src="projects[0].img"
@@ -90,16 +90,23 @@ export default class Projects extends Vue {
   max-width: 450px;
   margin: 0 auto;
 
-  h2 {
-    font-size: 32px;
+  .project {
+    .text {
+      h2 {
+        font-size: 32px;
+      }
+    }
   }
 
   @media (min-width: 740px) {
     max-width: 600px;
-
-    h2 {
-      font-size: 60px;
-      margin-top: 0 !important;
+    .project {
+      .text {
+        h2 {
+          font-size: 60px;
+          margin-top: 0 !important;
+        }
+      }
     }
   }
 
@@ -110,8 +117,15 @@ export default class Projects extends Vue {
       justify-content: center;
       align-content: center;
 
-      .desc-container {
-        max-width: 400px;
+      .text {
+        margin-right: 40px;
+
+        p {
+          font-size: 16px;
+        }
+        &-desc {
+          max-width: 470px;
+        }
       }
     }
   }

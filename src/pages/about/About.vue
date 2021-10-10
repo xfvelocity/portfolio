@@ -6,7 +6,7 @@
           <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
         </transition>
       </v-col>
-      <v-col :cols="screenWidth > 740 ? '6' : 12">
+      <v-col :cols="screenWidth >= 740 ? '6' : 12">
         <transition name="slide-fade-bottom">
           <div v-show="show" class="text">
             <h2 class="mb-1">About Me</h2>
@@ -32,7 +32,7 @@
             </p>
 
             <div
-              v-if="screenWidth > 740"
+              v-if="screenWidth >= 740"
               class="d-flex mt-8"
               @click="goToLink('/src/assets/alexlong-cv.pdf')"
             >
@@ -42,7 +42,7 @@
           </div>
         </transition>
       </v-col>
-      <v-col v-if="screenWidth > 740" cols="6">
+      <v-col v-if="screenWidth >= 740" cols="6">
         <transition name="slide-fade-top">
           <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
         </transition>

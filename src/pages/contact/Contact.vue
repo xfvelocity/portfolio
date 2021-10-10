@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 d-flex align-center" id="contact-page">
+  <div class="px-6 d-flex justify-center align-center" id="contact-page">
     <transition name="slide-fade-bottom">
       <div v-show="show">
         <h2 class="text-center">Get in touch</h2>
@@ -13,8 +13,9 @@
             :key="i"
             class="mx-2"
             color="white"
-            buttonClass="pa-8"
-            :largeIcon="true"
+            :buttonClass="screenWidth >= 740 ? 'pa-10' : 'pa-8'"
+            :largeIcon="screenWidth < 740"
+            :xLargeIcon="screenWidth >= 740"
             :iconName="option.name"
             :outlined="true"
             :icon="true"
@@ -52,6 +53,10 @@ export default class Contact extends Vue {
     setTimeout(() => (this.show = this.inView), 600);
   }
 
+  get screenWidth(): number {
+    return this.$store.state.screenWidth;
+  }
+
   goToLink(link: string): void {
     window.location.href = link;
   }
@@ -63,6 +68,23 @@ export default class Contact extends Vue {
 
   h2 {
     font-size: 40px;
+  }
+
+  @media (min-width: 740px) {
+    h2 {
+      font-size: 60px;
+    }
+    p {
+      font-size: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    h2 {
+      font-size: 100px;
+    }
   }
 }
 </style>

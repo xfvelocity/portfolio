@@ -19,9 +19,13 @@
             :src="iconName"
             alt=""
           />
-          <v-icon v-else :large="largeIcon" :color="iconColor">{{
-            iconName
-          }}</v-icon>
+          <v-icon
+            v-else
+            :large="largeIcon"
+            :x-large="xLargeIcon"
+            :color="iconColor"
+            >{{ iconName }}</v-icon
+          >
         </v-btn>
       </template>
       <span>{{ tooltipMessage }}</span>
@@ -42,9 +46,13 @@
         :src="iconName"
         alt=""
       />
-      <v-icon v-else :large="largeIcon" :color="iconColor">{{
-        iconName
-      }}</v-icon>
+      <v-icon
+        v-else
+        :large="largeIcon"
+        :x-large="xLargeIcon"
+        :color="iconColor"
+        >{{ iconName }}</v-icon
+      >
     </v-btn>
   </div>
 </template>
@@ -72,6 +80,8 @@ export default class Button extends Vue {
   outlined!: boolean;
   @Prop({ default: false })
   largeIcon!: boolean;
+  @Prop({ default: false })
+  xLargeIcon!: boolean;
   @Prop()
   buttonClass!: string;
   @Prop()
