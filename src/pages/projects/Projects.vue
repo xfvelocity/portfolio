@@ -44,9 +44,8 @@
             </div>
           </div>
         </v-col>
-        <v-col v-if="screenWidth >= 1200" cols="6">
+        <v-col class="img-container" v-if="screenWidth >= 1200" cols="6">
           <img
-            style="width: 100%"
             :src="projects[0].img"
             alt=""
             @click="goToLink(projects[0].link)"
@@ -116,9 +115,25 @@ export default class Projects extends Vue {
     .project {
       justify-content: center;
       align-content: center;
+      position: relative;
+      .img-container {
+        z-index: -1;
+        position: absolute;
+        right: 150px;
+        top: -250px;
+        img {
+          width: 800px;
+        }
+      }
 
       .text {
+        position: absolute;
+        left: 0;
         margin-right: 40px;
+
+        h2 {
+          font-size: 80px;
+        }
 
         p {
           font-size: 16px;
