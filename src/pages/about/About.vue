@@ -34,6 +34,7 @@
             <div
               v-if="screenWidth >= 740"
               class="d-flex mt-8"
+              style="cursor: pointer"
               @click="goToLink('/src/assets/alexlong-cv.pdf')"
             >
               <p class="font-weight-medium mr-1 mb-0">CV / Resume</p>
@@ -76,7 +77,7 @@ export default class About extends Vue {
   }
 
   goToLink(link: string): void {
-    window.open(link);
+    if (!process.env.VUE_APP_DISABLE_LINKS) window.open(link);
   }
 }
 </script>
