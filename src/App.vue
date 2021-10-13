@@ -58,6 +58,7 @@ export default class App extends Vue {
     { component: "Contact", inView: false },
   ];
   options: FullPageOptions = {
+    licenseKey: process.env.VUE_APP_FULL_PAGE_LICENSE_KEY,
     anchors: ["home", "about", "projects", "contact"],
     lockAnchors: true,
     scrollingSpeed: 1000,

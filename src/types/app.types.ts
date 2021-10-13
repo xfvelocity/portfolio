@@ -4,6 +4,7 @@ export type Page = {
 };
 
 export type FullPageOptions = {
+  licenseKey: string;
   anchors: string[];
   scrollingSpeed: number;
   lockAnchors: true;
