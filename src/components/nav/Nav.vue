@@ -3,7 +3,9 @@
     class="pa-6 d-flex align-center"
     :class="screenWidth >= 1200 ? 'pt-8 pr-12' : 'pt-6 pr-6'"
   >
-    <h3 v-if="showName" style="font-weight: 600">Alex Long</h3>
+    <h3 v-if="showName" style="font-weight: 600">
+      Alex <span v-if="!hideSensitiveData">Long</span>
+    </h3>
     <v-spacer></v-spacer>
     <div class="d-flex">
       <Button
@@ -31,12 +33,14 @@ export default class Nav extends Vue {
   @Prop({ default: true })
   showName!: string;
 
+  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
+
   get screenWidth(): number {
     return this.$store.state.screenWidth;
   }
 
   goToLink(link: string): void {
-    if (!process.env.VUE_APP_DISABLE_LINKS) window.open(link);
+    if (!process.env.VUE_APP_HIDE_SENSITIVE_DATA) window.open(link);
   }
 }
 </script>

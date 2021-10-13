@@ -58,7 +58,7 @@ export default class Contact extends Vue {
   }
 
   goToLink(link: string): void {
-    if (!process.env.VUE_APP_DISABLE_LINKS) window.location.href = link;
+    if (!process.env.VUE_APP_HIDE_SENSITIVE_DATA) window.location.href = link;
   }
 }
 </script>

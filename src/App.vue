@@ -1,5 +1,12 @@
 <template>
   <v-app id="app">
+    <div
+      v-if="hideSensitiveData"
+      class="text-center white--text grey darken-3 py-2"
+      style="position: fixed; width: 100%; z-index: 10"
+    >
+      This site is in public viewing mode. Some functionality may be disabled.
+    </div>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
         <template>
@@ -52,9 +59,16 @@ export default class App extends Vue {
   ];
   options: FullPageOptions = {
     anchors: ["home", "about", "projects", "contact"],
+    lockAnchors: true,
     scrollingSpeed: 1000,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
+  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
+
+  created(): void {
+    if (this.hideSensitiveData) document.title = "Alex | Portfolio";
+    else document.title = "Alex Long | Portfolio";
+  }
 
   mounted(): void {
     this.setLoadedPage();

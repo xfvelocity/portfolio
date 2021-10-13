@@ -79,7 +79,7 @@ export default class Projects extends Vue {
   }
 
   goToLink(link: string): void {
-    if (!process.env.VUE_APP_DISABLE_LINKS) window.open(link);
+    if (!process.env.VUE_APP_HIDE_SENSITIVE_DATA) window.open(link);
   }
 }
 </script>

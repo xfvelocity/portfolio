@@ -6,6 +6,7 @@ export type Page = {
 export type FullPageOptions = {
   anchors: string[];
   scrollingSpeed: number;
+  lockAnchors: true;
   onLeave: (origin: OnLeaveOrigin, destination: OnLeaveDestination) => void;
 };
 

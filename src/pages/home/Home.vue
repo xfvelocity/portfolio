@@ -13,7 +13,7 @@
       <v-col class="justify-center mt-10" :cols="isTablet ? 'auto' : 12">
         <transition name="slide-fade-left">
           <div v-show="show" class="text">
-            <h1>Alex Long</h1>
+            <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
             <div>
               <h3>front end</h3>
               <h3 class="typewriter">software engineer</h3>
@@ -39,6 +39,7 @@ export default class Home extends Vue {
   inView!: boolean;
 
   show: boolean = false;
+  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
 
   @Watch("inView")
   setContentVisible(): void {
