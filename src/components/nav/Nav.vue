@@ -33,14 +33,15 @@ export default class Nav extends Vue {
   @Prop({ default: true })
   showName!: string;
 
-  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
+  hideSensitiveData: boolean =
+    process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
 
   get screenWidth(): number {
     return this.$store.state.screenWidth;
   }
 
   goToLink(link: string): void {
-    if (!process.env.VUE_APP_HIDE_SENSITIVE_DATA) window.open(link);
+    if (!this.hideSensitiveData) window.open(link);
   }
 }
 </script>

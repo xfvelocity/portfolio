@@ -39,7 +39,8 @@ export default class Home extends Vue {
   inView!: boolean;
 
   show: boolean = false;
-  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
+  hideSensitiveData: boolean =
+    process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
 
   @Watch("inView")
   setContentVisible(): void {

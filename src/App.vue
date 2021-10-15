@@ -64,7 +64,8 @@ export default class App extends Vue {
     scrollingSpeed: 1000,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
-  hideSensitiveData: boolean = process.env.VUE_APP_HIDE_SENSITIVE_DATA;
+  hideSensitiveData: boolean =
+    process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
 
   created(): void {
     if (this.hideSensitiveData) document.title = "Alex | Portfolio";

@@ -77,7 +77,7 @@ export default class About extends Vue {
   }
 
   goToLink(link: string): void {
-    if (!process.env.VUE_APP_HIDE_SENSITIVE_DATA) window.open(link);
+    if (process.env.VUE_APP_HIDE_SENSITIVE_DATA === "false") window.open(link);
   }
 }
 </script>
