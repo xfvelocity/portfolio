@@ -12,6 +12,18 @@ import Button from "@/components/buttons/Button.vue";
 Vue.component("Button", Button);
 Vue.use(VueFullPage);
 
+Vue.mixin({
+  computed: {
+    screenWidth: () => store.state.screenWidth,
+  },
+  methods: {
+    goToLink: (link: string) =>
+      process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true"
+        ? undefined
+        : window.open(link),
+  },
+});
+
 Vue.config.productionTip = false;
 
 new Vue({

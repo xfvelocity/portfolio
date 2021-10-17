@@ -1,4 +1,4 @@
-import { Project } from "@/types/projects.types";
+import { Project } from "@/shared/types/projects.types";
 
 export const projectSlides: Project[] = [
   {

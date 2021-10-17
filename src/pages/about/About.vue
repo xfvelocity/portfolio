@@ -1,14 +1,14 @@
 <template>
-  <v-container id="about-page" class="d-flex align-center px-6">
+  <v-container class="d-flex align-center px-6">
     <v-row class="align-center">
       <v-col v-if="screenWidth < 740" class="pa-0" cols="12">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
+          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
       <v-col :cols="screenWidth >= 740 ? '6' : 12">
         <transition name="slide-fade-bottom">
-          <div v-show="show" class="text">
+          <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
             <p>
               I'm, a self-taught developer with over
@@ -45,7 +45,7 @@
       </v-col>
       <v-col v-if="screenWidth >= 740" cols="6">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-show="show" svgClass="solar-system_svg" />
+          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
     </v-row>
@@ -64,26 +64,11 @@ import SolarSystemSVG from "./SolarSytemSVG.vue";
 export default class About extends Vue {
   @Prop()
   inView!: boolean;
-
-  show: boolean = false;
-
-  @Watch("inView")
-  setContentVisible(): void {
-    setTimeout(() => (this.show = this.inView), 300);
-  }
-
-  get screenWidth(): number {
-    return this.$store.state.screenWidth;
-  }
-
-  goToLink(link: string): void {
-    if (process.env.VUE_APP_HIDE_SENSITIVE_DATA === "false") window.open(link);
-  }
 }
 </script>
 
 <style lang="scss">
-#about-page {
+#about {
   height: 80vh;
   margin: 0 auto;
   max-width: 1400px;

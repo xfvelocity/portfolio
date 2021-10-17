@@ -1,11 +1,8 @@
 <template>
   <nav
-    class="pa-6 d-flex align-center"
+    class="px-6 pt-6 d-flex align-center"
     :class="screenWidth >= 1200 ? 'pt-8 pr-12' : 'pt-6 pr-6'"
   >
-    <h3 v-if="showName" style="font-weight: 600">
-      Alex <span v-if="!hideSensitiveData">Long</span>
-    </h3>
     <v-spacer></v-spacer>
     <div class="d-flex">
       <Button
@@ -35,14 +32,6 @@ export default class Nav extends Vue {
 
   hideSensitiveData: boolean =
     process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
-
-  get screenWidth(): number {
-    return this.$store.state.screenWidth;
-  }
-
-  goToLink(link: string): void {
-    if (!this.hideSensitiveData) window.open(link);
-  }
 }
 </script>
 <style lang="scss">

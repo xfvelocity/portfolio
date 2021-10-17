@@ -1,7 +1,7 @@
 <template>
-  <div class="px-6 d-flex justify-center align-center" id="contact-page">
+  <div class="px-6 d-flex justify-center align-center">
     <transition name="slide-fade-bottom">
-      <div v-show="show">
+      <div v-show="inView">
         <h2 class="text-center">Get in touch</h2>
         <p class="text-center">
           Like what you see? or want to ask more questions, feel free to contact
@@ -36,7 +36,6 @@ export default class Contact extends Vue {
   @Prop()
   inView!: any;
 
-  show: boolean = false;
   contactOptions: ContactOptions[] = [
     {
       name: "phone",
@@ -47,26 +46,10 @@ export default class Contact extends Vue {
       value: "mailto:alexlong2001@outlook.com",
     },
   ];
-
-  @Watch("inView")
-  setContentVisible(): void {
-    setTimeout(() => (this.show = this.inView), 600);
-  }
-
-  get screenWidth(): number {
-    return this.$store.state.screenWidth;
-  }
-
-  goToLink(link: string): void {
-    if (process.env.VUE_APP_HIDE_SENSITIVE_DATA === "false")
-      window.location.href = link;
-  }
 }
 </script>
 <style lang="scss">
-#contact-page {
-  height: 80vh;
-
+#contact {
   h2 {
     font-size: 40px;
   }

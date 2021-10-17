@@ -1,18 +1,18 @@
 <template>
-  <v-container id="home-page">
+  <v-container>
     <v-row
       class="align-center"
       :class="screenWidth >= 1500 ? 'justify-space-between' : 'justify-center'"
     >
       <v-col v-if="!isTablet" cols="12">
         <transition name="slide-fade-right">
-          <img v-show="show" class="test" src="@/assets/saturn.svg" alt="" />
+          <img v-show="inView" class="test" src="@/assets/saturn.svg" alt="" />
         </transition>
       </v-col>
 
       <v-col class="justify-center mt-10" :cols="isTablet ? 'auto' : 12">
         <transition name="slide-fade-left">
-          <div v-show="show" class="text">
+          <div v-show="inView" class="text">
             <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
             <div>
               <h3>front end</h3>
@@ -21,9 +21,10 @@
           </div>
         </transition>
       </v-col>
+
       <v-col v-if="isTablet" cols="6">
         <transition name="slide-fade-right">
-          <img v-show="show" src="@/assets/saturn.svg" alt="" />
+          <img v-show="inView" src="@/assets/saturn.svg" alt="" />
         </transition>
       </v-col>
     </v-row>
@@ -38,18 +39,8 @@ export default class Home extends Vue {
   @Prop()
   inView!: boolean;
 
-  show: boolean = false;
   hideSensitiveData: boolean =
     process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
-
-  @Watch("inView")
-  setContentVisible(): void {
-    setTimeout(() => (this.show = this.inView), 400);
-  }
-
-  get screenWidth(): number {
-    return this.$store.state.screenWidth;
-  }
 
   get isTablet(): boolean {
     return this.$store.state.screenWidth >= 740;
@@ -58,13 +49,8 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss">
-#home-page {
-  padding: 0 28px;
-  height: 80vh;
+#home {
   max-width: 1400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   img {
     display: block;
