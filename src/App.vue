@@ -76,11 +76,11 @@ export default class App extends Vue {
   ];
   options: FullPageOptions = {
     licenseKey: process.env.VUE_APP_FULL_PAGE_LICENSE_KEY,
-    scrollHorizontallyKey: process.env.VUE_APP_SCROLL_HORIZONTALLY_LICENSE_KEY,
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
     lockAnchors: false,
     scrollHorizontally: true,
+    scrollHorizontallyKey: process.env.VUE_APP_SCROLL_HORIZONTALLY_LICENSE_KEY,
     controlArrows: false,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
