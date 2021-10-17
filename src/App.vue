@@ -75,7 +75,7 @@ export default class App extends Vue {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
     lockAnchors: false,
-    scrollHorizontally: true,
+    scrollHorizontally: false,
     controlArrows: false,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
