@@ -80,8 +80,8 @@ export default class App extends Vue {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
     lockAnchors: false,
-    scrollHorizontally: false,
-    controlArrows: true,
+    scrollHorizontally: true,
+    controlArrows: false,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
   hideSensitiveData: boolean =
