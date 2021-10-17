@@ -7,13 +7,24 @@
     >
       This site is in public viewing mode. Some functionality may be disabled.
     </div>
+    <transition name="slide-fade-top" appear>
+      <Nav style="width: 100%" />
+    </transition>
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div v-for="(page, i) in pages" :key="i" class="section">
+      <div class="section" v-for="(page, i) in pages" :key="i">
         <template>
-          <transition name="slide-fade-top" appear>
-            <Nav style="width: 100%" :showName="page.component !== 'Home'" />
-          </transition>
-          <component :is="page.component" :inView="page.inView" />
+          <template v-if="page.component === 'Projects'">
+            <component
+              v-for="(project, i) in page.slides"
+              :key="i"
+              :project="project"
+              class="slide"
+              :is="page.component"
+              :inView="page.inView"
+            />
+          </template>
+          <component v-else :is="page.component" :inView="page.inView" />
+
           <!-- <NextPage
             :pages="pages"
             :index="i"
@@ -33,6 +44,7 @@ import {
   OnLeaveOrigin,
   Page,
 } from "./types/app.types";
+import { projectSlides } from "./pages/projects/projects.data";
 import Home from "./pages/home/Home.vue";
 import About from "./pages/about/About.vue";
 import Projects from "./pages/projects/Projects.vue";
@@ -54,14 +66,17 @@ export default class App extends Vue {
   pages: Page[] = [
     { component: "Home", inView: false },
     { component: "About", inView: false },
-    { component: "Projects", inView: false },
+    { component: "Projects", inView: false, slides: projectSlides },
     { component: "Contact", inView: false },
   ];
   options: FullPageOptions = {
     licenseKey: process.env.VUE_APP_FULL_PAGE_LICENSE_KEY,
+    scrollHorizontallyKey: process.env.VUE_APP_SCROLL_HORIZONTALLY_LICENSE_KEY,
     anchors: ["home", "about", "projects", "contact"],
-    lockAnchors: true,
     scrollingSpeed: 1000,
+    lockAnchors: false,
+    scrollHorizontally: true,
+    controlArrows: false,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
   hideSensitiveData: boolean =

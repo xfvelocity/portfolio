@@ -1,6 +1,6 @@
 import { Project } from "@/types/projects.types";
 
-export const projects: Project[] = [
+export const projectSlides: Project[] = [
   {
     name: "Build A-Dream",
     desc:

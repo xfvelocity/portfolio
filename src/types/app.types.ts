@@ -1,13 +1,17 @@
 export type Page = {
   component: string;
   inView: boolean;
+  slides?: any[];
 };
 
 export type FullPageOptions = {
   licenseKey: string;
   anchors: string[];
   scrollingSpeed: number;
-  lockAnchors: true;
+  lockAnchors: boolean;
+  controlArrows: boolean;
+  scrollHorizontally: boolean;
+  scrollHorizontallyKey: string;
   onLeave: (origin: OnLeaveOrigin, destination: OnLeaveDestination) => void;
 };
 
