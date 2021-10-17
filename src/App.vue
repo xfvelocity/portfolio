@@ -3,7 +3,7 @@
     <div
       v-if="hideSensitiveData"
       class="text-center white--text grey darken-3 py-2"
-      style="position: fixed; width: 100%; z-index: 10"
+      style="position: fixed; width: 100%; z-index: 10; font-size: 14px"
     >
       This site is in public viewing mode. Some functionality may be disabled.
     </div>
@@ -22,6 +22,11 @@
               :is="page.component"
               :inView="page.inView"
             />
+            <!-- <div class="d-flex" style="position: absolute; bottom: 0">
+              <Button :icon="true" iconName="chevron_left" />
+              <v-spacer></v-spacer>
+              <Button :icon="true" iconName="chevron_right" />
+            </div> -->
           </template>
           <component v-else :is="page.component" :inView="page.inView" />
 
@@ -76,7 +81,7 @@ export default class App extends Vue {
     scrollingSpeed: 1000,
     lockAnchors: false,
     scrollHorizontally: false,
-    controlArrows: false,
+    controlArrows: true,
     onLeave: (origin, destination) => this.setCurrentPage(origin, destination),
   };
   hideSensitiveData: boolean =
@@ -143,6 +148,24 @@ body {
   p,
   a {
     font-size: 14px;
+  }
+
+  .fp-tableCell {
+    vertical-align: top;
+  }
+
+  .fp-controlArrow {
+    top: 75%;
+  }
+
+  .fp-prev {
+    left: 25px !important;
+    border-width: 14px 12px 14px 0 !important;
+  }
+
+  .fp-next {
+    right: 25px !important;
+    border-width: 14px 0 14px 12px !important;
   }
 }
 

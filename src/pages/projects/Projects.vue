@@ -87,10 +87,6 @@ export default class Projects extends Vue {
 </script>
 <style lang="scss">
 .projects {
-  .fp-tableCell {
-    vertical-align: top;
-  }
-
   &-content {
     &__row {
       .text {
