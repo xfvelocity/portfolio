@@ -1,12 +1,12 @@
 <template>
   <v-app id="app">
-    <div
+    <!-- <div
       v-if="hideSensitiveData"
       class="text-center white--text grey darken-3 py-2"
       style="position: fixed; width: 100%; z-index: 10; font-size: 14px"
     >
       This site is in public viewing mode. Some functionality may be disabled.
-    </div>
+    </div> -->
     <transition name="slide-fade-top" appear>
       <Nav />
     </transition>
