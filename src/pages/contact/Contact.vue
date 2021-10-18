@@ -54,6 +54,11 @@ export default class Contact extends Vue {
     font-size: 40px;
   }
 
+  .fp-tableCell {
+    display: flex;
+    align-items: center;
+  }
+
   @media (min-width: 740px) {
     h2 {
       font-size: 60px;

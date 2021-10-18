@@ -1,6 +1,6 @@
 <template>
   <v-container class="projects px-6">
-    <transition name="slide-fade-left">
+    <transition name="slide-fade-bottom">
       <v-row
         class="projects-content align-center justify-center"
         v-show="inView"
@@ -76,6 +76,10 @@ export default class Projects extends Vue {
         font-size: 32px;
       }
     }
+  }
+
+  .fp-tableCell {
+    vertical-align: top;
   }
 }
 

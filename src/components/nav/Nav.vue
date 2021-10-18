@@ -1,6 +1,7 @@
 <template>
   <nav
     class="px-6 pt-6 d-flex align-center"
+    style="z-index: 99"
     :class="screenWidth >= 1200 ? 'pt-8 pr-12' : 'pt-6 pr-6'"
   >
     <v-spacer></v-spacer>
