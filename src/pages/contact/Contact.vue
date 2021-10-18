@@ -29,7 +29,7 @@
  
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { ContactOptions } from "@/types/contact.types";
+import { ContactOptions } from "@/shared/types/contact.types";
 
 @Component
 export default class Contact extends Vue {
