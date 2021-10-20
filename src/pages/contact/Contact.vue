@@ -1,7 +1,7 @@
 <template>
   <div class="px-6 d-flex justify-center align-center">
     <transition name="slide-fade-bottom">
-      <div v-show="inView">
+      <div class="content" v-show="inView">
         <h2 class="text-center">Get in touch</h2>
         <p class="text-center">
           Like what you see? or want to ask more questions, feel free to contact
@@ -13,9 +13,9 @@
             :key="i"
             class="mx-2"
             color="white"
-            :buttonClass="screenWidth > 768 ? 'pa-10' : 'pa-8'"
-            :largeIcon="screenWidth <= 768"
-            :xLargeIcon="screenWidth > 768"
+            :buttonClass="screenWidth >= 768 ? 'pa-10' : 'pa-8'"
+            :largeIcon="screenWidth < 768"
+            :xLargeIcon="screenWidth >= 768"
             :iconName="option.name"
             :outlined="true"
             :icon="true"
@@ -50,29 +50,25 @@ export default class Contact extends Vue {
 </script>
 <style lang="scss">
 #contact {
-  h2 {
-    font-size: 40px;
-  }
-
   .fp-tableCell {
     display: flex;
     align-items: center;
   }
 
-  @media (min-width: 768px) {
-    h2 {
-      font-size: 60px;
-    }
-    p {
-      font-size: 20px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
+  .content {
+    max-width: 350px;
+    margin: 0 auto;
 
-  @media (min-width: 1000px) {
-    h2 {
-      font-size: 100px;
+    @media (min-width: 768px) {
+      max-width: 450px;
+
+      h2 {
+        font-size: 65px;
+      }
+
+      p {
+        font-size: 18px;
+      }
     }
   }
 }

@@ -19,8 +19,8 @@
           <div v-show="inView" class="text">
             <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
             <div>
-              <h3>front end</h3>
-              <h3 class="typewriter">software engineer</h3>
+              <h4>front end</h4>
+              <h4 class="typewriter">software engineer</h4>
             </div>
           </div>
         </transition>
@@ -68,14 +68,11 @@ export default class Home extends Vue {
     max-width: 275px;
     margin: 0 auto;
     h1 {
-      font-size: 50px;
       margin: 0;
       letter-spacing: 0.2rem;
     }
 
-    h3 {
-      font-size: 16px;
-      font-weight: 400;
+    h4 {
       margin: 0;
       letter-spacing: 0.2rem;
     }
@@ -86,12 +83,6 @@ export default class Home extends Vue {
     margin: 0 auto;
     .text {
       max-width: 350px;
-      h1 {
-        font-size: 60px;
-      }
-      h3 {
-        font-size: 20px;
-      }
       .typewriter {
         max-width: 235px;
       }
@@ -109,9 +100,6 @@ export default class Home extends Vue {
   @media (min-width: 1100px) {
     .text {
       max-width: none;
-      h1 {
-        font-size: 80px;
-      }
     }
   }
 }

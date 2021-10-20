@@ -7,14 +7,14 @@
     <v-spacer></v-spacer>
     <div class="d-flex">
       <Button
-        class="mr-2"
-        :imgSize="screenWidth > 768 ? '29px' : '24px'"
+        :class="screenWidth >= 768 ? 'mr-4' : 'mr-2'"
+        :imgSize="screenWidth >= 768 ? '29px' : '24px'"
         :iconName="require('@/assets/icons/github.svg')"
         :customIcon="true"
         @click="goToLink('https://github.com/xfvelocity')"
       />
       <Button
-        :imgSize="screenWidth > 768 ? '29px' : '24px'"
+        :imgSize="screenWidth >= 768 ? '29px' : '24px'"
         :iconName="require('@/assets/icons/linkedin.svg')"
         :customIcon="true"
         @click="goToLink('https://www.linkedin.com/in/alex-long-31339a15a/')"
@@ -40,11 +40,5 @@ export default class Nav extends Vue {
   position: absolute;
   width: 100%;
   z-index: 99;
-
-  @media (min-width: 768px) {
-    h3 {
-      font-size: 22px;
-    }
-  }
 }
 </style>

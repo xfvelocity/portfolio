@@ -1,7 +1,10 @@
 <template>
   <v-container class="projects px-6">
     <transition name="slide-fade-bottom">
-      <v-row class="align-center justify-center" v-show="inView">
+      <v-row
+        class="projects-content align-center justify-center"
+        v-show="inView"
+      >
         <v-col v-if="screenWidth < 1200" cols="12">
           <img
             style="width: 100%"
@@ -11,7 +14,7 @@
           />
         </v-col>
         <v-col class="text" :cols="screenWidth > 1200 ? 'auto' : '12'">
-          <h2 class="my-3">{{ info.name }}</h2>
+          <h3 class="my-3">{{ info.name }}</h3>
           <div class="text-desc">
             <p>{{ info.desc }}</p>
             <div class="d-flex mt-8">
@@ -23,7 +26,7 @@
                   @click="goToLink(info.link)"
                 />
                 <Button
-                  imgSize="22px"
+                  imgSize="24px"
                   :iconName="require('@/assets/icons/github.svg')"
                   :customIcon="true"
                   @click="goToLink(info.github)"
@@ -68,32 +71,15 @@ export default class Projects extends Vue {
 <style lang="scss">
 .projects {
   max-width: 400px;
-  .text {
-    h2 {
-      font-size: 32px;
-    }
-  }
 
   .fp-tableCell {
     vertical-align: top;
   }
 
   @media (min-width: 768px) {
-    max-width: 500px;
+    max-width: 550px;
   }
 }
-
-//   @media (min-width: 768px) {
-//     max-width: 600px;
-//     .project {
-//       .text {
-//         h2 {
-//           font-size: 60px;
-//           margin-top: 0 !important;
-//         }
-//       }
-//     }
-//   }
 
 //   @media (min-width: 1200px) {
 //     max-width: 1400px;

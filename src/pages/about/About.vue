@@ -84,7 +84,6 @@ export default class About extends Vue {
     max-width: 400px;
     margin: 0 auto;
     h2 {
-      font-size: 40px;
       text-align: center;
     }
   }
@@ -93,12 +92,13 @@ export default class About extends Vue {
     .solar-system_svg {
       max-width: 350px;
       max-height: 350px;
+      margin-bottom: 20px;
     }
 
     .text {
+      max-width: 450px;
       h2 {
         text-align: left;
-        font-size: 60px;
       }
     }
   }
@@ -123,9 +123,6 @@ export default class About extends Vue {
   @media (min-width: 1600px) {
     .text {
       max-width: 550px;
-      p {
-        font-size: 16px;
-      }
     }
     .solar-system_svg {
       max-width: 700px;
