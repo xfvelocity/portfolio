@@ -1,12 +1,12 @@
 <template>
   <v-container class="d-flex align-center px-6">
     <v-row class="align-center">
-      <v-col v-if="screenWidth < 740" class="pa-0" cols="12">
+      <v-col v-if="screenWidth <= 768" class="pa-0" cols="12">
         <transition name="slide-fade-top">
           <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
-      <v-col :cols="screenWidth >= 740 ? '6' : 12">
+      <v-col :cols="screenWidth > 768 ? '6' : 12">
         <transition name="slide-fade-bottom">
           <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
@@ -32,7 +32,7 @@
             </p>
 
             <div
-              v-if="screenWidth >= 740"
+              v-if="screenWidth > 768"
               class="d-flex mt-8"
               style="cursor: pointer"
               @click="goToLink('/src/assets/alexlong-cv.pdf')"
@@ -43,7 +43,7 @@
           </div>
         </transition>
       </v-col>
-      <v-col v-if="screenWidth >= 740" cols="6">
+      <v-col v-if="screenWidth > 768" cols="6">
         <transition name="slide-fade-top">
           <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
@@ -74,14 +74,14 @@ export default class About extends Vue {
   max-width: 1400px;
 
   .solar-system_svg {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 220px;
+    max-width: 220px;
     display: block;
     margin: 0 auto;
   }
 
   .text {
-    max-width: 450px;
+    max-width: 400px;
     margin: 0 auto;
     h2 {
       font-size: 40px;
@@ -89,14 +89,7 @@ export default class About extends Vue {
     }
   }
 
-  @media (min-width: 600px) {
-    .solar-system_svg {
-      max-width: 300px;
-      max-height: 300px;
-    }
-  }
-
-  @media (min-width: 740px) {
+  @media (min-width: 768px) {
     .solar-system_svg {
       max-width: 350px;
       max-height: 350px;

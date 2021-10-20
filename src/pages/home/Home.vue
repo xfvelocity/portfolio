@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container class="home-content">
     <v-row
       class="align-center"
-      :class="screenWidth >= 1500 ? 'justify-space-between' : 'justify-center'"
+      :class="screenWidth > 1500 ? 'justify-space-between' : 'justify-center'"
     >
       <v-col v-if="!isTablet" cols="12">
         <transition name="slide-fade-right">
@@ -10,7 +10,11 @@
         </transition>
       </v-col>
 
-      <v-col class="justify-center mt-10" :cols="isTablet ? 'auto' : 12">
+      <v-col
+        class="justify-center"
+        :class="isTablet ? '' : 'mt-10'"
+        :cols="isTablet ? 'auto' : 12"
+      >
         <transition name="slide-fade-left">
           <div v-show="inView" class="text">
             <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
@@ -43,14 +47,16 @@ export default class Home extends Vue {
     process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
 
   get isTablet(): boolean {
-    return this.$store.state.screenWidth >= 740;
+    return this.$store.state.screenWidth > 768;
   }
 }
 </script>
 
 <style lang="scss">
-#home {
+.home-content {
   max-width: 1400px;
+  display: flex;
+  align-items: center;
 
   img {
     display: block;
@@ -76,6 +82,8 @@ export default class Home extends Vue {
   }
 
   @media (min-width: 550px) {
+    width: 80%;
+    margin: 0 auto;
     .text {
       max-width: 350px;
       h1 {
@@ -88,9 +96,12 @@ export default class Home extends Vue {
         max-width: 235px;
       }
     }
+    img {
+      max-width: 400px;
+    }
   }
 
-  @media (min-width: 740px) {
+  @media (min-width: 769px) {
     img {
       max-width: 650px;
     }

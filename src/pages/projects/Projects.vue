@@ -1,10 +1,7 @@
 <template>
   <v-container class="projects px-6">
     <transition name="slide-fade-bottom">
-      <v-row
-        class="projects-content align-center justify-center"
-        v-show="inView"
-      >
+      <v-row class="align-center justify-center" v-show="inView">
         <v-col v-if="screenWidth < 1200" cols="12">
           <img
             style="width: 100%"
@@ -13,7 +10,7 @@
             @click="goToLink(info.link)"
           />
         </v-col>
-        <v-col class="text" :cols="screenWidth >= 1200 ? 'auto' : '12'">
+        <v-col class="text" :cols="screenWidth > 1200 ? 'auto' : '12'">
           <h2 class="my-3">{{ info.name }}</h2>
           <div class="text-desc">
             <p>{{ info.desc }}</p>
@@ -47,7 +44,7 @@
             </div>
           </div>
         </v-col>
-        <v-col class="img-container" v-if="screenWidth >= 1200" cols="6">
+        <v-col class="img-container" v-if="screenWidth > 1200" cols="6">
           <img :src="info.img" alt="" @click="goToLink(info.link)" />
         </v-col>
       </v-row>
@@ -70,20 +67,23 @@ export default class Projects extends Vue {
 
 <style lang="scss">
 .projects {
-  &-content {
-    .text {
-      h2 {
-        font-size: 32px;
-      }
+  max-width: 400px;
+  .text {
+    h2 {
+      font-size: 32px;
     }
   }
 
   .fp-tableCell {
     vertical-align: top;
   }
+
+  @media (min-width: 768px) {
+    max-width: 500px;
+  }
 }
 
-//   @media (min-width: 740px) {
+//   @media (min-width: 768px) {
 //     max-width: 600px;
 //     .project {
 //       .text {

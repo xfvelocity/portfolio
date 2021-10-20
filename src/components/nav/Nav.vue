@@ -1,20 +1,20 @@
 <template>
   <nav
+    id="nav"
     class="px-6 pt-6 d-flex align-center"
-    style="z-index: 99"
-    :class="screenWidth >= 1200 ? 'pt-8 pr-12' : 'pt-6 pr-6'"
+    :class="screenWidth > 1200 ? 'pt-8 pr-12' : 'pt-6 pr-6'"
   >
     <v-spacer></v-spacer>
     <div class="d-flex">
       <Button
         class="mr-2"
-        :imgSize="screenWidth >= 740 ? '29px' : '24px'"
+        :imgSize="screenWidth > 768 ? '29px' : '24px'"
         :iconName="require('@/assets/icons/github.svg')"
         :customIcon="true"
         @click="goToLink('https://github.com/xfvelocity')"
       />
       <Button
-        :imgSize="screenWidth >= 740 ? '29px' : '24px'"
+        :imgSize="screenWidth > 768 ? '29px' : '24px'"
         :iconName="require('@/assets/icons/linkedin.svg')"
         :customIcon="true"
         @click="goToLink('https://www.linkedin.com/in/alex-long-31339a15a/')"
@@ -36,9 +36,15 @@ export default class Nav extends Vue {
 }
 </script>
 <style lang="scss">
-@media (min-width: 740px) {
-  h3 {
-    font-size: 22px;
+#nav {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 22px;
+    }
   }
 }
 </style>

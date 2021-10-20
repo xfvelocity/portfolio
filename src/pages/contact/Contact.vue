@@ -13,9 +13,9 @@
             :key="i"
             class="mx-2"
             color="white"
-            :buttonClass="screenWidth >= 740 ? 'pa-10' : 'pa-8'"
-            :largeIcon="screenWidth < 740"
-            :xLargeIcon="screenWidth >= 740"
+            :buttonClass="screenWidth > 768 ? 'pa-10' : 'pa-8'"
+            :largeIcon="screenWidth <= 768"
+            :xLargeIcon="screenWidth > 768"
             :iconName="option.name"
             :outlined="true"
             :icon="true"
@@ -59,7 +59,7 @@ export default class Contact extends Vue {
     align-items: center;
   }
 
-  @media (min-width: 740px) {
+  @media (min-width: 768px) {
     h2 {
       font-size: 60px;
     }

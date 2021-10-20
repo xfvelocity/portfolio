@@ -1,5 +1,11 @@
 @import "transitions";
 
+html,
+body,
+.site-content {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -24,6 +30,11 @@ body {
 
 #app {
   font-family: "Poppins", sans-serif;
-  background-image: url("./assets/bg.png");
+  background-image: url("./assets/bg2.png");
   background-repeat: no-repeat;
+
+  .fp-tableCell {
+    display: flex;
+    align-items: center;
+  }
 }
