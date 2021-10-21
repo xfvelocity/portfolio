@@ -127,16 +127,10 @@ export default class About extends Vue {
     .text {
       max-width: 550px;
     }
-    .solar-system_svg {
-      max-width: 700px;
-      max-height: 700px;
-    }
-  }
 
-  @media (min-width: 1800px) {
     .solar-system_svg {
-      max-width: 700px;
-      max-height: 700px;
+      max-width: 650px;
+      max-height: 650px;
     }
   }
 }

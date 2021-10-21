@@ -70,6 +70,14 @@ export default class Contact extends Vue {
         font-size: 18px;
       }
     }
+
+    @media (min-width: 1400px) {
+      max-width: 500px;
+
+      h2 {
+        font-size: 75px;
+      }
+    }
   }
 }
 </style>
