@@ -104,6 +104,9 @@ export default class About extends Vue {
   }
 
   @media (min-width: 1000px) {
+    width: 90%;
+    margin: 0 auto;
+
     .solar-system_svg {
       max-width: 450px;
       max-height: 450px;

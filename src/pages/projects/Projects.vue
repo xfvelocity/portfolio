@@ -5,15 +5,10 @@
         class="projects-content align-center justify-center"
         v-show="inView"
       >
-        <v-col v-if="screenWidth < 1200" cols="12">
-          <img
-            style="width: 100%"
-            :src="info.img"
-            alt=""
-            @click="goToLink(info.link)"
-          />
+        <v-col class="img-container" v-if="screenWidth < 1200" cols="12">
+          <img :src="info.img" alt="" @click="goToLink(info.link)" />
         </v-col>
-        <v-col class="text" :cols="screenWidth > 1200 ? 'auto' : '12'">
+        <v-col class="text" :cols="screenWidth >= 1200 ? 'auto' : '12'">
           <h3 class="my-3">{{ info.name }}</h3>
           <div class="text-desc">
             <p>{{ info.desc }}</p>
@@ -33,7 +28,7 @@
                 />
               </span>
               <v-spacer></v-spacer>
-              <span>
+              <span class="text-desc__technologies">
                 <img
                   width="20px"
                   style="max-height: 20px"
@@ -47,7 +42,7 @@
             </div>
           </div>
         </v-col>
-        <v-col class="img-container" v-if="screenWidth > 1200" cols="6">
+        <v-col class="img-container" v-if="screenWidth >= 1200" cols="auto">
           <img :src="info.img" alt="" @click="goToLink(info.link)" />
         </v-col>
       </v-row>
@@ -76,45 +71,59 @@ export default class Projects extends Vue {
     vertical-align: top;
   }
 
+  &-content {
+    .img-container {
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+
   @media (min-width: 768px) {
     max-width: 550px;
   }
+
+  @media (min-width: 1200px) {
+    max-width: 1400px;
+
+    .fp-tableCell {
+      height: 100vh;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    &-content {
+      position: relative;
+
+      .img-container {
+        z-index: -1;
+        position: absolute;
+        right: 0;
+
+        img {
+          width: 550px !important;
+        }
+      }
+
+      .text {
+        position: absolute;
+        left: 0;
+        margin-right: 40px;
+
+        h3 {
+          font-size: 80px;
+          margin-bottom: 0 !important;
+        }
+
+        &-desc {
+          max-width: 460px;
+
+          &__technologies {
+            margin-top: 30px !important;
+          }
+        }
+      }
+    }
+  }
 }
-
-//   @media (min-width: 1200px) {
-//     max-width: 1400px;
-
-//     .project {
-//       justify-content: center;
-//       align-content: center;
-//       position: relative;
-//       .img-container {
-//         z-index: -1;
-//         position: absolute;
-//         right: 150px;
-//         top: -250px;
-//         img {
-//           width: 800px;
-//         }
-//       }
-
-//       .text {
-//         position: absolute;
-//         left: 0;
-//         margin-right: 40px;
-
-//         h2 {
-//           font-size: 80px;
-//         }
-
-//         p {
-//           font-size: 16px;
-//         }
-//         &-desc {
-//           max-width: 470px;
-//         }
-//       }
-//     }
-//   }
-// }
 </style>

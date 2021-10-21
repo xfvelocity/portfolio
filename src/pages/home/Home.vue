@@ -47,14 +47,14 @@ export default class Home extends Vue {
     process.env.VUE_APP_HIDE_SENSITIVE_DATA === "true";
 
   get isTablet(): boolean {
-    return this.$store.state.screenWidth > 768;
+    return this.$store.state.screenWidth >= 768;
   }
 }
 </script>
 
 <style lang="scss">
 .home-content {
-  max-width: 1400px;
+  max-width: 1400px !important;
   display: flex;
   align-items: center;
 
@@ -79,7 +79,7 @@ export default class Home extends Vue {
   }
 
   @media (min-width: 550px) {
-    width: 80%;
+    width: 90% !important;
     margin: 0 auto;
     .text {
       max-width: 350px;
@@ -97,10 +97,11 @@ export default class Home extends Vue {
       max-width: 650px;
     }
   }
-  @media (min-width: 1100px) {
-    .text {
-      max-width: none;
-    }
-  }
+
+  // @media (min-width: 1200px) {
+  //   .text {
+  //     max-width: none;
+  //   }
+  // }
 }
 </style>
