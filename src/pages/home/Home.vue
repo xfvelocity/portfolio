@@ -98,6 +98,15 @@ export default class Home extends Vue {
     }
   }
 
+  @media (min-width: 1400px) {
+    .text {
+      max-width: none;
+      h1 {
+        font-size: 80px;
+      }
+    }
+  }
+
   // @media (min-width: 1200px) {
   //   .text {
   //     max-width: none;

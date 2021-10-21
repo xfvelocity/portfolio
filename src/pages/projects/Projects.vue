@@ -12,7 +12,7 @@
           <h3 class="my-3">{{ info.name }}</h3>
           <div class="text-desc">
             <p>{{ info.desc }}</p>
-            <div class="d-flex mt-8">
+            <div class="d-flex align-center mt-8 text-desc__technologies">
               <span class="d-flex align-center">
                 <Button
                   class="mr-1"
@@ -28,7 +28,7 @@
                 />
               </span>
               <v-spacer></v-spacer>
-              <span class="text-desc__technologies">
+              <span>
                 <img
                   width="20px"
                   style="max-height: 20px"
@@ -84,7 +84,7 @@ export default class Projects extends Vue {
   }
 
   @media (min-width: 1200px) {
-    max-width: 1400px;
+    max-width: 1500px;
 
     .fp-tableCell {
       height: 100vh;
@@ -99,10 +99,7 @@ export default class Projects extends Vue {
         z-index: -1;
         position: absolute;
         right: 0;
-
-        img {
-          width: 550px !important;
-        }
+        width: 60%;
       }
 
       .text {
@@ -120,6 +117,18 @@ export default class Projects extends Vue {
 
           &__technologies {
             margin-top: 30px !important;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    &-content {
+      .text {
+        &-desc {
+          &__technologies {
+            margin-top: 80px !important;
           }
         }
       }
