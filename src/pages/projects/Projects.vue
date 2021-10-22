@@ -5,8 +5,13 @@
         class="projects-content align-center justify-center"
         v-show="inView"
       >
-        <v-col class="img-container" v-if="screenWidth < 1200" cols="12">
-          <img :src="info.img" alt="" @click="goToLink(info.link)" />
+        <v-col
+          class="img-container"
+          v-if="screenWidth < 1200"
+          cols="12"
+          @click="goToLink(info.link)"
+        >
+          <img :src="info.img" alt="" />
         </v-col>
         <v-col class="text" :cols="screenWidth >= 1200 ? 'auto' : '12'">
           <h3 class="my-3">{{ info.name }}</h3>
@@ -42,8 +47,13 @@
             </div>
           </div>
         </v-col>
-        <v-col class="img-container" v-if="screenWidth >= 1200" cols="auto">
-          <img :src="info.img" alt="" @click="goToLink(info.link)" />
+        <v-col
+          class="img-container"
+          v-if="screenWidth >= 1200"
+          cols="auto"
+          @click="goToLink(info.link)"
+        >
+          <img :src="info.img" alt="" />
         </v-col>
       </v-row>
     </transition>
@@ -74,6 +84,7 @@ export default class Projects extends Vue {
   &-content {
     .img-container {
       img {
+        cursor: pointer;
         width: 100% !important;
       }
     }
