@@ -53,29 +53,40 @@ export default class Contact extends Vue {
   .fp-tableCell {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .content {
-    max-width: 350px;
-    margin: 0 auto;
+    p {
+      max-width: 350px;
+      margin: 0 auto;
+    }
 
     @media (min-width: 768px) {
-      max-width: 450px;
-
       h2 {
         font-size: 65px;
       }
 
       p {
+        max-width: 450px;
         font-size: 18px;
       }
     }
 
     @media (min-width: 1400px) {
-      max-width: 500px;
-
       h2 {
-        font-size: 75px;
+        font-size: 80px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      h2 {
+        font-size: 100px;
+      }
+
+      p {
+        max-width: 550px;
+        font-size: 20px;
       }
     }
   }
