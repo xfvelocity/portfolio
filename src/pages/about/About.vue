@@ -35,7 +35,7 @@
               v-if="screenWidth > 768"
               class="d-flex mt-8"
               style="cursor: pointer"
-              @click="goToLink('/src/assets/alexlong-cv.pdf')"
+              @click="goToLink('/alexlong-cv.pdf')"
             >
               <p class="font-weight-medium mr-1 mb-0">CV / Resume</p>
               <v-icon color="white">file_download</v-icon>
