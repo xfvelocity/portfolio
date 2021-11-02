@@ -11,11 +11,11 @@
           <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
             <p>
-              I'm, a self-taught developer with over
-              <span class="light-blue--text text--lighten-2">2 years</span>
+              I'm a self-taught developer with over
+              <span class="light-blue--text text--lighten-2">2 years</span> of
               experience who has a love for web development which is fueled by
-              creating and troubleshooting code. It started with coding being a
-              hobby which has now led to a full-time career.
+              creating and troubleshooting code. Started coding as a hobby which
+              has now led to a full-time career.
             </p>
             <p>
               Experience with a range of Javascript frameworks such as
