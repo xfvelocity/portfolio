@@ -59,7 +59,7 @@
     </transition>
   </v-container>
 </template>
- 
+
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Project } from "@/shared/types/projects.types";
