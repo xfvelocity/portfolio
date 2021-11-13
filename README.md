@@ -1,5 +1,9 @@
 # Vue Portfolio
 
-Live: https://www.alexlong.dev/
+Portfolio website re-designed and built from the ground up to use Vue & Fullpage.js.
 
-A website to show off my skills and experience in Web Development. Frequently updated to show off projects or website I'm working on.
+Production: https://alexlong.dev \
+Preview: https://vue-portfolio-ochre.vercel.app
+
+Design: https://www.figma.com/file/oNy7qrFVBn5qDDvqi80FTL/Vue-Portfolio?node-id=0%3A1
+
