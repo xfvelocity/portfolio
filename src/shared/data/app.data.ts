@@ -40,8 +40,8 @@ export const pages: Page[] = [
       desc:
         'This will be a new version of my previously developed "Gym Tracker" built on Vue 3. Currently in progress - Check the Repo to keep up to date with progress',
       github: "https://github.com/VelocityDevelopment/Track-IT",
-      link: "https://github.com/VelocityDevelopment/Track-IT",
-      technologies: ["typescript", "vue", "mongodb", "nodejs"],
+      link: "https://www.gymprogresstracker.com/",
+      technologies: ["typescript", "vue", "vuetify", "firebase"],
       img: require("@/assets/gymtracker.png"),
     },
   },
