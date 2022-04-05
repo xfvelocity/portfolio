@@ -13,8 +13,30 @@ export const pages: Page[] = [
         "This was one of the first projects that I started working on and it's been re-worked multiple times, currently using Vue & Nuxtjs. This website was built for a family member to help promote their landscaping business.",
       github: "https://github.com/xfvelocity/build-a-dream",
       link: "https://buildadream.co.uk/",
+      jira:
+        "https://alex-long-projects.atlassian.net/jira/software/projects/BD/boards/4",
+      figma:
+        "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?node-id=0%3A1",
       technologies: ["typescript", "vue", "vuetify", "nuxt"],
       img: require("@/assets/buildadream.png"),
+    },
+  },
+  {
+    component: "Projects",
+    id: "trackit",
+    inView: false,
+    info: {
+      name: "Track IT (PWA)",
+      desc:
+        'This is an updated version of my previous project "Gym Progress Tracker". This is used to help create meal plans throughout the week, track nutrients and build up shopping lists',
+      github: "https://github.com/xfvelocity/track-it",
+      link: "https://track-it-7f82b.web.app",
+      jira:
+        "https://alex-long-projects.atlassian.net/jira/software/projects/TI/boards/3",
+      figma:
+        "https://www.figma.com/file/KOV22iCoPwxCdkzgeDubL9/Track-IT?node-id=0%3A1",
+      technologies: ["typescript", "vue", "vuetify", "firebase"],
+      img: require("@/assets/gymtracker.png"),
     },
   },
   {
@@ -27,22 +49,10 @@ export const pages: Page[] = [
         "HostingSolutions was a website in which I wanted to challenge my base HTML/CSS skills. This is one of the favourite websites I’ve created as it has taught me a lot about SVG animations.",
       github: "https://github.com/xfvelocity/hosting-solutions",
       link: "https://hosting-solutions.herokuapp.com/",
+      figma:
+        "https://www.figma.com/file/OiXuQZ9nhFYGX4ZBXIMHtn/Hosting-Solutions?node-id=0%3A1",
       technologies: ["html", "css", "javascript", "sass"],
       img: require("@/assets/hostingsolutions.png"),
-    },
-  },
-  {
-    component: "Projects",
-    id: "trackit",
-    inView: false,
-    info: {
-      name: "Track IT",
-      desc:
-        'This will be a new version of my previously developed "Gym Tracker" built on Vue 3. Currently in progress - Check the Repo to keep up to date with progress',
-      github: "https://github.com/VelocityDevelopment/Track-IT",
-      link: "https://www.gymprogresstracker.com/",
-      technologies: ["typescript", "vue", "vuetify", "firebase"],
-      img: require("@/assets/gymtracker.png"),
     },
   },
   { component: "Contact", id: "contact", inView: false },

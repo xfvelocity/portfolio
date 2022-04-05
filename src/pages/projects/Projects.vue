@@ -23,16 +23,34 @@
                   class="mr-1"
                   iconName="launch"
                   :icon="true"
+                  tooltipMessage="Visit"
                   @click="goToLink(info.link)"
                 />
                 <Button
                   imgSize="24px"
                   :iconName="require('@/assets/icons/github.svg')"
                   :customIcon="true"
+                  tooltipMessage="Github"
                   @click="goToLink(info.github)"
                 />
+                <Button
+                  v-if="info.jira"
+                  imgSize="22px"
+                  :iconName="require('@/assets/icons/jira.svg')"
+                  :customIcon="true"
+                  tooltipMessage="Jira Board"
+                  @click="goToLink(info.jira)"
+                />
+                <Button
+                  v-if="info.figma"
+                  imgSize="16px"
+                  :iconName="require('@/assets/icons/figma.svg')"
+                  :customIcon="true"
+                  tooltipMessage="Figma Designs"
+                  @click="goToLink(info.figma)"
+                />
               </span>
-              <v-spacer></v-spacer>
+              <v-spacer />
               <span>
                 <img
                   width="20px"
@@ -61,7 +79,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { Project } from "@/shared/types/projects.types";
 
 @Component

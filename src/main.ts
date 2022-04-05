@@ -4,7 +4,6 @@ import App from "./App.vue";
 import store from "./store";
 // @ts-ignore
 import VueFullPage from "vue-fullpage.js";
-import "./fullpage.scrollHorizontally.min";
 import vuetify from "./plugins/vuetify";
 
 import Button from "@/components/buttons/Button.vue";

@@ -19,16 +19,18 @@
             </p>
             <p>
               Experience with a range of Javascript frameworks such as
-              <span class="light-blue--text text--lighten-2">Vue</span> &
+              <span class="light-blue--text text--lighten-2">Vue 3</span> &
               <span class="light-blue--text text--lighten-2">Svelte</span>.
-              Paired alongside with
-              <span class="light-blue--text text--lighten-2">Vuetify</span> &
-              <span class="light-blue--text text--lighten-2">Tailwind</span> to
-              build stunning looking websites. I can also build backend systems
-              using
+              Paired with design frameworks such as
+              <span class="light-blue--text text--lighten-2">
+                Vuetify, Tailwind
+              </span>
+              & <span class="light-blue--text text--lighten-2">Ionic</span> to
+              build stunning looking websites. I also have experience building
+              backend systems using
               <span class="light-blue--text text--lighten-2">NodeJS</span> &
-              <span class="light-blue--text text--lighten-2">MongoDB</span> to
-              help support these.
+              <span class="light-blue--text text--lighten-2">MongoDB</span> or
+              <span class="light-blue--text text--lighten-2">Firebase</span>
             </p>
 
             <div
@@ -51,9 +53,9 @@
     </v-row>
   </v-container>
 </template>
- 
+
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import SolarSystemSVG from "./SolarSytemSVG.vue";
 
 @Component({
@@ -83,6 +85,7 @@ export default class About extends Vue {
   .text {
     max-width: 400px;
     margin: 0 auto;
+
     h2 {
       text-align: center;
     }
@@ -97,6 +100,7 @@ export default class About extends Vue {
 
     .text {
       max-width: 450px;
+
       h2 {
         text-align: left;
       }
@@ -117,6 +121,7 @@ export default class About extends Vue {
     .row {
       justify-content: center;
     }
+
     .solar-system_svg {
       max-width: 550px;
       max-height: 550px;
