@@ -6,22 +6,24 @@
     >
       This site is in public viewing mode. Some functionality may be disabled.
     </div>
+
     <transition name="slide-fade-top" appear>
-      <Nav />
+      <Nav :windowWidth="windowWidth" />
     </transition>
 
     <v-main>
-      <!-- <full-page ref="fullpage" :options="options" id="fullpage">
-      <component
-        class="section fp-autoheight"
-        :id="page.id"
-        v-for="(page, i) in pages"
-        :is="page.component"
-        :info="page.info"
-        :in-view="page.inView"
-        :key="i"
-      />
-    </full-page> -->
+      <full-page ref="fullpage" :options="options" id="fullpage">
+        <component
+          class="section fp-autoheight"
+          :id="page.id"
+          v-for="(page, i) in pages"
+          :is="page.component"
+          :info="page.info"
+          :in-view="page.inView"
+          :windowWidth="windowWidth"
+          :key="i"
+        />
+      </full-page>
     </v-main>
   </v-app>
 </template>
@@ -37,15 +39,15 @@ import { pageData } from "./shared/data/app.data";
 
 import Home from "./pages/home/Home.vue";
 import About from "./pages/about/About.vue";
-import Projects from "./pages/projects/Projects.vue";
-import Contact from "./pages/contact/Contact.vue";
+// import Projects from "./pages/projects/Projects.vue";
+// import Contact from "./pages/contact/Contact.vue";
 import Nav from "./components/nav/Nav.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     Home,
-    // About,
+    About,
     // Projects,
     // Contact,
     Nav,
@@ -88,6 +90,7 @@ export default defineComponent({
 
     return {
       options,
+      windowWidth,
       hideSensitiveData,
       pages,
     };
@@ -98,12 +101,10 @@ export default defineComponent({
 <style lang="scss">
 @import "./scss/main.scss";
 
-#app {
-  .notice {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    font-size: 14px;
-  }
+.notice {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  font-size: 14px;
 }
 </style>

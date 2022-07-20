@@ -1,12 +1,13 @@
 <template>
   <v-container class="d-flex align-center px-6">
     <v-row class="align-center">
-      <v-col v-if="screenWidth <= 768" class="pa-0" cols="12">
+      <v-col v-if="windowWidth <= 768" class="pa-0" cols="12">
         <transition name="slide-fade-top">
           <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
-      <v-col :cols="screenWidth > 768 ? '6' : 12">
+
+      <v-col :cols="windowWidth > 768 ? 6 : 12">
         <transition name="slide-fade-bottom">
           <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
@@ -34,7 +35,7 @@
             </p>
 
             <div
-              v-if="screenWidth > 768"
+              v-if="windowWidth > 768"
               class="d-flex mt-8"
               style="cursor: pointer"
               @click="goToLink('/alexlong-cv.pdf')"
@@ -45,7 +46,8 @@
           </div>
         </transition>
       </v-col>
-      <v-col v-if="screenWidth > 768" cols="6">
+
+      <v-col v-if="windowWidth > 768" cols="6">
         <transition name="slide-fade-top">
           <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
@@ -55,18 +57,32 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { defineComponent } from "vue";
+import { goToLink } from "../../shared/helpers/utils";
+
 import SolarSystemSVG from "./SolarSytemSVG.vue";
 
-@Component({
+export default defineComponent({
+  name: "About",
   components: {
     SolarSystemSVG,
   },
-})
-export default class About extends Vue {
-  @Prop()
-  inView!: boolean;
-}
+  props: {
+    inView: {
+      type: Boolean,
+      default: false,
+    },
+    windowWidth: {
+      type: Number,
+      default: 0,
+    },
+  },
+  setup() {
+    return {
+      goToLink,
+    };
+  },
+});
 </script>
 
 <style lang="scss">

@@ -465,16 +465,21 @@
     </defs>
   </svg>
 </template>
- 
-<script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
-export default class SolarSystemSVG extends Vue {
-  @Prop()
-  svgClass!: string;
-}
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "SolarSystemSVG",
+  props: {
+    svgClass: {
+      type: String,
+      default: "",
+    },
+  },
+});
 </script>
+
 <style lang="scss">
 #outer-ring {
   transform-origin: center;

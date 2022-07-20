@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { dynamicImage } from "../../shared/helpers/utils";
+import { dynamicImage, goToLink } from "../../shared/helpers/utils";
 
 import Button from "../buttons/Button.vue";
 
@@ -45,10 +45,6 @@ export default defineComponent({
     },
   },
   setup() {
-    const goToLink = (link: string): void => {
-      window.open(link);
-    };
-
     return {
       dynamicImage,
       goToLink,
