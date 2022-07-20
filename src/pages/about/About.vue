@@ -3,13 +3,13 @@
     <v-row class="align-center">
       <v-col v-if="windowWidth <= 768" class="pa-0" cols="12">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
+          <SolarSystemSVG v-if="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
 
       <v-col :cols="windowWidth > 768 ? 6 : 12">
         <transition name="slide-fade-bottom">
-          <div v-show="inView" class="text">
+          <div v-if="inView" class="text">
             <h2 class="mb-1">About Me</h2>
             <p>
               I'm a self-taught developer with over
@@ -49,7 +49,7 @@
 
       <v-col v-if="windowWidth > 768" cols="6">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
+          <SolarSystemSVG v-if="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
     </v-row>

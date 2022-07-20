@@ -7,13 +7,13 @@
       >
         <v-col
           class="img-container"
-          v-if="screenWidth < 1200"
+          v-if="windowWidth < 1200"
           cols="12"
           @click="goToLink(info.link)"
         >
           <img :src="info.img" alt="" />
         </v-col>
-        <v-col class="text" :cols="screenWidth >= 1200 ? 'auto' : '12'">
+        <v-col class="text" :cols="windowWidth >= 1200 ? 'auto' : '12'">
           <h3 class="my-3">{{ info.name }}</h3>
           <div class="text-desc">
             <p>{{ info.desc }}</p>
@@ -27,27 +27,27 @@
                   @click="goToLink(info.link)"
                 />
                 <Button
-                  imgSize="24px"
-                  :iconName="require('@/assets/icons/github.svg')"
+                  :img-size="24"
+                  :iconName="dynamicImage('icons/github.svg')"
                   :customIcon="true"
                   tooltipMessage="Github"
                   @click="goToLink(info.github)"
                 />
                 <Button
                   v-if="info.jira"
-                  imgSize="22px"
-                  :iconName="require('@/assets/icons/jira.svg')"
+                  :img-size="22"
+                  :iconName="dynamicImage('icons/jira.svg')"
                   :customIcon="true"
                   tooltipMessage="Jira Board"
-                  @click="goToLink(info.jira)"
+                  @click="goToLink(info.jira!)"
                 />
                 <Button
                   v-if="info.figma"
-                  imgSize="16px"
-                  :iconName="require('@/assets/icons/figma.svg')"
+                  :img-size="16"
+                  :iconName="dynamicImage('icons/figma.svg')"
                   :customIcon="true"
                   tooltipMessage="Figma Designs"
-                  @click="goToLink(info.figma)"
+                  @click="goToLink(info.figma!)"
                 />
               </span>
               <v-spacer />
@@ -58,7 +58,7 @@
                   class="mr-1"
                   v-for="(tech, i) in info.technologies"
                   :key="`tech-${i}`"
-                  :src="require(`@/assets/skills/${tech}.svg`)"
+                  :src="dynamicImage(`skills/${tech}.svg`)"
                   alt=""
                 />
               </span>
@@ -67,7 +67,7 @@
         </v-col>
         <v-col
           class="img-container"
-          v-if="screenWidth >= 1200"
+          v-if="windowWidth >= 1200"
           cols="auto"
           @click="goToLink(info.link)"
         >
@@ -79,16 +79,38 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { Project } from "@/shared/types/projects.types";
+import { defineComponent, PropType } from "vue";
+import { dynamicImage, goToLink } from "../../shared/helpers/utils";
+import { Project } from "../../shared/types/projects.types";
 
-@Component
-export default class Projects extends Vue {
-  @Prop()
-  inView!: boolean;
-  @Prop()
-  info!: Project;
-}
+import Button from "../../components/buttons/Button.vue";
+
+export default defineComponent({
+  name: "Projects",
+  components: {
+    Button,
+  },
+  props: {
+    inView: {
+      type: Boolean,
+      default: false,
+    },
+    info: {
+      type: Object as PropType<Project>,
+      default: () => ({}),
+    },
+    windowWidth: {
+      type: Number,
+      default: 0,
+    },
+  },
+  setup() {
+    return {
+      dynamicImage,
+      goToLink,
+    };
+  },
+});
 </script>
 
 <style lang="scss">

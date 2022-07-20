@@ -13,12 +13,12 @@
             :key="i"
             class="mx-2"
             color="white"
-            :buttonClass="screenWidth >= 768 ? 'pa-10' : 'pa-8'"
-            :largeIcon="screenWidth < 768"
-            :xLargeIcon="screenWidth >= 768"
+            :buttonClass="windowWidth >= 768 ? 'pa-10' : 'pa-8'"
+            :largeIcon="windowWidth < 768"
+            :xLargeIcon="windowWidth >= 768"
             :iconName="option.name"
-            :outlined="true"
-            :icon="true"
+            outlined
+            icon
             @click="goToLink(option.value)"
           />
         </div>
@@ -26,28 +26,49 @@
     </transition>
   </div>
 </template>
- 
+
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { ContactOptions } from "@/shared/types/contact.types";
+import { defineComponent } from "vue";
+import { goToLink } from "../../shared/helpers/utils";
+import { ContactOptions } from "../../shared/types/contact.types";
 
-@Component
-export default class Contact extends Vue {
-  @Prop()
-  inView!: any;
+import Button from "../../components/buttons/Button.vue";
 
-  contactOptions: ContactOptions[] = [
-    {
-      name: "phone",
-      value: "tel:07411820679",
+export default defineComponent({
+  name: "Contact",
+  components: {
+    Button,
+  },
+  props: {
+    inView: {
+      type: Boolean,
+      default: false,
     },
-    {
-      name: "mail",
-      value: "mailto:alexlong2001@outlook.com",
+    windowWidth: {
+      type: Number,
+      default: 0,
     },
-  ];
-}
+  },
+  setup() {
+    const contactOptions: ContactOptions[] = [
+      {
+        name: "phone",
+        value: "tel:07411820679",
+      },
+      {
+        name: "mail",
+        value: "mailto:alexlong2001@outlook.com",
+      },
+    ];
+
+    return {
+      contactOptions,
+      goToLink,
+    };
+  },
+});
 </script>
+
 <style lang="scss">
 #contact {
   .fp-tableCell {

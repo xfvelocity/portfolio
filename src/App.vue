@@ -39,8 +39,8 @@ import { pageData } from "./shared/data/app.data";
 
 import Home from "./pages/home/Home.vue";
 import About from "./pages/about/About.vue";
-// import Projects from "./pages/projects/Projects.vue";
-// import Contact from "./pages/contact/Contact.vue";
+import Projects from "./pages/projects/Projects.vue";
+import Contact from "./pages/contact/Contact.vue";
 import Nav from "./components/nav/Nav.vue";
 
 export default defineComponent({
@@ -48,8 +48,8 @@ export default defineComponent({
   components: {
     Home,
     About,
-    // Projects,
-    // Contact,
+    Projects,
+    Contact,
     Nav,
   },
   setup() {
@@ -60,7 +60,7 @@ export default defineComponent({
     };
     const hideSensitiveData: boolean =
       import.meta.env.VITE_HIDE_SENSITIVE_DATA === "true";
-    const pages: Page[] = pageData;
+    const pages = ref<Page[]>([...pageData]);
 
     const windowWidth = ref<number>(0);
 
@@ -68,7 +68,7 @@ export default defineComponent({
       if (hideSensitiveData) document.title = "Alex | Portfolio";
       else document.title = "Alex Long | Portfolio";
 
-      pages[0].inView = true;
+      pages.value[0].inView = true;
 
       windowWidth.value = window.innerWidth;
       window.addEventListener("resize", () => {
@@ -78,12 +78,12 @@ export default defineComponent({
 
     const setInView = (destination: OnLeaveDestination): void => {
       const activeSlideID: string = destination.item.id;
-      const matchingSlide: Page | undefined = pages.find(
+      const matchingSlide: Page | undefined = pages.value.find(
         (page) => page.id === activeSlideID
       );
 
       if (matchingSlide) {
-        pages.forEach((page) => (page.inView = false));
+        pages.value.forEach((page) => (page.inView = false));
         matchingSlide.inView = true;
       }
     };
