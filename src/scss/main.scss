@@ -1,0 +1,88 @@
+@import "transitions";
+
+html,
+body,
+.site-content {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: white;
+    letter-spacing: 0.1rem;
+  }
+
+  p,
+  a {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 50px;
+
+    @media (min-width: 550px) {
+      font-size: 60px;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+
+    @media (min-width: 550px) {
+      font-size: 50px;
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 60px;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (min-width: 550px) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+
+    @media (min-width: 550px) {
+      font-size: 16px;
+    }
+  }
+}
+
+#app {
+  font-family: "Poppins", sans-serif;
+  background-image: url("./assets/bg.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .fp-tableCell {
+    display: flex;
+    align-items: center;
+  }
+}
