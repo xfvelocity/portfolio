@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app>
     <div
       v-if="hideSensitiveData"
       class="notice text-center white--text grey darken-3 py-2"
@@ -9,7 +9,9 @@
     <transition name="slide-fade-top" appear>
       <Nav />
     </transition>
-    <!-- <full-page ref="fullpage" :options="options" id="fullpage">
+
+    <v-main>
+      <!-- <full-page ref="fullpage" :options="options" id="fullpage">
       <component
         class="section fp-autoheight"
         :id="page.id"
@@ -20,6 +22,7 @@
         :key="i"
       />
     </full-page> -->
+    </v-main>
   </v-app>
 </template>
 

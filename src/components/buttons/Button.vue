@@ -5,6 +5,7 @@
     :width="buttonSize"
     :height="buttonSize"
     :outlined="outlined"
+    icon
     :variant="variant"
     @click="$emit('click')"
   >
