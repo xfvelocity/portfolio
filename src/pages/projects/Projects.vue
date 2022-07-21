@@ -1,17 +1,14 @@
 <template>
   <v-container class="projects px-6">
     <transition name="slide-fade-bottom">
-      <v-row
-        class="projects-content align-center justify-center"
-        v-show="inView"
-      >
+      <v-row class="projects-content align-center justify-center">
         <v-col
           class="img-container"
           v-if="windowWidth < 1200"
           cols="12"
           @click="goToLink(info.link)"
         >
-          <img :src="info.img" alt="" />
+          <img :src="dynamicImage(info.img)" alt="" />
         </v-col>
         <v-col class="text" :cols="windowWidth >= 1200 ? 'auto' : '12'">
           <h3 class="my-3">{{ info.name }}</h3>
@@ -53,9 +50,8 @@
               <v-spacer />
               <span>
                 <img
-                  width="20px"
-                  style="max-height: 20px"
-                  class="mr-1"
+                  style="width: 20px; max-height: 20px"
+                  class="mr-2"
                   v-for="(tech, i) in info.technologies"
                   :key="`tech-${i}`"
                   :src="dynamicImage(`skills/${tech}.svg`)"
@@ -71,7 +67,7 @@
           cols="auto"
           @click="goToLink(info.link)"
         >
-          <img :src="info.img" alt="" />
+          <img :src="dynamicImage(info.img)" alt="" />
         </v-col>
       </v-row>
     </transition>
@@ -116,6 +112,10 @@ export default defineComponent({
 <style lang="scss">
 .projects {
   max-width: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .fp-tableCell {
     vertical-align: top;

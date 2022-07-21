@@ -16,7 +16,7 @@ export const pageData: Page[] = [
       figma:
         "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?node-id=0%3A1",
       technologies: ["typescript", "vue", "vuetify", "nuxt"],
-      // img: require("~/assets/buildadream.png"),
+      img: "buildadream.png",
     },
   },
   {
@@ -32,7 +32,7 @@ export const pageData: Page[] = [
       figma:
         "https://www.figma.com/file/KOV22iCoPwxCdkzgeDubL9/Track-IT?node-id=0%3A1",
       technologies: ["typescript", "vue", "vuetify", "firebase"],
-      // img: require("~/assets/gymtracker.png"),
+      img: "gymtracker.png",
     },
   },
   {
@@ -47,7 +47,7 @@ export const pageData: Page[] = [
       figma:
         "https://www.figma.com/file/OiXuQZ9nhFYGX4ZBXIMHtn/Hosting-Solutions?node-id=0%3A1",
       technologies: ["html", "css", "javascript", "sass"],
-      // img: require("~/assets/hostingsolutions.png"),
+      img: "hostingsolutions.png",
     },
   },
   { component: "Contact", id: "contact", inView: false },

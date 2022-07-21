@@ -3,41 +3,38 @@
     <v-row class="align-center">
       <v-col v-if="windowWidth <= 768" class="pa-0" cols="12">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-if="inView" svgClass="solar-system_svg" />
+          <SolarSystemSVG svgClass="solar-system_svg" />
         </transition>
       </v-col>
 
       <v-col :cols="windowWidth > 768 ? 6 : 12">
         <transition name="slide-fade-bottom">
-          <div v-if="inView" class="text">
+          <div class="text">
             <h2 class="mb-1">About Me</h2>
             <p>
               I'm a self-taught developer with over
-              <span class="light-blue--text text--lighten-2">2 years</span> of
+              <span class="text-light-blue-lighten-2">2 years</span> of
               experience who has a love for web development which is fueled by
               creating and troubleshooting code. Started coding as a hobby which
               has now led to a full-time career.
             </p>
             <p>
               Experience with a range of Javascript frameworks such as
-              <span class="light-blue--text text--lighten-2">Vue 3</span> &
-              <span class="light-blue--text text--lighten-2">Svelte</span>.
-              Paired with design frameworks such as
-              <span class="light-blue--text text--lighten-2">
-                Vuetify, Tailwind
-              </span>
-              & <span class="light-blue--text text--lighten-2">Ionic</span> to
-              build stunning looking websites. I also have experience building
-              backend systems using
-              <span class="light-blue--text text--lighten-2">NodeJS</span> &
-              <span class="light-blue--text text--lighten-2">MongoDB</span> or
-              <span class="light-blue--text text--lighten-2">Firebase</span>
+              <span class="text-light-blue-lighten-2">Vue 3</span> &
+              <span class="text-light-blue-lighten-2">Svelte</span>. Paired with
+              design frameworks such as
+              <span class="text-light-blue-lighten-2"> Vuetify, Tailwind </span>
+              & <span class="text-light-blue-lighten-2">Ionic</span> to build
+              stunning looking websites. I also have experience building backend
+              systems using
+              <span class="text-light-blue-lighten-2">NodeJS</span> &
+              <span class="text-light-blue-lighten-2">MongoDB</span> or
+              <span class="text-light-blue-lighten-2">Firebase</span>
             </p>
 
             <div
               v-if="windowWidth > 768"
-              class="d-flex mt-8"
-              style="cursor: pointer"
+              class="d-flex mt-8 cursor-pointer"
               @click="goToLink('/alexlong-cv.pdf')"
             >
               <p class="font-weight-medium mr-1 mb-0">CV / Resume</p>
@@ -49,7 +46,7 @@
 
       <v-col v-if="windowWidth > 768" cols="6">
         <transition name="slide-fade-top">
-          <SolarSystemSVG v-if="inView" svgClass="solar-system_svg" />
+          <SolarSystemSVG svgClass="solar-system_svg" />
         </transition>
       </v-col>
     </v-row>
@@ -87,7 +84,7 @@ export default defineComponent({
 
 <style lang="scss">
 #about {
-  height: 80vh;
+  height: 100%;
   margin: 0 auto;
   max-width: 1400px;
 

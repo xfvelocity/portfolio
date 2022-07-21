@@ -71,6 +71,8 @@ export default defineComponent({
 
 <style lang="scss">
 #contact {
+  height: 100%;
+
   .fp-tableCell {
     display: flex;
     align-items: center;

@@ -16,12 +16,12 @@
         <component
           class="section fp-autoheight"
           :id="page.id"
-          v-for="(page, i) in pages"
+          v-for="page in pages"
           :is="page.component"
           :info="page.info"
           :in-view="page.inView"
           :windowWidth="windowWidth"
-          :key="i"
+          :key="page.id"
         />
       </full-page>
     </v-main>
@@ -56,7 +56,7 @@ export default defineComponent({
     const options: FullPageOptions = {
       licenseKey: import.meta.env.VITE_FULL_PAGE_LICENSE_KEY,
       scrollingSpeed: 1000,
-      onLeave: (origin, destination) => setInView(destination),
+      onLeave: (origin, destination) => setInView(origin, destination),
     };
     const hideSensitiveData: boolean =
       import.meta.env.VITE_HIDE_SENSITIVE_DATA === "true";
@@ -76,7 +76,7 @@ export default defineComponent({
       });
     });
 
-    const setInView = (destination: OnLeaveDestination): void => {
+    const setInView = (origin: any, destination: OnLeaveDestination): void => {
       const activeSlideID: string = destination.item.id;
       const matchingSlide: Page | undefined = pages.value.find(
         (page) => page.id === activeSlideID
@@ -86,6 +86,8 @@ export default defineComponent({
         pages.value.forEach((page) => (page.inView = false));
         matchingSlide.inView = true;
       }
+
+      console.log(destination, pages.value);
     };
 
     return {

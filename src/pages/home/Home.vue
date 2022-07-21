@@ -6,7 +6,7 @@
     >
       <v-col v-if="!isTablet" cols="12">
         <transition name="slide-fade-right">
-          <img v-if="inView" :src="dynamicImage('saturn.svg')" alt="" />
+          <img :src="dynamicImage('saturn.svg')" alt="" />
         </transition>
       </v-col>
 
@@ -16,7 +16,7 @@
         :cols="isTablet ? 'auto' : 12"
       >
         <transition name="slide-fade-left">
-          <div v-if="inView" class="text">
+          <div class="text">
             <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
             <div>
               <h4>front end</h4>
@@ -28,7 +28,7 @@
 
       <v-col v-if="isTablet" cols="6">
         <transition name="slide-fade-right">
-          <img v-if="inView" :src="dynamicImage('saturn.svg')" alt="" />
+          <img :src="dynamicImage('saturn.svg')" alt="" />
         </transition>
       </v-col>
     </v-row>
