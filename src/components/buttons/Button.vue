@@ -4,7 +4,6 @@
     :color="color"
     :width="buttonSize"
     :height="buttonSize"
-    :outlined="outlined"
     icon
     :variant="variant"
     @click="$emit('click')"
@@ -56,10 +55,6 @@ export default defineComponent({
     buttonSize: {
       type: Number,
       default: 32,
-    },
-    outlined: {
-      type: Boolean,
-      default: false,
     },
     iconSize: {
       type: String,

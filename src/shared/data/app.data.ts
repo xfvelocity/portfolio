@@ -9,7 +9,7 @@ export const pageData: Page[] = [
     inView: false,
     info: {
       name: "Build A-Dream",
-      desc: "This was one of the first projects that I started working on and it's been re-worked multiple times, currently using Vue & Nuxtjs. This website was built for a family member to help promote their landscaping business.",
+      desc: "This was one of the first projects that I started working on and it's been re-worked multiple times, currently using Vue & Nuxtjs.<br /><br /> This website was built for a family member to help promote their landscaping business.",
       github: "https://github.com/xfvelocity/build-a-dream",
       link: "https://buildadream.co.uk/",
       jira: "https://alex-long-projects.atlassian.net/jira/software/projects/BD/boards/4",
@@ -41,7 +41,7 @@ export const pageData: Page[] = [
     inView: false,
     info: {
       name: "Hosting Solutions",
-      desc: "HostingSolutions was a website in which I wanted to challenge my base HTML/CSS skills. This is one of the favourite websites I’ve created as it has taught me a lot about SVG animations.",
+      desc: "HostingSolutions is one of the first websites I ever created. It helped me improve my HTML/CSS skills, and learn about SVG animations",
       github: "https://github.com/xfvelocity/hosting-solutions",
       link: "https://hosting-solutions.herokuapp.com/",
       figma:

@@ -103,6 +103,10 @@ export default defineComponent({
 <style lang="scss">
 @import "./scss/main.scss";
 
+.fp-watermark {
+  display: none !important;
+}
+
 .notice {
   position: fixed;
   width: 100%;

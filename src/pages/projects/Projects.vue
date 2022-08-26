@@ -13,10 +13,10 @@
         >
           <img :src="dynamicImage(info.img)" alt="" />
         </v-col>
-        <v-col class="text" :cols="windowWidth >= 1200 ? 'auto' : '12'">
+        <v-col class="text" :cols="windowWidth >= 1200 ? '12' : '12'">
           <h3 class="my-3">{{ info.name }}</h3>
           <div class="text-desc">
-            <p>{{ info.desc }}</p>
+            <p v-html="info.desc" />
             <div class="d-flex align-center mt-8 text-desc__technologies">
               <span class="d-flex align-center">
                 <Button
@@ -111,7 +111,12 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.v-container {
+  max-width: none !important;
+  width: 90%;
+}
+
 .projects {
   max-width: 400px;
   height: 100%;
@@ -166,7 +171,7 @@ export default defineComponent({
         }
 
         &-desc {
-          max-width: 460px;
+          max-width: 500px;
 
           &__technologies {
             margin-top: 30px !important;

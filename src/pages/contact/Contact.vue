@@ -13,10 +13,10 @@
             :key="i"
             class="mx-2"
             color="white"
-            :buttonClass="windowWidth >= 768 ? 'pa-10' : 'pa-8'"
+            :buttonSize="windowWidth >= 768 ? 80 : 60"
             :iconName="option.name"
             :iconSize="windowWidth < 768 ? 'large' : 'x-large'"
-            outlined
+            variant="outlined"
             @click="goToLink(option.value)"
           />
         </div>
@@ -50,11 +50,11 @@ export default defineComponent({
   setup() {
     const contactOptions: ContactOptions[] = [
       {
-        name: "phone",
+        name: "mdi-phone",
         value: "tel:07411820679",
       },
       {
-        name: "mail",
+        name: "mdi-email",
         value: "mailto:alexlong2001@outlook.com",
       },
     ];
