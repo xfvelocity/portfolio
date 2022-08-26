@@ -11,7 +11,7 @@
         <transition name="slide-fade-bottom">
           <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
-            <p>
+            <p class="mb-4">
               I'm a self-taught developer with over
               <span class="text-light-blue-lighten-2">2 years</span> of
               experience who has a love for web development which is fueled by
@@ -102,6 +102,10 @@ export default defineComponent({
     h2 {
       text-align: center;
     }
+
+    p {
+      font-size: 14px;
+    }
   }
 
   @media (min-width: 768px) {
@@ -116,6 +120,10 @@ export default defineComponent({
 
       h2 {
         text-align: left;
+      }
+
+      p {
+        font-size: 16px;
       }
     }
   }

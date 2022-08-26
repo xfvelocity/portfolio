@@ -15,7 +15,7 @@
       :src="iconName"
       alt=""
     />
-    <v-icon :icon="iconName" v-else :size="iconSize" :color="iconColor" />
+    <v-icon v-else :icon="iconName" :size="iconSize" :color="iconColor" />
 
     <v-tooltip v-if="tooltipMessage" activator="parent" location="start">
       <span>{{ tooltipMessage }}</span>

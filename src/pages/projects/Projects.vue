@@ -21,7 +21,7 @@
               <span class="d-flex align-center">
                 <Button
                   class="mr-1"
-                  iconName="launch"
+                  iconName="mdi-open-in-new"
                   tooltipMessage="Visit"
                   @click="goToLink(info.link)"
                 />

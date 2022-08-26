@@ -74,7 +74,7 @@
 
 // Type Writer
 .typewriter {
-  max-width: 200px;
+  max-width: 220px !important;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
