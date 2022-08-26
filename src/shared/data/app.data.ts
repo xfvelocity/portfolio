@@ -27,7 +27,7 @@ export const pageData: Page[] = [
       name: "Track IT (PWA)",
       desc: 'This is an updated version of my previous project "Gym Progress Tracker". This is used to help create meal plans throughout the week, track nutrients and build up shopping lists',
       github: "https://github.com/xfvelocity/track-it",
-      link: "https://track-it-7f82b.web.app",
+      link: "https://track-it.co.uk/",
       jira: "https://alex-long-projects.atlassian.net/jira/software/projects/TI/boards/3",
       figma:
         "https://www.figma.com/file/KOV22iCoPwxCdkzgeDubL9/Track-IT?node-id=0%3A1",
