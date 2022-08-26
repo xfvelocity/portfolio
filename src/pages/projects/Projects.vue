@@ -118,7 +118,7 @@ export default defineComponent({
 }
 
 .projects {
-  max-width: 400px;
+  max-width: 400px !important;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -138,11 +138,11 @@ export default defineComponent({
   }
 
   @media (min-width: 768px) {
-    max-width: 550px;
+    max-width: 550px !important;
   }
 
   @media (min-width: 1200px) {
-    max-width: 1500px;
+    max-width: 1500px !important;
 
     .fp-tableCell {
       height: 100vh;
