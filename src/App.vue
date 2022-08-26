@@ -56,7 +56,7 @@ export default defineComponent({
     const options: FullPageOptions = {
       licenseKey: import.meta.env.VITE_FULL_PAGE_LICENSE_KEY,
       scrollingSpeed: 1000,
-      onLeave: (origin, destination) => setInView(origin, destination),
+      onLeave: (origin, destination) => setInView(destination),
     };
     const hideSensitiveData: boolean =
       import.meta.env.VITE_HIDE_SENSITIVE_DATA === "true";
@@ -76,7 +76,7 @@ export default defineComponent({
       });
     });
 
-    const setInView = (origin: any, destination: OnLeaveDestination): void => {
+    const setInView = (destination: OnLeaveDestination): void => {
       const activeSlideID: string = destination.item.id;
       const matchingSlide: Page | undefined = pages.value.find(
         (page) => page.id === activeSlideID
@@ -84,10 +84,10 @@ export default defineComponent({
 
       if (matchingSlide) {
         pages.value.forEach((page) => (page.inView = false));
-        matchingSlide.inView = true;
+        setTimeout(() => {
+          matchingSlide.inView = true;
+        }, 10);
       }
-
-      console.log(destination, pages.value);
     };
 
     return {

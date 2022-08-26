@@ -11,8 +11,8 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "vue": "^3.2.37",
-    "vue-fullpage.js": "^0.2.5",
-    "vuetify": "^3.0.0-beta.5"
+    "vue-fullpage.js": "^0.2.6",
+    "vuetify": "^3.0.0-beta.9"
   },
   "devDependencies": {
     "@types/node": "^18.0.6",

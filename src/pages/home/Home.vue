@@ -6,7 +6,7 @@
     >
       <v-col v-if="!isTablet" cols="12">
         <transition name="slide-fade-right">
-          <img :src="dynamicImage('saturn.svg')" alt="" />
+          <img v-show="inView" :src="dynamicImage('saturn.svg')" alt="" />
         </transition>
       </v-col>
 
@@ -16,7 +16,7 @@
         :cols="isTablet ? 'auto' : 12"
       >
         <transition name="slide-fade-left">
-          <div class="text">
+          <div v-show="inView" class="text">
             <h1>Alex <span v-if="!hideSensitiveData">Long</span></h1>
             <div>
               <h4>front end</h4>
@@ -28,7 +28,7 @@
 
       <v-col v-if="isTablet" cols="6">
         <transition name="slide-fade-right">
-          <img :src="dynamicImage('saturn.svg')" alt="" />
+          <img v-show="inView" :src="dynamicImage('saturn.svg')" alt="" />
         </transition>
       </v-col>
     </v-row>
@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, watch } from "vue";
 import { dynamicImage } from "../../shared/helpers/utils";
 
 export default defineComponent({
@@ -57,6 +57,11 @@ export default defineComponent({
   },
   setup(props) {
     const isTablet = computed<boolean>(() => props.windowWidth >= 768);
+
+    watch(
+      () => props.inView,
+      (val) => console.log(val)
+    );
 
     return {
       isTablet,

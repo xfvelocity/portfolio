@@ -3,13 +3,13 @@
     <v-row class="align-center">
       <v-col v-if="windowWidth <= 768" class="pa-0" cols="12">
         <transition name="slide-fade-top">
-          <SolarSystemSVG svgClass="solar-system_svg" />
+          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
 
       <v-col :cols="windowWidth > 768 ? 6 : 12">
         <transition name="slide-fade-bottom">
-          <div class="text">
+          <div v-show="inView" class="text">
             <h2 class="mb-1">About Me</h2>
             <p>
               I'm a self-taught developer with over
@@ -38,7 +38,7 @@
               @click="goToLink('/alexlong-cv.pdf')"
             >
               <p class="font-weight-medium mr-1 mb-0">CV / Resume</p>
-              <v-icon color="white">file_download</v-icon>
+              <v-icon color="white" icon="mdi-download" />
             </div>
           </div>
         </transition>
@@ -46,7 +46,7 @@
 
       <v-col v-if="windowWidth > 768" cols="6">
         <transition name="slide-fade-top">
-          <SolarSystemSVG svgClass="solar-system_svg" />
+          <SolarSystemSVG v-show="inView" svgClass="solar-system_svg" />
         </transition>
       </v-col>
     </v-row>

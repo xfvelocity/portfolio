@@ -1,7 +1,10 @@
 <template>
   <v-container class="projects px-6">
     <transition name="slide-fade-bottom">
-      <v-row class="projects-content align-center justify-center">
+      <v-row
+        v-show="inView"
+        class="projects-content align-center justify-center"
+      >
         <v-col
           class="img-container"
           v-if="windowWidth < 1200"
@@ -19,14 +22,13 @@
                 <Button
                   class="mr-1"
                   iconName="launch"
-                  :icon="true"
                   tooltipMessage="Visit"
                   @click="goToLink(info.link)"
                 />
                 <Button
                   :img-size="24"
                   :iconName="dynamicImage('icons/github.svg')"
-                  :customIcon="true"
+                  customIcon
                   tooltipMessage="Github"
                   @click="goToLink(info.github)"
                 />
@@ -34,7 +36,7 @@
                   v-if="info.jira"
                   :img-size="22"
                   :iconName="dynamicImage('icons/jira.svg')"
-                  :customIcon="true"
+                  customIcon
                   tooltipMessage="Jira Board"
                   @click="goToLink(info.jira!)"
                 />
@@ -42,7 +44,7 @@
                   v-if="info.figma"
                   :img-size="16"
                   :iconName="dynamicImage('icons/figma.svg')"
-                  :customIcon="true"
+                  customIcon
                   tooltipMessage="Figma Designs"
                   @click="goToLink(info.figma!)"
                 />

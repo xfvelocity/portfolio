@@ -1,7 +1,7 @@
 <template>
   <div class="px-6 d-flex justify-center align-center">
     <transition name="slide-fade-bottom">
-      <div class="content" v-show="inView">
+      <div class="content" v-if="inView">
         <h2 class="text-center">Get in touch</h2>
         <p class="text-center">
           Like what you see? or want to ask more questions, feel free to contact
@@ -14,11 +14,9 @@
             class="mx-2"
             color="white"
             :buttonClass="windowWidth >= 768 ? 'pa-10' : 'pa-8'"
-            :largeIcon="windowWidth < 768"
-            :xLargeIcon="windowWidth >= 768"
             :iconName="option.name"
+            :iconSize="windowWidth < 768 ? 'large' : 'x-large'"
             outlined
-            icon
             @click="goToLink(option.value)"
           />
         </div>
