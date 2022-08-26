@@ -138,7 +138,7 @@ export default defineComponent({
   }
 
   @media (min-width: 768px) {
-    max-width: 550px !important;
+    max-width: 700px !important;
   }
 
   @media (min-width: 1200px) {
