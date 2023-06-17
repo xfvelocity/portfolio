@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-down" appear>
-    <nav class="nav xf-flex xf-py-4 xf-px-6">
+    <nav class="nav xf-flex xf-p-6">
       <a
         class="xf-hover xf-ml-auto"
         href="https://github.com/xfvelocity"
@@ -65,7 +65,7 @@ onMounted(() => {
         setTimeout(() => {
           sectionsInView.value[entry.target.id as keyof SectionsInView] =
             entry.isIntersecting;
-        }, 200);
+        }, 100);
       }),
     { rootMargin: "-50px" }
   );
