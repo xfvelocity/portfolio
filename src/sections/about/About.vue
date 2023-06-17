@@ -1,44 +1,44 @@
 <template>
   <div class="full-height">
     <div class="about xf-center max-width">
-      <transition name="slide-down">
-        <xf-icon v-show="inView" class="solar-system" src="solar-system.svg" />
-      </transition>
-
       <transition name="slide-up">
-        <div v-show="inView" class="text">
-          <h2 class="xf-mt-6 xf-mb-2 xf-text-32">About Me</h2>
-          <p>
-            A passionate self-taught developer with
-            <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
-              more than 3 years of experience
-            </span>
-            in web development. My love for development is constantly fuelled by
-            the thrill of creating and troubleshooting code.
-          </p>
-          <p class="xf-my-3">
-            Experience with a range of JavaScript frameworks such as
-            <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
-              Vue 3 (Nuxt), React 18 (Next), Astro</span
-            >.
-          </p>
-          <p>
-            Integration with CMS
-            <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
-              >Strapi, Sanity.io</span
-            >
-            and tested with
-            <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
-              >Cypress, Vitest, Jest</span
-            >.
-          </p>
+        <div v-show="inView">
+          <xf-icon class="solar-system" src="solar-system.svg" />
 
-          <div
-            class="xf-flex xf-mt-6 xf-cursor-pointer"
-            @click="goToLink('/alexlong-cv.pdf')"
-          >
-            <p class="xf-fw-700 xf-mr-2">CV / Resume</p>
-            <xf-icon src="icons/download.svg" fill="white" />
+          <div class="text">
+            <h2 class="xf-mt-6 xf-mb-2 xf-text-32">About Me</h2>
+            <p>
+              A passionate self-taught developer with
+              <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
+                more than 3 years of experience
+              </span>
+              in web development. My love for development is constantly fuelled
+              by the thrill of creating and troubleshooting code.
+            </p>
+            <p class="xf-my-3">
+              Experience with a range of JavaScript frameworks such as
+              <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
+                Vue 3 (Nuxt), React 18 (Next), Astro</span
+              >.
+            </p>
+            <p>
+              Integration with CMS
+              <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
+                >Strapi, Sanity.io</span
+              >
+              and tested with
+              <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
+                >Cypress, Vitest, Jest</span
+              >.
+            </p>
+
+            <div
+              class="xf-flex xf-mt-6 xf-cursor-pointer"
+              @click="goToLink('/alexlong-cv.pdf')"
+            >
+              <p class="xf-fw-700 xf-mr-2">CV / Resume</p>
+              <xf-icon src="icons/download.svg" fill="white" />
+            </div>
           </div>
         </div>
       </transition>

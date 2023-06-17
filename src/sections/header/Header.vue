@@ -24,6 +24,9 @@
 
 <script lang="ts" setup>
 import { dynamicImage } from "@/composables/utils";
+
+// ** Props **
+defineProps<{ inView: boolean }>();
 </script>
 
 <style lang="scss">
