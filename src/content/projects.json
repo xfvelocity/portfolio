@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Build A-Dream",
+    "desc": [
+      "This website has been through many iterations, from pure HTML & CSS whilst learning web development to Svelte when learning my first framework.",
+      "Recently been re-written  using React & Astro to ensure the best performance and latest techologies."
+    ],
+    "technologies": ["react", "astro", "typescript"],
+    "img": "buildadream.png",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://buildadream.co.uk"
+      },
+      {
+        "name": "github",
+        "link": "https://github.com/xfvelocity/build-a-dream"
+      },
+      {
+        "name": "figma",
+        "link": "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?node-id=0%3A1"
+      }
+    ]
+  },
+  {
+    "name": "Galacticraft",
+    "desc": [
+      "Built using Nuxt & Sanity.io CMS to create a blog website for a minecraft mod with over 15 million total downloads.",
+      "Taking advantage of my custom component library to speed up development"
+    ],
+    "technologies": ["typescript", "vue", "nuxt", "sanity"],
+    "img": "galacticraft.png",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://galacticraft-web.vercel.app/"
+      },
+      {
+        "name": "github",
+        "link": "https://github.com/xfvelocity/galacticraft-web"
+      },
+      {
+        "name": "figma",
+        "link": "https://www.figma.com/file/PxtSDSAbNfSrOe5PgdptVL/Galacticraft?type=design&node-id=304%3A2&t=omktbvzbiEgHOmIc-1"
+      }
+    ]
+  },
+  {
+    "name": "Component library",
+    "desc": [
+      "Custom component library built on Vue & Vite for custom component which are fast & reliable.",
+      "Used to speed up development and have a standard across projects."
+    ],
+    "technologies": ["typescript", "vue", "vite"],
+    "img": "xf-cmpt-lib.png",
+    "links": [
+      {
+        "name": "link",
+        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
+      },
+      {
+        "name": "github",
+        "link": "https://github.com/xfvelocity/xf-cmpt-libb"
+      }
+    ]
+  }
+]
