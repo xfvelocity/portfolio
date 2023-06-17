@@ -49,11 +49,24 @@
 </template>
 
 <script lang="ts" setup>
-import { PageInfo } from "@/types/app.types";
 import { dynamicImage } from "@/composables/utils";
 
 import { XfIcon } from "xf-cmpt-lib";
 
+interface PageInfoLink {
+  name: string;
+  link: string;
+}
+
+interface PageInfo {
+  name: string;
+  desc: string[];
+  technologies: string[];
+  img: string;
+  links: PageInfoLink[];
+}
+
+// ** Props **
 defineProps<{ info: PageInfo }>();
 </script>
 

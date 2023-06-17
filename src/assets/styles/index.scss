@@ -7,10 +7,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   background: linear-gradient(250.1deg, #091126 8.45%, #000000 99.92%);
   color: white;
-
   height: 100% !important;
   overflow: hidden !important;
   scroll-behavior: smooth;
@@ -18,7 +16,7 @@ body {
 
 h3,
 p {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05em;
 }
 
 .full-height {

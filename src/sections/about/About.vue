@@ -71,6 +71,7 @@ import { XfIcon } from "xf-cmpt-lib";
     width: 100%;
     display: block;
     margin: 0 auto;
+    max-width: 250px;
 
     #outer-ring {
       transform-origin: center;

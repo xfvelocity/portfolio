@@ -46,7 +46,7 @@
     ]
   },
   {
-    "name": "Component library",
+    "name": "Component Library",
     "desc": [
       "Custom component library built on Vue & Vite for custom component which are fast & reliable.",
       "Used to speed up development and have a standard across projects."

@@ -6,7 +6,7 @@
         href="https://github.com/xfvelocity"
         target="_blank"
       >
-        <xf-icon src="icons/github.svg" :size="24" fill="grey" />
+        <xf-icon src="icons/github.svg" :size="28" fill="grey" />
       </a>
     </nav>
   </transition>
