@@ -1,8 +1,8 @@
 <template>
   <div v-if="info" class="project full-height">
     <div class="xf-center max-width">
-      <transition name="slide-fade-bottom">
-        <div>
+      <transition name="slide-up">
+        <div v-show="inView">
           <img class="xf-w-100" :src="dynamicImage(info.img)" alt="" />
 
           <h3 class="xf-mt-3 xf-mb-1 xf-text-32">{{ info.name }}</h3>
@@ -67,7 +67,7 @@ interface PageInfo {
 }
 
 // ** Props **
-defineProps<{ info: PageInfo }>();
+defineProps<{ info: PageInfo; inView: boolean }>();
 </script>
 
 <style lang="scss" scoped>

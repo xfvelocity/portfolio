@@ -1,6 +1,6 @@
 <template>
-  <transition name="slide-fade-top" appear>
-    <nav class="nav xf-flex xf-p-4">
+  <transition name="slide-down" appear>
+    <nav class="nav xf-flex xf-py-4 xf-px-6">
       <a
         class="xf-hover xf-ml-auto"
         href="https://github.com/xfvelocity"
@@ -12,14 +12,21 @@
   </transition>
 
   <main class="container">
-    <Header />
-    <About />
-    <Projects v-for="(project, i) in projects" :key="i" :info="project" />
-    <Contact />
+    <Header id="header" :in-view="sectionsInView.header" />
+    <About id="about" :in-view="sectionsInView.about" />
+    <Projects
+      v-for="(project, i) in projects"
+      :key="i"
+      :info="project"
+      :id="`project${i}`"
+      :in-view="sectionsInView[`project${i}` as keyof SectionsInView]"
+    />
+    <Contact id="contact" :in-view="sectionsInView.contact" />
   </main>
 </template>
 
 <script lang="ts" setup>
+import { onMounted, ref } from "vue";
 import { useMediaQuery } from "@/composables/mediaQueries";
 import projects from "@/content/projects.json";
 
@@ -29,8 +36,48 @@ import About from "@/sections/about/About.vue";
 import Projects from "@/sections/projects/Projects.vue";
 import Contact from "@/sections/contact/Contact.vue";
 
-// ** Lifecycle **
+interface SectionsInView {
+  header: boolean;
+  about: boolean;
+  project0: boolean;
+  project1: boolean;
+  project2: boolean;
+  contact: boolean;
+}
+
+// ** Data **
+const sectionsInView = ref<SectionsInView>({
+  header: false,
+  about: false,
+  project0: false,
+  project1: false,
+  project2: false,
+  contact: false,
+});
+
 useMediaQuery();
+
+// ** Lifecycle **
+onMounted(() => {
+  const intersectionObserver: IntersectionObserver = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        setTimeout(() => {
+          sectionsInView.value[entry.target.id as keyof SectionsInView] =
+            entry.isIntersecting;
+        }, 200);
+      }),
+    { rootMargin: "-50px" }
+  );
+
+  Object.keys(sectionsInView.value).forEach((x) => {
+    const target: Element | null = document.querySelector(`#${x}`);
+
+    if (target) {
+      intersectionObserver.observe(target);
+    }
+  });
+});
 </script>
 
 <style lang="scss">

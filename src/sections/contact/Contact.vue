@@ -1,8 +1,8 @@
 <template>
   <div class="full-height">
     <div class="contact max-width xf-center xf-flex-center">
-      <transition name="slide-fade-bottom">
-        <div class="xf-text-center">
+      <transition name="slide-up">
+        <div v-show="inView" class="xf-text-center">
           <h2 class="xf-text-36">Get in touch</h2>
           <p class="xf-text-14 xf-mt-2">
             Like what you see? or want to ask more questions, feel free to
@@ -37,6 +37,9 @@ interface ContactOptions {
   icon: string;
   route: string;
 }
+
+// ** Props **
+defineProps<{ inView: boolean }>();
 
 // ** Data **
 const contactOptions: ContactOptions[] = [

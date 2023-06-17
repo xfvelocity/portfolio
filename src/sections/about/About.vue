@@ -1,13 +1,13 @@
 <template>
   <div class="full-height">
     <div class="about xf-center max-width">
-      <transition name="slide-fade-top">
-        <xf-icon class="solar-system" src="solar-system.svg" />
+      <transition name="slide-down">
+        <xf-icon v-show="inView" class="solar-system" src="solar-system.svg" />
       </transition>
 
-      <transition name="slide-fade-bottom">
-        <div class="text">
-          <h2 class="xf-mt-6 xf-mb-3 xf-text-32">About Me</h2>
+      <transition name="slide-up">
+        <div v-show="inView" class="text">
+          <h2 class="xf-mt-6 xf-mb-2 xf-text-32">About Me</h2>
           <p>
             A passionate self-taught developer with
             <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
@@ -16,7 +16,7 @@
             in web development. My love for development is constantly fuelled by
             the thrill of creating and troubleshooting code.
           </p>
-          <p class="xf-my-4">
+          <p class="xf-my-3">
             Experience with a range of JavaScript frameworks such as
             <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
               Vue 3 (Nuxt), React 18 (Next), Astro</span
@@ -34,7 +34,7 @@
           </p>
 
           <div
-            class="xf-flex xf-mt-8 xf-cursor-pointer"
+            class="xf-flex xf-mt-6 xf-cursor-pointer"
             @click="goToLink('/alexlong-cv.pdf')"
           >
             <p class="xf-fw-700 xf-mr-2">CV / Resume</p>
@@ -49,6 +49,9 @@
 <script lang="ts" setup>
 import { goToLink } from "@/composables/utils";
 import { XfIcon } from "xf-cmpt-lib";
+
+// ** Props **
+defineProps<{ inView: boolean }>();
 </script>
 
 <style lang="scss">
@@ -71,7 +74,7 @@ import { XfIcon } from "xf-cmpt-lib";
     width: 100%;
     display: block;
     margin: 0 auto;
-    max-width: 250px;
+    max-width: 220px;
 
     #outer-ring {
       transform-origin: center;
