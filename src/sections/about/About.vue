@@ -2,7 +2,7 @@
   <div class="full-height">
     <div class="about xf-center max-width">
       <transition name="slide-fade-top">
-        <SolarSystemSVG svgClass="solar-system_svg" />
+        <xf-icon class="solar-system" src="solar-system.svg" />
       </transition>
 
       <transition name="slide-fade-bottom">
@@ -10,7 +10,7 @@
           <h2 class="xf-mt-6 xf-mb-3 xf-text-32">About Me</h2>
           <p>
             A passionate self-taught developer with
-            <span class="xf-text-colour-blue">
+            <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
               more than 3 years of experience
             </span>
             in web development. My love for development is constantly fuelled by
@@ -18,15 +18,19 @@
           </p>
           <p class="xf-my-4">
             Experience with a range of JavaScript frameworks such as
-            <span class="xf-text-colour-blue">
+            <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
               Vue 3 (Nuxt), React 18 (Next), Astro</span
             >.
           </p>
           <p>
             Integration with CMS
-            <span class="xf-text-colour-blue">Strapi, Sanity.io</span> and
-            tested with
-            <span class="xf-text-colour-blue">Cypress, Vitest, Jest</span>.
+            <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
+              >Strapi, Sanity.io</span
+            >
+            and tested with
+            <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
+              >Cypress, Vitest, Jest</span
+            >.
           </p>
 
           <div
@@ -44,20 +48,11 @@
 
 <script lang="ts" setup>
 import { goToLink } from "@/composables/utils";
-
 import { XfIcon } from "xf-cmpt-lib";
-import SolarSystemSVG from "./SolarSytemSVG.vue";
 </script>
 
 <style lang="scss">
 .about {
-  .solar-system_svg {
-    height: 100%;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
   .text {
     max-width: 400px;
     margin: 0 auto;
@@ -71,55 +66,32 @@ import SolarSystemSVG from "./SolarSytemSVG.vue";
     }
   }
 
-  @media (min-width: 768px) {
-    .solar-system_svg {
-      max-width: 350px;
-      max-height: 350px;
-      margin-bottom: 20px;
-    }
-
-    .text {
-      max-width: 450px;
-
-      h2 {
-        text-align: left;
-      }
-
-      p {
-        font-size: 16px;
-      }
-    }
-  }
-
-  @media (min-width: 1000px) {
-    width: 90%;
+  .solar-system {
+    height: 100%;
+    width: 100%;
+    display: block;
     margin: 0 auto;
 
-    .solar-system_svg {
-      max-width: 450px;
-      max-height: 450px;
-    }
-  }
-
-  @media (min-width: 1400px) {
-    .row {
-      justify-content: center;
+    #outer-ring {
+      transform-origin: center;
+      animation: rotateClockwise 320s linear infinite;
     }
 
-    .solar-system_svg {
-      max-width: 550px;
-      max-height: 550px;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    .text {
-      max-width: 550px;
+    #inner-ring {
+      transform-origin: center;
+      animation: rotateAntiClockwise 240s linear infinite;
     }
 
-    .solar-system_svg {
-      max-width: 650px;
-      max-height: 650px;
+    @keyframes rotateClockwise {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateAntiClockwise {
+      to {
+        transform: rotate(-360deg);
+      }
     }
   }
 }
