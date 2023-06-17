@@ -1,12 +1,5 @@
 @import "transitions";
 
-html,
-body,
-#app,
-main {
-  height: auto !important;
-}
-
 #app {
   background-image: url("./assets/stars.svg");
   background-position: center;
@@ -25,8 +18,10 @@ p {
 }
 
 .full-height {
-  height: 100vh;
+  height: 100%;
   position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 .max-width {
