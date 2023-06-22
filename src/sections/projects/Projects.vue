@@ -5,13 +5,15 @@
         <div v-show="inView">
           <img class="xf-w-100" :src="dynamicImage(info.img)" alt="" />
 
-          <h3 class="xf-mt-3 xf-mb-1 xf-text-32">{{ info.name }}</h3>
+          <h3 class="xf-mt-3 xf-mb-1 xf-text-32 xf-text-36-sm">
+            {{ info.name }}
+          </h3>
 
           <div class="text-desc">
             <p
               v-for="(text, i) in info.desc"
               :key="i"
-              class="xf-text-14 xf-mb-2"
+              class="xf-text-14 xf-text-16-sm xf-mb-2"
             >
               {{ text }}
             </p>

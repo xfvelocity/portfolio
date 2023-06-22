@@ -30,4 +30,8 @@ p {
   width: 100% !important;
   max-width: 320px;
   margin: 0 auto;
+
+  @include sm-up {
+    max-width: 600px;
+  }
 }

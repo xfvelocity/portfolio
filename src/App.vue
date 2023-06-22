@@ -81,7 +81,6 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import "xf-cmpt-lib/dist/cmpt-lib-ts.css";
 @import "./assets/styles/index.scss";
 
 .nav {

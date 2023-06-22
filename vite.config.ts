@@ -11,4 +11,11 @@ export default defineConfig({
       "@": join(__dirname, "./src"),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "xf-cmpt-lib/dist/cmpt-lib-ts.css"; @import "./src/assets/styles/variables.scss";`,
+      },
+    },
+  },
 });

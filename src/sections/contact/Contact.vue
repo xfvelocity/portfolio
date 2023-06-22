@@ -3,8 +3,8 @@
     <div class="contact max-width xf-center xf-flex-center">
       <transition name="slide-up">
         <div v-show="inView" class="xf-text-center">
-          <h2 class="xf-text-36">Get in touch</h2>
-          <p class="xf-text-14 xf-mt-2">
+          <h2 class="xf-text-36 xf-fw-700">Get in touch</h2>
+          <p class="contact-desc xf-text-14 xf-text-16-sm xf-mt-2">
             Like what you see? or want to ask more questions, feel free to
             contact me.
           </p>
@@ -56,16 +56,21 @@ const contactOptions: ContactOptions[] = [
 
 <style lang="scss">
 .contact {
+  h2 {
+    letter-spacing: 0.05em;
+  }
+
+  &-desc {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
   &-icon {
     border: 2px solid white;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     position: relative;
-  }
-
-  h2 {
-    letter-spacing: 0.05em;
   }
 }
 </style>

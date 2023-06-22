@@ -6,7 +6,9 @@
           <xf-icon class="solar-system" src="solar-system.svg" />
 
           <div class="text">
-            <h2 class="xf-mt-6 xf-mb-2 xf-text-32">About Me</h2>
+            <h2 class="xf-mt-6 xf-mb-2 xf-mb-md-4 xf-text-32 xf-text-36-sm">
+              About Me
+            </h2>
             <p>
               A passionate self-taught developer with
               <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
@@ -33,7 +35,7 @@
             </p>
 
             <div
-              class="xf-flex xf-mt-6 xf-cursor-pointer"
+              class="xf-flex-center xf-mt-6 xf-cursor-pointer"
               @click="goToLink('/alexlong-cv.pdf')"
             >
               <p class="xf-fw-700 xf-mr-2">CV / Resume</p>
@@ -96,6 +98,18 @@ defineProps<{ inView: boolean }>();
       to {
         transform: rotate(-360deg);
       }
+    }
+  }
+
+  @include sm-up {
+    .text {
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .solar-system {
+      max-width: 350px;
     }
   }
 }
