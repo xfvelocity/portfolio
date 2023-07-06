@@ -2,21 +2,14 @@
   <div class="full-height">
     <div class="header max-width xf-center">
       <transition name="slide-up" appear>
-        <div class="header-content xf-flex xf-flex-wrap">
-          <div class="header-text xf-mt-8 xf-mt-sm-15">
-            <h1 class="xf-fw-700">Alex Long</h1>
+        <div class="header-content xf-text-center">
+          <h1 class="xf-fw-700">Alex Long</h1>
 
-            <div>
-              <h4 class="xf-text-20">front end</h4>
-              <h4 class="xf-text-20 typewriter">software engineer</h4>
-            </div>
-          </div>
+          <h4 class="xf-text-20">front end software engineer</h4>
 
-          <img
-            class="header-img xf-w-100"
-            :src="dynamicImage('saturn.svg')"
-            alt=""
-          />
+          <p class="xf-mt-6 xf-text-colour-blue-lighten-3">
+            3+ years experience
+          </p>
         </div>
       </transition>
     </div>
@@ -24,38 +17,24 @@
 </template>
 
 <script lang="ts" setup>
-import { dynamicImage } from "@/composables/utils";
-
 // ** Props **
 defineProps<{ inView: boolean }>();
 </script>
 
 <style lang="scss">
 .header {
-  &-content {
-    @include sm-up {
-      justify-content: center;
-    }
+  h1,
+  h4,
+  p {
+    letter-spacing: 0.1rem;
   }
 
-  &-text {
-    order: 1;
-
-    h1 {
-      letter-spacing: 0.2rem;
-      font-size: 50px;
-    }
-
-    h4 {
-      letter-spacing: 0.2rem;
-      font-weight: 500;
-    }
+  h1 {
+    font-size: 50px;
   }
 
-  @include sm-up {
-    img {
-      max-width: 450px;
-    }
+  h4 {
+    font-weight: 500;
   }
 }
 </style>

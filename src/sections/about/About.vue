@@ -1,46 +1,15 @@
 <template>
   <div class="full-height">
-    <div class="about xf-center max-width">
+    <div class="xf-center max-width">
       <transition name="slide-up">
-        <div v-show="inView">
-          <xf-icon class="solar-system" src="solar-system.svg" />
-
-          <div class="text">
-            <h2 class="xf-mt-6 xf-mb-2 xf-mb-md-4 xf-text-32 xf-text-36-sm">
-              About Me
-            </h2>
-            <p>
-              A passionate self-taught developer with
-              <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
-                more than 3 years of experience
-              </span>
-              in web development. My love for development is constantly fuelled
-              by the thrill of creating and troubleshooting code.
-            </p>
-            <p class="xf-my-3">
-              Experience with a range of JavaScript frameworks such as
-              <span class="xf-text-colour-blue-lighten-2 xf-fw-600">
-                Vue 3 (Nuxt), React 18 (Next), Astro</span
-              >.
-            </p>
-            <p>
-              Integration with CMS
-              <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
-                >Strapi, Sanity.io</span
-              >
-              and tested with
-              <span class="xf-text-colour-blue-lighten-2 xf-fw-600"
-                >Cypress, Vitest, Jest</span
-              >.
-            </p>
-
-            <div
-              class="xf-flex-center xf-mt-6 xf-cursor-pointer"
-              @click="goToLink('/alexlong-cv.pdf')"
-            >
-              <p class="xf-fw-700 xf-mr-2">CV / Resume</p>
-              <xf-icon src="icons/download.svg" fill="white" />
-            </div>
+        <div v-show="inView" class="about xf-grid xf-gap-3">
+          <div
+            v-for="(tech, i) in technologies"
+            :key="i"
+            class="about-technology xf-flex-center xf-col-6"
+          >
+            <xf-icon :src="`icons/skills/${tech.icon}.svg`" :size="20" />
+            <span class="xf-ml-2 xf-fw-700">{{ tech.name }}</span>
           </div>
         </div>
       </transition>
@@ -49,68 +18,21 @@
 </template>
 
 <script lang="ts" setup>
-import { goToLink } from "@/composables/utils";
 import { XfIcon } from "xf-cmpt-lib";
+import { dynamicImage } from "../../composables/utils";
+
+import technologies from "../../content/technologies.json";
 
 // ** Props **
 defineProps<{ inView: boolean }>();
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .about {
-  .text {
-    max-width: 400px;
-    margin: 0 auto;
-
-    h2 {
-      text-align: center;
-    }
-
-    p {
-      font-size: 14px;
-    }
-  }
-
-  .solar-system {
-    height: 100%;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    max-width: 220px;
-
-    #outer-ring {
-      transform-origin: center;
-      animation: rotateClockwise 320s linear infinite;
-    }
-
-    #inner-ring {
-      transform-origin: center;
-      animation: rotateAntiClockwise 240s linear infinite;
-    }
-
-    @keyframes rotateClockwise {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes rotateAntiClockwise {
-      to {
-        transform: rotate(-360deg);
-      }
-    }
-  }
-
-  @include sm-up {
-    .text {
-      p {
-        font-size: 16px;
-      }
-    }
-
-    .solar-system {
-      max-width: 350px;
-    }
+  &-technology {
+    background-color: #101010;
+    padding: 15px 30px;
+    border-radius: 10px;
   }
 }
 </style>

@@ -47,7 +47,7 @@ interface SectionsInView {
 
 // ** Data **
 const sectionsInView = ref<SectionsInView>({
-  header: false,
+  header: true,
   about: false,
   project0: false,
   project1: false,
@@ -91,7 +91,7 @@ onMounted(() => {
 
 .container {
   height: 100%;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 </style>

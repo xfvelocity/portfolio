@@ -1,0 +1,66 @@
+[
+  {
+    "name": "HTML",
+    "icon": "html"
+  },
+  {
+    "name": "CSS",
+    "icon": "css"
+  },
+  {
+    "name": "SCSS",
+    "icon": "scss"
+  },
+  {
+    "name": "Javascript",
+    "icon": "javascript"
+  },
+  {
+    "name": "Vue",
+    "icon": "vue"
+  },
+  {
+    "name": "React",
+    "icon": "react"
+  },
+  {
+    "name": "Typescript",
+    "icon": "typescript"
+  },
+  {
+    "name": "Nuxt",
+    "icon": "nuxt"
+  },
+  {
+    "name": "Astro",
+    "icon": "astro"
+  },
+  {
+    "name": "Next",
+    "icon": "next"
+  },
+  {
+    "name": "Jest",
+    "icon": "jest"
+  },
+  {
+    "name": "Cypress",
+    "icon": "cypress"
+  },
+  {
+    "name": "Firebase",
+    "icon": "firebase"
+  },
+  {
+    "name": "Strapi",
+    "icon": "strapi"
+  },
+  {
+    "name": "Sanity",
+    "icon": ""
+  },
+  {
+    "name": "Figma",
+    "icon": "figma"
+  }
+]

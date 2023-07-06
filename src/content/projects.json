@@ -2,8 +2,8 @@
   {
     "name": "Build A-Dream",
     "desc": [
-      "This website has been through many iterations, from pure HTML & CSS whilst learning web development to Svelte when learning my first framework.",
-      "Recently been re-written  using React & Astro to ensure the best performance and latest techologies."
+      "Created for a local landscaping business to help promote their business and show off their work.",
+      "Recently been re-written using the latest technologies to ensure the best performance"
     ],
     "technologies": ["react", "astro", "typescript"],
     "img": "buildadream.png",
