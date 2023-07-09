@@ -31,10 +31,18 @@ defineProps<{ inView: boolean }>();
 
   h1 {
     font-size: 50px;
+
+    @include md-up {
+      font-size: 100px;
+    }
   }
 
   h4 {
     font-weight: 500;
+
+    @include md-up {
+      font-size: 24px !important;
+    }
   }
 }
 </style>

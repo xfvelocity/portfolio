@@ -7,11 +7,8 @@
     ],
     "technologies": ["react", "astro", "typescript"],
     "img": "buildadream.png",
+    "route": "https://buildadream.co.uk",
     "links": [
-      {
-        "name": "link",
-        "link": "https://buildadream.co.uk"
-      },
       {
         "name": "github",
         "link": "https://github.com/xfvelocity/build-a-dream"
@@ -30,11 +27,8 @@
     ],
     "technologies": ["typescript", "vue", "nuxt", "sanity"],
     "img": "galacticraft.png",
+    "route": "https://galacticraft.vercel.app",
     "links": [
-      {
-        "name": "link",
-        "link": "https://galacticraft-web.vercel.app/"
-      },
       {
         "name": "github",
         "link": "https://github.com/xfvelocity/galacticraft-web"
@@ -53,11 +47,8 @@
     ],
     "technologies": ["typescript", "vue", "vite"],
     "img": "xf-cmpt-lib.png",
+    "route": "https://www.npmjs.com/package/xf-cmpt-lib",
     "links": [
-      {
-        "name": "link",
-        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
-      },
       {
         "name": "github",
         "link": "https://github.com/xfvelocity/xf-cmpt-libb"

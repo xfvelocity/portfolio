@@ -6,10 +6,13 @@
           <div
             v-for="(tech, i) in technologies"
             :key="i"
-            class="about-technology xf-flex-center xf-col-6"
+            class="about-technology xf-flex-center xf-col-6 xf-col-lg-3 xf-py-3 xf-px-6 xf-py-md-6"
           >
-            <xf-icon :src="`icons/skills/${tech.icon}.svg`" :size="20" />
-            <span class="xf-ml-2 xf-fw-700">{{ tech.name }}</span>
+            <xf-icon
+              :src="`icons/skills/${tech.icon}.svg`"
+              :size="isMedium ? 36 : 20"
+            />
+            <span class="xf-ml-2 xf-fw-700 xf-text-18-md">{{ tech.name }}</span>
           </div>
         </div>
       </transition>
@@ -19,7 +22,7 @@
 
 <script lang="ts" setup>
 import { XfIcon } from "xf-cmpt-lib";
-import { dynamicImage } from "../../composables/utils";
+import { isMedium } from "../../composables/mediaQueries";
 
 import technologies from "../../content/technologies.json";
 
@@ -31,7 +34,6 @@ defineProps<{ inView: boolean }>();
 .about {
   &-technology {
     background-color: #101010;
-    padding: 15px 30px;
     border-radius: 10px;
   }
 }

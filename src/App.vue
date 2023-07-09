@@ -27,8 +27,8 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { useMediaQuery } from "@/composables/mediaQueries";
-import projects from "@/content/projects.json";
+import { useMediaQuery } from "./composables/mediaQueries";
+import projects from "./content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
 import Header from "@/sections/header/Header.vue";
@@ -91,7 +91,7 @@ onMounted(() => {
 
 .container {
   height: 100%;
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 </style>

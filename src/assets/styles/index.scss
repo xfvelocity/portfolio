@@ -36,4 +36,8 @@ p {
   @include sm-up {
     max-width: 600px;
   }
+
+  @include md-up {
+    max-width: 800px;
+  }
 }

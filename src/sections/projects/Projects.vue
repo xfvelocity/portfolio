@@ -1,9 +1,14 @@
 <template>
   <div v-if="info" class="project full-height">
-    <div class="xf-center max-width">
+    <div class="xf-center project-max-width">
       <transition name="slide-up">
         <div v-show="inView">
-          <img class="xf-w-100" :src="dynamicImage(info.img)" alt="" />
+          <img
+            class="xf-w-100 xf-cursor-pointer xf-hover"
+            :src="dynamicImage(info.img)"
+            alt=""
+            @click="openLink(info.route)"
+          />
 
           <h3 class="xf-mt-3 xf-mb-1 xf-text-32 xf-text-36-sm">
             {{ info.name }}
@@ -51,7 +56,7 @@
 </template>
 
 <script lang="ts" setup>
-import { dynamicImage } from "@/composables/utils";
+import { dynamicImage } from "../../composables/utils";
 
 import { XfIcon } from "xf-cmpt-lib";
 
@@ -66,16 +71,32 @@ interface PageInfo {
   technologies: string[];
   img: string;
   links: PageInfoLink[];
+  route: string;
 }
 
 // ** Props **
 defineProps<{ info: PageInfo; inView: boolean }>();
+
+// ** Methods **
+const openLink = (route: string): void => {
+  window.open(route);
+};
 </script>
 
 <style lang="scss" scoped>
 .project {
   img {
     border: 1px solid rgb(46, 46, 46);
+  }
+
+  &-max-width {
+    width: 100% !important;
+    max-width: 320px;
+    margin: 0 auto;
+
+    @include sm-up {
+      max-width: 600px;
+    }
   }
 }
 </style>
