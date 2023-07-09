@@ -50,13 +50,17 @@
 // Type Writer
 .typewriter {
   @include sm-up {
-    max-width: 400px !important;
+    max-width: 340px !important;
     margin: 0 auto;
     overflow: hidden;
     border-right: 0.15em solid orange;
     white-space: nowrap;
     letter-spacing: 0.1rem;
     animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @include md-up {
+    max-width: 400px !important;
   }
 }
 

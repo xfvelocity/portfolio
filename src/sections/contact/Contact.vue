@@ -3,10 +3,10 @@
     <div class="contact max-width xf-center xf-flex-center">
       <transition name="slide-up">
         <div v-show="inView" class="xf-text-center">
-          <h2 class="xf-text-36 xf-fw-700">Get in touch</h2>
+          <h2 class="xf-fw-700">Get in touch</h2>
           <p class="contact-desc xf-text-14 xf-text-16-sm xf-mt-2">
-            Like what you see? or want to ask more questions, feel free to
-            contact me.
+            For any inquiries or collaboration opportunities, please feel free
+            to reach out.
           </p>
 
           <div class="xf-flex-center xf-mt-8 xf-gap-4">
@@ -20,7 +20,7 @@
                 class="xf-center"
                 :src="`icons/${option.icon}.svg`"
                 fill="white"
-                :size="24"
+                :size="isMedium ? 28 : 24"
               />
             </a>
           </div>
@@ -31,6 +31,8 @@
 </template>
 
 <script lang="ts" setup>
+import { isMedium } from "@/composables/mediaQueries";
+
 import { XfIcon } from "xf-cmpt-lib";
 
 interface ContactOptions {
@@ -58,6 +60,11 @@ const contactOptions: ContactOptions[] = [
 .contact {
   h2 {
     letter-spacing: 0.05em;
+    font-size: 32px;
+
+    @include sm-up {
+      font-size: 60px;
+    }
   }
 
   &-desc {
@@ -71,6 +78,11 @@ const contactOptions: ContactOptions[] = [
     width: 60px;
     height: 60px;
     position: relative;
+
+    @include sm-up {
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 </style>
