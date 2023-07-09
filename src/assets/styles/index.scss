@@ -1,14 +1,7 @@
 @import "./_fonts.scss";
 @import "./_transitions.scss";
 
-#app {
-  background-image: url("./assets/stars.svg");
-  background-position: center;
-  background-size: contain;
-}
-
 body {
-  background: linear-gradient(250.1deg, #091126 8.45%, #000000 99.92%);
   color: white;
   font-family: "Montserrat Alternates" !important;
   height: 100% !important;

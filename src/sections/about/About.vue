@@ -33,8 +33,14 @@ defineProps<{ inView: boolean }>();
 <style lang="scss" scoped>
 .about {
   &-technology {
-    background-color: #101010;
+    background-color: rgb(21, 16, 48);
     border-radius: 10px;
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+      transition: all 0.2s;
+    }
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div v-if="info" class="project full-height">
     <div class="xf-center project-max-width">
       <transition name="slide-up">
-        <div v-show="inView">
+        <div v-show="inView" class="project-content">
           <img
             class="xf-w-100 xf-cursor-pointer xf-hover"
             :src="dynamicImage(info.img)"
@@ -10,7 +10,7 @@
             @click="openLink(info.route)"
           />
 
-          <h3 class="xf-mt-3 xf-mb-1 xf-text-32 xf-text-36-sm">
+          <h3 class="xf-my-3 xf-text-32 xf-text-36-sm">
             {{ info.name }}
           </h3>
 
@@ -85,8 +85,20 @@ const openLink = (route: string): void => {
 
 <style lang="scss" scoped>
 .project {
+  &-content {
+    background-color: rgba(21, 16, 48, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.01);
+      transition: all 0.2s;
+    }
+  }
+
   img {
-    border: 1px solid rgb(46, 46, 46);
+    border-radius: 20px;
   }
 
   &-max-width {
@@ -95,7 +107,7 @@ const openLink = (route: string): void => {
     margin: 0 auto;
 
     @include sm-up {
-      max-width: 600px;
+      max-width: 650px;
     }
   }
 }

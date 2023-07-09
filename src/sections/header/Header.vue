@@ -5,11 +5,7 @@
         <div class="header-content xf-text-center">
           <h1 class="xf-fw-700">Alex Long</h1>
 
-          <h4 class="xf-text-20">front end software engineer</h4>
-
-          <p class="xf-mt-6 xf-text-colour-blue-lighten-3">
-            3+ years experience
-          </p>
+          <h4 class="xf-text-20 typewriter">front end software engineer</h4>
         </div>
       </transition>
     </div>
@@ -23,14 +19,9 @@ defineProps<{ inView: boolean }>();
 
 <style lang="scss">
 .header {
-  h1,
-  h4,
-  p {
-    letter-spacing: 0.1rem;
-  }
-
   h1 {
     font-size: 50px;
+    letter-spacing: 0.1rem;
 
     @include md-up {
       font-size: 100px;
