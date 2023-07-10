@@ -48,19 +48,19 @@
     "icon": "cypress"
   },
   {
-    "name": "Firebase",
-    "icon": "firebase"
-  },
-  {
     "name": "Strapi",
     "icon": "strapi"
   },
   {
-    "name": "Sanity",
-    "icon": ""
+    "name": "Firebase",
+    "icon": "firebase"
   },
   {
-    "name": "Figma",
-    "icon": "figma"
+    "name": "Sanity",
+    "icon": "sanity"
+  },
+  {
+    "name": "Storybook",
+    "icon": "storybook"
   }
 ]

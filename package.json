@@ -11,13 +11,13 @@
   "dependencies": {
     "three": "^0.154.0",
     "vue": "^3.3.4",
-    "xf-cmpt-lib": "^0.4.7"
+    "xf-cmpt-lib": "^0.5.2"
   },
   "devDependencies": {
-    "@types/node": "^20.4.0",
+    "@types/node": "^20.4.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "sass": "^1.63.6",
     "typescript": "^5.1.6",
-    "vite": "^4.3.9"
+    "vite": "^4.4.2"
   }
 }

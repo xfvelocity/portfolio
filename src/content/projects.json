@@ -2,12 +2,11 @@
   {
     "name": "Build A-Dream",
     "desc": [
-      "Created for a local landscaping business to help promote their business and show off their work.",
-      "Recently been re-written using the latest technologies to ensure the best performance"
+      "Created for a local landscaping business to help promote their business and show off their work."
     ],
-    "technologies": ["react", "astro", "typescript"],
+    "technologies": ["react", "astro", "typescript", "scss"],
     "img": "buildadream.png",
-    "route": "https://buildadream.co.uk",
+    "route": "https://build-a-dream-2.vercel.app",
     "links": [
       {
         "name": "github",
@@ -22,10 +21,9 @@
   {
     "name": "Galacticraft",
     "desc": [
-      "Built using Nuxt & Sanity.io CMS to create a blog website for a minecraft mod with over 15 million total downloads.",
-      "Taking advantage of my custom component library to speed up development"
+      "Built using Nuxt & Sanity.io CMS to create a blog website for a minecraft mod with over 15 million total downloads."
     ],
-    "technologies": ["typescript", "vue", "nuxt", "sanity"],
+    "technologies": ["nuxt", "typescript", "vue", "sanity", "scss"],
     "img": "galacticraft.png",
     "route": "https://galacticraft.vercel.app",
     "links": [
@@ -42,16 +40,19 @@
   {
     "name": "Component Library",
     "desc": [
-      "Custom component library built on Vue & Vite for custom component which are fast & reliable.",
-      "Used to speed up development and have a standard across projects."
+      "Custom component library built on Vue & Vite for custom components to allow for consistency across projects."
     ],
-    "technologies": ["typescript", "vue", "vite"],
+    "technologies": ["typescript", "vue", "storybook", "jest", "scss"],
     "img": "xf-cmpt-lib.png",
-    "route": "https://www.npmjs.com/package/xf-cmpt-lib",
+    "route": "https://64ac1ca86d4d3ba86b52b13b-aszaegfmlg.chromatic.com",
     "links": [
       {
         "name": "github",
-        "link": "https://github.com/xfvelocity/xf-cmpt-libb"
+        "link": "https://github.com/xfvelocity/xf-cmpt-lib"
+      },
+      {
+        "name": "npm",
+        "link": "https://github.com/xfvelocity/xf-cmpt-lib"
       }
     ]
   }
