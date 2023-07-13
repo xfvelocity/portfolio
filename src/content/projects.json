@@ -6,7 +6,7 @@
     ],
     "technologies": ["react", "astro", "typescript", "scss"],
     "img": "buildadream.png",
-    "route": "https://build-a-dream-2.vercel.app",
+    "route": "https://buildadream.co.uk",
     "links": [
       {
         "name": "github",
@@ -14,7 +14,7 @@
       },
       {
         "name": "figma",
-        "link": "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?node-id=0%3A1"
+        "link": "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?type=design&node-id=651%3A126&mode=design&t=RnbldIIoz58M4fhT-1"
       }
     ]
   },
@@ -25,7 +25,7 @@
     ],
     "technologies": ["nuxt", "typescript", "vue", "sanity", "scss"],
     "img": "galacticraft.png",
-    "route": "https://galacticraft.vercel.app",
+    "route": "https://blog.galacticraft.net",
     "links": [
       {
         "name": "github",
@@ -52,7 +52,7 @@
       },
       {
         "name": "npm",
-        "link": "https://github.com/xfvelocity/xf-cmpt-lib"
+        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
       }
     ]
   }
