@@ -11,7 +11,7 @@
     </nav>
   </transition>
 
-  <main class="container">
+  <main class="xf-h-100">
     <Header id="header" :in-view="sectionsInView.header" />
     <About id="about" :in-view="sectionsInView.about" />
     <Projects
@@ -30,6 +30,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { useMediaQuery } from "./composables/mediaQueries";
+import { throttle } from "./composables/utils";
 import projects from "./content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
@@ -80,6 +81,18 @@ onMounted(() => {
       intersectionObserver.observe(target);
     }
   });
+
+  let scroll = 0;
+
+  document.addEventListener(
+    "mousewheel",
+    throttle((e: WheelEvent) => {
+      window.scrollBy({
+        top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
+        behavior: "smooth",
+      });
+    }, 800)
+  );
 });
 </script>
 
@@ -90,11 +103,5 @@ onMounted(() => {
   position: absolute;
   width: 100%;
   z-index: 99;
-}
-
-.container {
-  height: 100%;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 </style>

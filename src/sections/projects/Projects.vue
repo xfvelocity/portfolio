@@ -1,11 +1,11 @@
 <template>
-  <div v-if="info" class="project full-height">
+  <div class="project full-height">
     <div class="xf-center project-max-width">
       <transition name="slide-up">
-        <div v-show="inView" class="project-content xf-p-6 xf-p-md-10">
+        <div class="project-content xf-p-6 xf-p-md-10">
           <img
             class="xf-w-100 xf-cursor-pointer xf-hover"
-            :src="dynamicImage(info.img)"
+            :src="`img/${info.img}`"
             alt=""
             @click="openLink(info.route)"
           />
@@ -56,8 +56,6 @@
 </template>
 
 <script lang="ts" setup>
-import { dynamicImage } from "../../composables/utils";
-
 import { XfIcon } from "xf-cmpt-lib";
 
 interface PageInfoLink {
