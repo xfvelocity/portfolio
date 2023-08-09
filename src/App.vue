@@ -6,7 +6,7 @@
         href="https://github.com/xfvelocity"
         target="_blank"
       >
-        <xf-icon src="icons/github.svg" :size="28" fill="grey" />
+        <xf-icon src="icons/github.svg" :size="38" fill="grey" />
       </a>
     </nav>
   </transition>
@@ -98,8 +98,9 @@ onMounted(() => {
 @import "./assets/styles/index.scss";
 
 .nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  top: 0;
   z-index: 99;
 }
 </style>
