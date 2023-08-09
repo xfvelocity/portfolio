@@ -18,23 +18,15 @@ export const debounce = (func: Function, delay: number) => {
   };
 };
 
-export const throttle = (func: Function, delay: number) => {
-  let timeoutId;
-  let lastExecTime = 0;
+export const throttle = (func: Function, interval: number) => {
+  let lastCall = 0;
 
-  return function (...args) {
+  return (...args: any) => {
     const now = Date.now();
 
-    const execute = () => {
-      func.apply(this, args);
-      lastExecTime = now;
-    };
-
-    if (now - lastExecTime >= delay) {
-      execute();
-    } else {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(execute, delay - (now - lastExecTime));
+    if (lastCall + interval < now) {
+      lastCall = now;
+      return func.apply(this, args);
     }
   };
 };

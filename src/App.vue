@@ -82,8 +82,6 @@ onMounted(() => {
     }
   });
 
-  let scroll = 0;
-
   document.addEventListener(
     "mousewheel",
     throttle((e: WheelEvent) => {
