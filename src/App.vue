@@ -82,11 +82,29 @@ onMounted(() => {
     }
   });
 
+  let originalScrollY = 0;
+
+  document.addEventListener("touchstart", (e: any) => {
+    originalScrollY = e.changedTouches[0].clientY;
+  });
+
   document.addEventListener(
     "mousewheel",
-    throttle((e: WheelEvent) => {
+    throttle((e: WheelEvent): void => {
       window.scrollBy({
         top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
+        behavior: "smooth",
+      });
+    }, 800)
+  );
+  document.addEventListener(
+    "touchmove",
+    throttle((e: any): void => {
+      const scrollY: number = e.changedTouches[0].clientY;
+
+      window.scrollBy({
+        top:
+          scrollY > originalScrollY ? -window.innerHeight : window.innerHeight,
         behavior: "smooth",
       });
     }, 800)

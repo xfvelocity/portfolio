@@ -51,7 +51,7 @@ const contactOptions: ContactOptions[] = [
   },
   {
     icon: "envelope",
-    route: "mailto:alexlong.dev@outlook.com",
+    route: "mailto:alexlong2001@outlook.com",
   },
 ];
 </script>
