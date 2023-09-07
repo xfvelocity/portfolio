@@ -55,5 +55,21 @@
         "link": "https://www.npmjs.com/package/xf-cmpt-lib"
       }
     ]
+  },
+  {
+    "name": "Coming soon..",
+    "desc": ["Movie review platform"],
+    "technologies": ["typescript", "react", "scss", "nodejs", "mongodb"],
+    "img": "coming-soon.png",
+    "links": [
+      {
+        "name": "github",
+        "link": "https://github.com/xfvelocity/plot-ponder"
+      },
+      {
+        "name": "figma",
+        "link": "https://www.figma.com/file/8LRaNUHZsYncQnifAyFobp/PlotPonder-Reviewer?type=design&node-id=0%3A1&mode=design&t=QphvmiqxX76A1eOS-1"
+      }
+    ]
   }
 ]

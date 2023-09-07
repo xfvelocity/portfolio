@@ -4,7 +4,8 @@
       <transition name="slide-up">
         <div class="project-content xf-p-6 xf-p-md-10">
           <img
-            class="xf-w-100 xf-cursor-pointer xf-hover"
+            class="xf-w-100"
+            :class="{ 'xf-cursor-pointer xf-hover': info.route }"
             :src="`img/${info.img}`"
             alt=""
             @click="openLink(info.route)"
@@ -45,6 +46,7 @@
                   :src="`icons/skills/${tech}.svg`"
                   class="xf-mr-1"
                   :size="20"
+                  :title="tech"
                 />
               </div>
             </div>
@@ -77,7 +79,9 @@ defineProps<{ info: PageInfo; inView: boolean }>();
 
 // ** Methods **
 const openLink = (route: string): void => {
-  window.open(route);
+  if (route) {
+    window.open(route);
+  }
 };
 </script>
 
