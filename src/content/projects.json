@@ -19,6 +19,23 @@
     ]
   },
   {
+    "name": "Plot Ponder",
+    "desc": ["A platform to review films with your friends"],
+    "technologies": ["typescript", "react", "scss", "nodejs", "mongodb"],
+    "img": "coming-soon.png",
+    "route": "https://plotponder.com",
+    "links": [
+      {
+        "name": "github",
+        "link": "https://github.com/xfvelocity/plot-ponder"
+      },
+      {
+        "name": "figma",
+        "link": "https://www.figma.com/file/8LRaNUHZsYncQnifAyFobp/PlotPonder-Reviewer?type=design&node-id=0%3A1&mode=design&t=QphvmiqxX76A1eOS-1"
+      }
+    ]
+  },
+  {
     "name": "Galacticraft",
     "desc": [
       "Built using Nuxt & Sanity.io CMS to create a blog website for a minecraft mod with over 15 million total downloads."
@@ -44,31 +61,15 @@
     ],
     "technologies": ["typescript", "vue", "storybook", "jest", "scss"],
     "img": "xf-cmpt-lib.png",
-    "route": "https://64ac1ca86d4d3ba86b52b13b-aszaegfmlg.chromatic.com",
+    "route": "https://www.npmjs.com/package/xf-cmpt-lib",
     "links": [
       {
         "name": "github",
         "link": "https://github.com/xfvelocity/xf-cmpt-lib"
       },
       {
-        "name": "npm",
-        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
-      }
-    ]
-  },
-  {
-    "name": "Coming soon..",
-    "desc": ["Movie review platform"],
-    "technologies": ["typescript", "react", "scss", "nodejs", "mongodb"],
-    "img": "coming-soon.png",
-    "links": [
-      {
-        "name": "github",
-        "link": "https://github.com/xfvelocity/plot-ponder"
-      },
-      {
-        "name": "figma",
-        "link": "https://www.figma.com/file/8LRaNUHZsYncQnifAyFobp/PlotPonder-Reviewer?type=design&node-id=0%3A1&mode=design&t=QphvmiqxX76A1eOS-1"
+        "name": "storybook",
+        "link": "https://64ac1ca86d4d3ba86b52b13b-aszaegfmlg.chromatic.com "
       }
     ]
   }

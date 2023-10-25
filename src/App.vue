@@ -24,7 +24,7 @@
     <Contact id="contact" :in-view="sectionsInView.contact" />
   </main>
 
-  <background />
+  <Background />
 </template>
 
 <script lang="ts" setup>
@@ -38,7 +38,7 @@ import Header from "@/sections/header/Header.vue";
 import About from "@/sections/about/About.vue";
 import Projects from "@/sections/projects/Projects.vue";
 import Contact from "@/sections/contact/Contact.vue";
-import Background from "./Background.vue";
+import Background from "@/components/background/Background.vue";
 
 interface SectionsInView {
   header: boolean;
