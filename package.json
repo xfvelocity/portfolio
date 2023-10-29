@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.7",
-    "xf-cmpt-lib": "^0.5.2"
+    "xf-cmpt-lib": "^0.6.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.8",

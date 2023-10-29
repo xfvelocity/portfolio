@@ -34,10 +34,10 @@ import { throttle } from "./composables/utils";
 import projects from "./content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
-import Header from "@/sections/header/Header.vue";
-import About from "@/sections/about/About.vue";
-import Projects from "@/sections/projects/Projects.vue";
-import Contact from "@/sections/contact/Contact.vue";
+import Header from "@/components/header/Header.vue";
+import About from "@/components/about/About.vue";
+import Projects from "@/components/projects/Projects.vue";
+import Contact from "@/components/contact/Contact.vue";
 import Background from "@/components/background/Background.vue";
 
 interface SectionsInView {
