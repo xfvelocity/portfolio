@@ -20,8 +20,8 @@
     "name": "Plot Ponder",
     "desc": "A platform to review films with your friends.",
     "technologies": ["react", "nodejs", "mongodb", "typescript", "scss"],
-    "img": "coming-soon.png",
-    "route": "https://plotponder.com",
+    "img": "plot-ponder.png",
+    "route": "https://tst.plotponder.com",
     "links": [
       {
         "name": "github",
