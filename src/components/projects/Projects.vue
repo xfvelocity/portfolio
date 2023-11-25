@@ -5,7 +5,7 @@
         <div class="project-content xf-p-6 xf-p-md-10">
           <img
             :class="{ 'xf-cursor-pointer xf-hover': info.route }"
-            :src="`img/${info.img}`"
+            :src="dynamicImage(`img/${info.img}`)"
             alt=""
             @click="openLink(info.route)"
           />
@@ -28,7 +28,7 @@
                   target="_blank"
                 >
                   <xf-icon
-                    :src="`icons/${link.name}.svg`"
+                    :src="dynamicImage(`icons/${link.name}.svg`)"
                     class="xf-mr-2 xf-hover"
                     :size="isMedium ? 24 : 20"
                     :title="link.name"
@@ -39,7 +39,7 @@
                   <xf-icon
                     v-for="(tech, i) in info.technologies"
                     :key="`tech-${i}`"
-                    :src="`icons/skills/${tech}.svg`"
+                    :src="dynamicImage(`icons/skills/${tech}.svg`)"
                     class="xf-mr-1"
                     :size="isMedium ? 24 : 20"
                     :title="tech"
@@ -56,6 +56,7 @@
 
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
+import { dynamicImage } from "@/composables/utils";
 
 import { XfIcon } from "xf-cmpt-lib";
 

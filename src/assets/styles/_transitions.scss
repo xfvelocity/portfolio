@@ -34,18 +34,6 @@
 }
 
 // Slide Left
-.slide-left-enter-from,
-.slide-left-leave-to {
-  transform: translateX(50px);
-  opacity: 0;
-}
-
-// Slide Right
-.slide-right-enter-from,
-.slide-right-leave-to {
-  transform: translateX(-50px);
-  opacity: 0;
-}
 
 // Type Writer
 .typewriter {

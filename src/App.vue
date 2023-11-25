@@ -6,7 +6,11 @@
         href="https://github.com/xfvelocity"
         target="_blank"
       >
-        <xf-icon src="icons/github.svg" :size="38" fill="grey" />
+        <xf-icon
+          :src="dynamicImage('icons/github.svg')"
+          :size="38"
+          fill="grey"
+        />
       </a>
     </nav>
   </transition>
@@ -29,9 +33,9 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { useMediaQuery } from "./composables/mediaQueries";
-import { throttle } from "./composables/utils";
-import projects from "./content/projects.json";
+import { useMediaQuery } from "@/composables/mediaQueries";
+import { throttle, dynamicImage } from "@/composables/utils";
+import projects from "@/content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
 import Header from "@/components/header/Header.vue";

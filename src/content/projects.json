@@ -3,7 +3,7 @@
     "name": "Build A-Dream",
     "desc": "Promoting a local landscaping business and showing off their work.",
     "technologies": ["react", "astro", "typescript", "scss"],
-    "img": "buildadream.png",
+    "img": "buildadream-w800.webp",
     "route": "https://build-a-dream-2.vercel.app",
     "links": [
       {
@@ -20,7 +20,7 @@
     "name": "Plot Ponder",
     "desc": "A platform to review films with your friends.",
     "technologies": ["react", "nodejs", "mongodb", "typescript", "scss"],
-    "img": "plot-ponder.png",
+    "img": "plot-ponder-w800.webp",
     "route": "https://tst.plotponder.com",
     "links": [
       {
@@ -37,7 +37,7 @@
     "name": "Galacticraft",
     "desc": "Blog website for a minecraft mod with over 15 million total downloads.",
     "technologies": ["vue", "nuxt", "sanity", "typescript", "scss"],
-    "img": "galacticraft.png",
+    "img": "galacticraft-w800.webp",
     "route": "https://galacticraft.vercel.app",
     "links": [
       {
@@ -54,7 +54,7 @@
     "name": "Component Library",
     "desc": "Custom component library to allow for consistency across projects.",
     "technologies": ["vue", "typescript", "storybook", "jest", "scss"],
-    "img": "xf-cmpt-lib.png",
+    "img": "xf-cmpt-lib-w800.webp",
     "route": "https://www.npmjs.com/package/xf-cmpt-lib",
     "links": [
       {
