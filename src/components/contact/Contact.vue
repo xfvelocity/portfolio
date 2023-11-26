@@ -15,6 +15,7 @@
               :key="i"
               class="contact-icon"
               :href="option.route"
+              :aria-label="option.icon"
             >
               <xf-icon
                 class="xf-center"

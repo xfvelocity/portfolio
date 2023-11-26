@@ -25,6 +25,7 @@
                   v-for="(link, i) in info.links"
                   :key="i"
                   :href="link.link"
+                  :aria-label="link.name"
                   target="_blank"
                 >
                   <xf-icon

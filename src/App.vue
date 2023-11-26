@@ -4,6 +4,7 @@
       <a
         class="xf-hover xf-ml-auto"
         href="https://github.com/xfvelocity"
+        aria-label="github"
         target="_blank"
       >
         <xf-icon
