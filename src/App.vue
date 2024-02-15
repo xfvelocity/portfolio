@@ -76,7 +76,7 @@ onMounted(() => {
             entry.isIntersecting;
         }, 100);
       }),
-    { rootMargin: "-50px" }
+    { rootMargin: "-50px" },
   );
 
   Object.keys(sectionsInView.value).forEach((x) => {
@@ -100,7 +100,7 @@ onMounted(() => {
         top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
         behavior: "smooth",
       });
-    }, 800)
+    }, 800),
   );
   document.addEventListener(
     "touchmove",
@@ -112,7 +112,7 @@ onMounted(() => {
           scrollY > originalScrollY ? -window.innerHeight : window.innerHeight,
         behavior: "smooth",
       });
-    }, 800)
+    }, 800),
   );
 });
 </script>
