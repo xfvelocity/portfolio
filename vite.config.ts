@@ -14,7 +14,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "xf-cmpt-lib/dist/cmpt-lib-ts.css"; @import "./src/assets/styles/variables.scss";`,
+        additionalData(source, fp) {
+          if (fp.endsWith("variables.scss")) return `@import "xf-cmpt-lib/dist/cmpt-lib-ts.css"; ${source}`;
+          return `@import "@/assets/styles/variables.scss"; ${source}`;
+        },
       },
     },
   },

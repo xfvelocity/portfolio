@@ -68,7 +68,7 @@ interface PageInfoLink {
 
 interface PageInfo {
   name: string;
-  desc: string[];
+  desc: string;
   technologies: string[];
   img: string;
   links: PageInfoLink[];

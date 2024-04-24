@@ -7,23 +7,21 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "prettier": "prettier . --write",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
-  },
   "dependencies": {
-    "vue": "^3.4.15",
-    "xf-cmpt-lib": "^0.7.3"
+    "vue": "^3.4.25",
+    "xf-cmpt-lib": "^0.7.6"
   },
   "devDependencies": {
-    "@types/node": "^20.11.16",
-    "@vitejs/plugin-vue": "^5.0.3",
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.4",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
     "prettier": "3.2.5",
-    "sass": "^1.70.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12"
+    "sass": "^1.75.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vue-tsc": "^2.0.14"
   }
 }
