@@ -17,7 +17,7 @@ export default defineConfig({
         additionalData(source, fp) {
           if (fp.endsWith("variables.scss"))
             return `@import "xf-cmpt-lib/dist/cmpt-lib-ts.css"; ${source}`;
-          return `@import "@/assets/styles/variables.scss"; ${source}`;
+          return `@import "xf-cmpt-lib/dist/cmpt-lib-ts.css"; @import "@/assets/styles/variables.scss"; ${source}`;
         },
       },
     },
