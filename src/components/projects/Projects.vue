@@ -2,22 +2,37 @@
   <div class="project full-height">
     <div class="xf-center project-max-width">
       <transition name="slide-up">
-        <div class="project-content xf-p-6 xf-p-md-10">
+        <div
+          class="project-content xf-p-6 xf-p-md-10"
+          :class="{ 'xf-cursor-pointer xf-hover': info.route }"
+          @click="openLink(info.route)"
+        >
+          <video
+            v-if="info.video"
+            ref="video"
+            :poster="dynamicImage(`img/${info.img}`)"
+            muted
+            loop
+          >
+            <source :src="dynamicImage(`img/${info.video}`)" />
+          </video>
+
           <img
-            :class="{ 'xf-cursor-pointer xf-hover': info.route }"
+            v-else-if="info.img"
             :src="dynamicImage(`img/${info.img}`)"
             alt=""
-            @click="openLink(info.route)"
           />
 
-          <div class="project-content-desc xf-mt-lg-6">
-            <h3 class="xf-my-3 xf-text-30 xf-text-36-md">
+          <div class="project-content-desc xf-mt-2 xf-mt-lg-6">
+            <h3 class="xf-mb-1 xf-text-30 xf-text-36-md">
               {{ info.name }}
             </h3>
 
-            <p class="xf-text-14 xf-text-16-sm xf-text-18-lg">
-              {{ info.desc }}
-            </p>
+            <div class="xf-text-14 xf-text-16-sm xf-text-18-lg">
+              <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-1">
+                {{ d }}
+              </p>
+            </div>
 
             <div class="xf-mt-8 xf-mt-lg-12 xf-mt-xl-15">
               <div class="xf-flex xf-flex-align-items-center">
@@ -27,6 +42,7 @@
                   :href="link.link"
                   :aria-label="link.name"
                   target="_blank"
+                  @click.stop=""
                 >
                   <xf-icon
                     :src="dynamicImage(`icons/${link.name}.svg`)"
@@ -58,9 +74,11 @@
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
 import { dynamicImage } from "@/composables/utils";
+import { ref, watch } from "vue";
 
 import { XfIcon } from "xf-cmpt-lib";
 
+// ** Types **
 interface PageInfoLink {
   name: string;
   link: string;
@@ -68,15 +86,19 @@ interface PageInfoLink {
 
 interface PageInfo {
   name: string;
-  desc: string;
+  desc: string[];
   technologies: string[];
-  img: string;
+  img?: string;
+  video?: string;
   links: PageInfoLink[];
   route: string;
 }
 
 // ** Props **
-defineProps<{ info: PageInfo; inView: boolean }>();
+const props = defineProps<{ info: PageInfo; inView: boolean }>();
+
+// ** Data **
+const video = ref<HTMLVideoElement>();
 
 // ** Methods **
 const openLink = (route: string): void => {
@@ -84,18 +106,29 @@ const openLink = (route: string): void => {
     window.open(route);
   }
 };
+
+// ** Watchers **
+watch(
+  () => props.inView,
+  () => {
+    setTimeout(() => {
+      if (props.inView && video.value) {
+        video.value.play();
+      }
+    }, 2000);
+  },
+  { immediate: true },
+);
 </script>
 
 <style lang="scss" scoped>
 .project {
   &-content {
-    background-color: rgba(21, 16, 48, 0.5);
-    border-radius: 10px;
-
-    img {
+    img,
+    video {
       border-radius: 5px;
+      border: 2px solid rgb(173, 173, 173);
       width: 100%;
-      border: 1px solid rgb(111, 111, 111);
     }
 
     &:hover {
@@ -115,7 +148,7 @@ const openLink = (route: string): void => {
 
   &-max-width {
     width: 100% !important;
-    max-width: 320px;
+    max-width: 380px;
     margin: 0 auto;
 
     @include sm-up {
