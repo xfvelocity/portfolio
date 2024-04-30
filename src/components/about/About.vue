@@ -9,10 +9,10 @@
             class="about-technology xf-flex-center xf-col-6 xf-col-lg-3 xf-py-3 xf-px-6 xf-py-md-6"
           >
             <xf-icon
-              :src="dynamicImage(`icons/skills/${tech.icon}.svg`)"
+              :src="dynamicImage(`icons/skills/${tech.toLowerCase()}.svg`)"
               :size="isMedium ? 36 : 20"
             />
-            <span class="xf-ml-2 xf-fw-700 xf-text-18-md">{{ tech.name }}</span>
+            <span class="xf-ml-2 xf-fw-700 xf-text-18-md">{{ tech }}</span>
           </div>
         </div>
       </transition>
@@ -21,11 +21,12 @@
 </template>
 
 <script lang="ts" setup>
-import { XfIcon } from "xf-cmpt-lib";
 import { isMedium } from "@/composables/mediaQueries";
 import { dynamicImage } from "@/composables/utils";
 
 import technologies from "@/content/technologies.json";
+
+import { XfIcon } from "xf-cmpt-lib";
 
 // ** Props **
 defineProps<{ inView: boolean }>();

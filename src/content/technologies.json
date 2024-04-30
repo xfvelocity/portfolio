@@ -1,66 +1,18 @@
 [
-  {
-    "name": "HTML",
-    "icon": "html"
-  },
-  {
-    "name": "CSS",
-    "icon": "css"
-  },
-  {
-    "name": "SCSS",
-    "icon": "scss"
-  },
-  {
-    "name": "Javascript",
-    "icon": "javascript"
-  },
-  {
-    "name": "Vue",
-    "icon": "vue"
-  },
-  {
-    "name": "React",
-    "icon": "react"
-  },
-  {
-    "name": "Typescript",
-    "icon": "typescript"
-  },
-  {
-    "name": "NodeJs",
-    "icon": "nodejs"
-  },
-  {
-    "name": "MongoDB",
-    "icon": "mongodb"
-  },
-  {
-    "name": "Nuxt",
-    "icon": "nuxt"
-  },
-  {
-    "name": "Astro",
-    "icon": "astro"
-  },
-  {
-    "name": "Jest",
-    "icon": "jest"
-  },
-  {
-    "name": "Cypress",
-    "icon": "cypress"
-  },
-  {
-    "name": "Strapi",
-    "icon": "strapi"
-  },
-  {
-    "name": "Firebase",
-    "icon": "firebase"
-  },
-  {
-    "name": "Storybook",
-    "icon": "storybook"
-  }
+  "HTML",
+  "CSS",
+  "SCSS",
+  "Javascript",
+  "Typescript",
+  "Vue",
+  "Nuxt",
+  "React",
+  "NodeJs",
+  "MongoDB",
+  "Jest",
+  "Cypress",
+  "Strapi",
+  "Sanity",
+  "Storybook",
+  "Capacitor"
 ]
