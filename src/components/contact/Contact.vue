@@ -59,12 +59,14 @@ const contactOptions: ContactOptions[] = [
 </script>
 
 <style lang="scss">
+@use "@/assets/styles/variables";
+
 .contact {
   h2 {
     letter-spacing: 0.05em;
     font-size: 32px;
 
-    @include sm-up {
+    @include variables.sm-up {
       font-size: 60px;
     }
   }
@@ -81,7 +83,7 @@ const contactOptions: ContactOptions[] = [
     height: 60px;
     position: relative;
 
-    @include sm-up {
+    @include variables.sm-up {
       width: 80px;
       height: 80px;
     }

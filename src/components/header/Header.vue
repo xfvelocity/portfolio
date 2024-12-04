@@ -18,12 +18,14 @@ defineProps<{ inView: boolean }>();
 </script>
 
 <style lang="scss">
+@use "@/assets/styles/variables";
+
 .header {
   h1 {
     font-size: 50px;
     letter-spacing: 0.1rem;
 
-    @include md-up {
+    @include variables.md-up {
       font-size: 100px;
     }
   }
@@ -31,7 +33,7 @@ defineProps<{ inView: boolean }>();
   h4 {
     font-weight: 500;
 
-    @include md-up {
+    @include variables.md-up {
       font-size: 24px !important;
     }
   }

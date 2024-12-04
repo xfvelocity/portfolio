@@ -1,8 +1,9 @@
-@import "./_transitions.scss";
+@use "transitions";
+@use "variables";
 
 body {
   background: #050816;
-  color: white;
+  color: white !important;
   height: 100% !important;
   overflow: hidden !important;
   scroll-behavior: smooth;
@@ -25,11 +26,11 @@ p {
   max-width: 320px;
   margin: 0 auto;
 
-  @include sm-up {
+  @include variables.sm-up {
     max-width: 600px;
   }
 
-  @include md-up {
+  @include variables.md-up {
     max-width: 800px;
   }
 }

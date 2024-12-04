@@ -118,7 +118,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
+@use "./assets/styles/index.scss";
+@use "xf-cmpt-lib/style.css";
 
 .nav {
   position: fixed;

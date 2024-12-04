@@ -122,6 +122,8 @@ watch(
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/styles/variables";
+
 .project {
   &-content {
     img,
@@ -137,7 +139,7 @@ watch(
       transition: all 0.2s;
     }
 
-    @include lg-up {
+    @include variables.lg-up {
       gap: 20px;
 
       h3 {
@@ -151,15 +153,15 @@ watch(
     max-width: 380px;
     margin: 0 auto;
 
-    @include sm-up {
+    @include variables.sm-up {
       max-width: 650px;
     }
 
-    @include md-up {
+    @include variables.md-up {
       max-width: 800px;
     }
 
-    @include lg-up {
+    @include variables.lg-up {
       max-width: 900px;
     }
   }

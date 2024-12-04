@@ -1,3 +1,5 @@
+@use "variables";
+
 .fade-enter-active,
 .fade-leave-active,
 .slide-up-enter-active,
@@ -37,7 +39,7 @@
 
 // Type Writer
 .typewriter {
-  @include sm-up {
+  @include variables.sm-up {
     max-width: 340px !important;
     margin: 0 auto;
     overflow: hidden;
@@ -49,7 +51,7 @@
       blink-caret 0.75s step-end infinite;
   }
 
-  @include md-up {
+  @include variables.md-up {
     max-width: 400px !important;
   }
 }
