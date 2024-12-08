@@ -7,13 +7,7 @@
           :class="{ 'xf-cursor-pointer xf-hover': info.route }"
           @click="openLink(info.route)"
         >
-          <video
-            v-if="info.video"
-            ref="video"
-            :poster="dynamicImage(`img/${info.img}`)"
-            muted
-            loop
-          >
+          <video v-if="info.video" ref="video" muted loop>
             <source :src="dynamicImage(`img/${info.video}`)" />
           </video>
 
@@ -115,7 +109,7 @@ watch(
       if (props.inView && video.value) {
         video.value.play();
       }
-    }, 2000);
+    }, 500);
   },
   { immediate: true },
 );
