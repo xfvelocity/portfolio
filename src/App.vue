@@ -8,7 +8,7 @@
         target="_blank"
       >
         <xf-icon
-          :src="dynamicImage('icons/github.svg')"
+          :src="getImageUrl('icons/github.svg')"
           :size="38"
           fill="grey"
         />
@@ -35,7 +35,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
 import { useMediaQuery } from "@/composables/mediaQueries";
-import { throttle, dynamicImage } from "@/composables/utils";
+import { throttle, getImageUrl } from "@/composables/utils";
 import projects from "@/content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
@@ -119,7 +119,7 @@ onMounted(() => {
 
 <style lang="scss">
 @use "./assets/styles/index.scss";
-@use "xf-cmpt-lib/style.css";
+@use "xf-cmpt-lib/index.css" as cmpt;
 
 .nav {
   position: fixed;

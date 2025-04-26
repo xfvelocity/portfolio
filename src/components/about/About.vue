@@ -9,7 +9,7 @@
             class="about-technology xf-flex-center xf-col-6 xf-col-lg-3 xf-py-3 xf-px-6 xf-py-md-6"
           >
             <xf-icon
-              :src="dynamicImage(`icons/skills/${tech.toLowerCase()}.svg`)"
+              :src="getImageUrl(`icons/skills/${tech.toLowerCase()}.svg`)"
               :size="isMedium ? 36 : 20"
             />
             <span class="xf-ml-2 xf-fw-700 xf-text-18-md">{{ tech }}</span>
@@ -22,7 +22,7 @@
 
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
-import { dynamicImage } from "@/composables/utils";
+import { getImageUrl } from "@/composables/utils";
 
 import technologies from "@/content/technologies.json";
 

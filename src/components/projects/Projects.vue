@@ -8,12 +8,12 @@
           @click="openLink(info.route)"
         >
           <video v-if="info.video" ref="video" muted loop>
-            <source :src="dynamicImage(`img/${info.video}`)" />
+            <source :src="getImageUrl(`img/${info.video}`)" />
           </video>
 
           <img
             v-else-if="info.img"
-            :src="dynamicImage(`img/${info.img}`)"
+            :src="getImageUrl(`img/${info.img}`)"
             alt=""
           />
 
@@ -39,7 +39,7 @@
                   @click.stop=""
                 >
                   <xf-icon
-                    :src="dynamicImage(`icons/${link.name}.svg`)"
+                    :src="getImageUrl(`icons/${link.name}.svg`)"
                     class="xf-mr-2 xf-hover"
                     :size="isMedium ? 24 : 20"
                     :title="link.name"
@@ -50,7 +50,7 @@
                   <xf-icon
                     v-for="(tech, i) in info.technologies"
                     :key="`tech-${i}`"
-                    :src="dynamicImage(`icons/skills/${tech}.svg`)"
+                    :src="getImageUrl(`icons/skills/${tech}.svg`)"
                     class="xf-mr-1"
                     :size="isMedium ? 24 : 20"
                     :title="tech"
@@ -67,7 +67,7 @@
 
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
-import { dynamicImage } from "@/composables/utils";
+import { getImageUrl } from "@/composables/utils";
 import { ref, watch } from "vue";
 
 import { XfIcon } from "xf-cmpt-lib";

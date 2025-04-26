@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "vue": "^3.5.13",
-    "xf-cmpt-lib": "^0.7.25"
+    "xf-cmpt-lib": "^1.0.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@types/node": "^22.15.2",
+    "@vitejs/plugin-vue": "^5.2.3",
     "husky": "^9.1.7",
-    "prettier": "^3.4.2",
-    "sass": "^1.82.0",
-    "typescript": "^5.7.2",
-    "vite": "^5.4.3",
-    "vue-tsc": "^2.1.10"
+    "prettier": "^3.5.3",
+    "sass": "^1.87.0",
+    "typescript": "5.7.2",
+    "vite": "^6.3.3 ",
+    "vue-tsc": "^2.2.10"
   }
 }

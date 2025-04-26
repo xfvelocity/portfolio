@@ -1,5 +1,15 @@
-export const dynamicImage = (url: string) => {
-  return new URL(`/src/assets/${url}`, import.meta.url).href;
+export const getImageUrl = (filename: string): string => {
+  const path = `/src/assets/${filename}`;
+  const imageModules = import.meta.glob(
+    "/src/assets/**/*.{png,jpg,jpeg,svg,webp,gif,mp4}",
+    { eager: true },
+  ) as Record<string, { default: string }>;
+
+  if (imageModules[path]) {
+    return imageModules[path].default;
+  }
+
+  throw new Error(`Image not found: ${path}`);
 };
 
 export const goToLink = (url: string) => {

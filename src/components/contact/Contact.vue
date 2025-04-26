@@ -19,7 +19,7 @@
             >
               <xf-icon
                 class="xf-center"
-                :src="dynamicImage(`icons/${option.icon}.svg`)"
+                :src="getImageUrl(`icons/${option.icon}.svg`)"
                 fill="white"
                 :size="isMedium ? 28 : 24"
               />
@@ -33,7 +33,7 @@
 
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
-import { dynamicImage } from "@/composables/utils";
+import { getImageUrl } from "@/composables/utils";
 
 import { XfIcon } from "xf-cmpt-lib";
 
