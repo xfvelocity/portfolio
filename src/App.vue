@@ -12,99 +12,62 @@
     </nav>
   </transition>
 
-  <main class="xf-h-100">
-    <Header id="header" :in-view="sectionsInView.header" />
-    <About id="about" :in-view="sectionsInView.about" />
-    <Projects
-      v-for="(project, i) in projects"
-      :key="i"
-      :info="project"
-      :id="`project${i}`"
-      :index="i"
-      :in-view="sectionsInView[`project${i}` as keyof SectionsInView]"
-    />
-    <Contact id="contact" :in-view="sectionsInView.contact" />
+  <main>
+    <FullScreenScroll :sections="sections">
+      <template #home="{ active }">
+        <Header :in-view="active" />
+      </template>
+
+      <template #about="{ active }">
+        <About :in-view="active" />
+      </template>
+
+      <template
+        v-for="(project, i) in projects"
+        :key="i"
+        v-slot:[project.id]="{ active }"
+      >
+        <Projects :info="project" :index="i" :in-view="active" />
+      </template>
+
+      <template #contact="{ active }">
+        <Contact :in-view="active" />
+      </template>
+    </FullScreenScroll>
   </main>
 
   <Background />
 </template>
 
-<script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { useMediaQuery } from "@/composables/mediaQueries";
-import { throttle, getImageUrl } from "@/composables/utils";
+<script setup lang="ts">
+import { computed } from "vue";
+
+import { getImageUrl } from "@/composables/utils";
 import projects from "@/content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
+import FullScreenScroll from "./components/scroll/FullScreenScroll.vue";
 import Header from "@/components/header/Header.vue";
 import About from "@/components/about/About.vue";
 import Projects from "@/components/projects/Projects.vue";
 import Contact from "@/components/contact/Contact.vue";
 import Background from "@/components/background/Background.vue";
 
-interface SectionsInView {
-  header: boolean;
-  about: boolean;
-  project0: boolean;
-  project1: boolean;
-  project2: boolean;
-  contact: boolean;
-}
+//  ** Computed **
+const sections = computed<string>(() => {
+  const sectionsList: string[] = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "contact", label: "Contact" },
+  ];
 
-// ** Data **
-const sectionsInView = ref<SectionsInView>({
-  header: true,
-  about: true,
-  project0: true,
-  project1: true,
-  project2: true,
-  contact: true,
-});
+  sectionsList.splice(
+    2,
+    0,
+    ...projects.map((p) => ({ id: p.id, label: p.name })),
+  );
 
-useMediaQuery();
-
-// ** Lifecycle **
-onMounted(() => {
-  // const intersectionObserver: IntersectionObserver = new IntersectionObserver(
-  //   (entries) =>
-  //     entries.forEach((entry) => {
-  //       setTimeout(() => {
-  //         sectionsInView.value[entry.target.id as keyof SectionsInView] =
-  //           entry.isIntersecting;
-  //       }, 100);
-  //     }),
-  //   { rootMargin: "-50px" },
-  // );
-  // Object.keys(sectionsInView.value).forEach((x) => {
-  //   const target: Element | null = document.querySelector(`#${x}`);
-  //   if (target) {
-  //     intersectionObserver.observe(target);
-  //   }
-  // });
-  // let originalScrollY = 0;
-  // document.addEventListener("touchstart", (e: any) => {
-  //   originalScrollY = e.changedTouches[0].clientY;
-  // });
-  // document.addEventListener(
-  //   "mousewheel",
-  //   throttle((e: WheelEvent): void => {
-  //     window.scrollBy({
-  //       top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
-  //       behavior: "smooth",
-  //     });
-  //   }, 800),
-  // );
-  // document.addEventListener(
-  //   "touchmove",
-  //   throttle((e: any): void => {
-  //     const scrollY: number = e.changedTouches[0].clientY;
-  //     window.scrollBy({
-  //       top:
-  //         scrollY > originalScrollY ? -window.innerHeight : window.innerHeight,
-  //       behavior: "smooth",
-  //     });
-  //   }, 800),
-  // );
+  return sectionsList;
 });
 </script>
 

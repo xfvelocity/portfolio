@@ -12,10 +12,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-// ** Props **
-defineProps<{ inView: boolean }>();
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss">
 @use "@/assets/styles/variables";

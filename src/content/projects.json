@@ -1,5 +1,6 @@
 [
   {
+    "id": "buildADream",
     "name": "Build A-Dream",
     "desc": "This website was created for a local landscaping business who was in need of an upgrade. It was built using Astro and React for excellent performance and SEO. <br/><br/> It has helped massively with their online presence and has allowed them to grow their business.",
     "technologies": ["React", "Astro", "Typescript", "SCSS"],
@@ -25,6 +26,7 @@
     ]
   },
   {
+    "id": "galacticraft",
     "name": "Galacticraft",
     "desc": "A blog website built for a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS for easy content management. <br/><br/> It also takes advantage of my custom component library to ensure consistency across projects.",
     "technologies": ["Vue", "Nuxt", "Sanity", "Typescript", "SCSS"],
@@ -50,6 +52,7 @@
     ]
   },
   {
+    "id": "plotPonder",
     "name": "Plot Ponder",
     "desc": "This project was built to help my friend with learning React and APIs. It is a social media PWA which allows users to review movies and TV shows. <br/><br/> Using NodeJs and MongoDB on the backend for handling data and authentication.",
     "technologies": ["React", "NodeJs", "MongoDB", "Typescript", "SCSS"],
@@ -75,6 +78,7 @@
   },
 
   {
+    "id": "componentLibrary",
     "name": "Component Library",
     "desc": "This is a component library I built for my own use to maintain consistency across projects. It allows me to build and use components without limitations. <br/><br/> It is documented with Storybook to allow for easy use and testing.",
     "technologies": ["Vue", "Typescript", "Storybook", "Jest", "SCSS"],

@@ -3,7 +3,7 @@
     <div class="xf-center max-width">
       <transition name="slide-up">
         <div
-          class="project-content xf-grid xf-grid-12 xf-flex-align-items-center"
+          class="project-content xf-grid xf-grid-12 xf-gap-10 xf-flex-align-items-center"
         >
           <div
             class="project-content-desc xf-col-12 xf-col-lg-5 xf-flex xf-flex-direction-col"
@@ -59,7 +59,7 @@
           </div>
 
           <div
-            class="xf-col-12 xf-col-lg-7 xf-mt-4 xf-mt-lg-0"
+            class="xf-col-12 xf-col-lg-7"
             :class="{
               'xf-cursor-pointer xf-hover': info.route,
               'xf-col-offset-1 xf-row-offset-1': index % 2 === 0,
