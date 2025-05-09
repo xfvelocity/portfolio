@@ -24,6 +24,7 @@
       :key="i"
       :info="project"
       :id="`project${i}`"
+      :index="i"
       :in-view="sectionsInView[`project${i}` as keyof SectionsInView]"
     />
     <Contact id="contact" :in-view="sectionsInView.contact" />
@@ -57,63 +58,57 @@ interface SectionsInView {
 // ** Data **
 const sectionsInView = ref<SectionsInView>({
   header: true,
-  about: false,
-  project0: false,
-  project1: false,
-  project2: false,
-  contact: false,
+  about: true,
+  project0: true,
+  project1: true,
+  project2: true,
+  contact: true,
 });
 
 useMediaQuery();
 
 // ** Lifecycle **
 onMounted(() => {
-  const intersectionObserver: IntersectionObserver = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        setTimeout(() => {
-          sectionsInView.value[entry.target.id as keyof SectionsInView] =
-            entry.isIntersecting;
-        }, 100);
-      }),
-    { rootMargin: "-50px" },
-  );
-
-  Object.keys(sectionsInView.value).forEach((x) => {
-    const target: Element | null = document.querySelector(`#${x}`);
-
-    if (target) {
-      intersectionObserver.observe(target);
-    }
-  });
-
-  let originalScrollY = 0;
-
-  document.addEventListener("touchstart", (e: any) => {
-    originalScrollY = e.changedTouches[0].clientY;
-  });
-
-  document.addEventListener(
-    "mousewheel",
-    throttle((e: WheelEvent): void => {
-      window.scrollBy({
-        top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
-        behavior: "smooth",
-      });
-    }, 800),
-  );
-  document.addEventListener(
-    "touchmove",
-    throttle((e: any): void => {
-      const scrollY: number = e.changedTouches[0].clientY;
-
-      window.scrollBy({
-        top:
-          scrollY > originalScrollY ? -window.innerHeight : window.innerHeight,
-        behavior: "smooth",
-      });
-    }, 800),
-  );
+  // const intersectionObserver: IntersectionObserver = new IntersectionObserver(
+  //   (entries) =>
+  //     entries.forEach((entry) => {
+  //       setTimeout(() => {
+  //         sectionsInView.value[entry.target.id as keyof SectionsInView] =
+  //           entry.isIntersecting;
+  //       }, 100);
+  //     }),
+  //   { rootMargin: "-50px" },
+  // );
+  // Object.keys(sectionsInView.value).forEach((x) => {
+  //   const target: Element | null = document.querySelector(`#${x}`);
+  //   if (target) {
+  //     intersectionObserver.observe(target);
+  //   }
+  // });
+  // let originalScrollY = 0;
+  // document.addEventListener("touchstart", (e: any) => {
+  //   originalScrollY = e.changedTouches[0].clientY;
+  // });
+  // document.addEventListener(
+  //   "mousewheel",
+  //   throttle((e: WheelEvent): void => {
+  //     window.scrollBy({
+  //       top: e.deltaY < 0 ? -window.innerHeight : window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }, 800),
+  // );
+  // document.addEventListener(
+  //   "touchmove",
+  //   throttle((e: any): void => {
+  //     const scrollY: number = e.changedTouches[0].clientY;
+  //     window.scrollBy({
+  //       top:
+  //         scrollY > originalScrollY ? -window.innerHeight : window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }, 800),
+  // );
 });
 </script>
 

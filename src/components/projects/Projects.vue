@@ -1,63 +1,86 @@
 <template>
   <div class="project full-height">
-    <div class="xf-center project-max-width">
+    <div class="xf-center max-width">
       <transition name="slide-up">
         <div
-          class="project-content xf-p-6 xf-p-md-10"
-          :class="{ 'xf-cursor-pointer xf-hover': info.route }"
-          @click="openLink(info.route)"
+          class="project-content xf-grid xf-grid-12 xf-flex-align-items-center"
         >
-          <video v-if="info.video" ref="video" muted loop>
-            <source :src="getImageUrl(`img/${info.video}`)" />
-          </video>
-
-          <img
-            v-else-if="info.img"
-            :src="getImageUrl(`img/${info.img}`)"
-            alt=""
-          />
-
-          <div class="project-content-desc xf-mt-2 xf-mt-lg-6">
+          <div
+            class="project-content-desc xf-col-5"
+            :class="{ 'xf-col-offset-8': index % 2 === 0 }"
+          >
             <h3 class="xf-mb-1 xf-text-30 xf-text-36-md">
               {{ info.name }}
             </h3>
 
-            <div class="xf-text-14 xf-text-16-sm xf-text-18-lg">
-              <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-1">
-                {{ d }}
-              </p>
-            </div>
+            <div class="project-content-desc-info">
+              <div class="xf-text-14 xf-text-16-sm xf-text-18-lg">
+                <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-1">
+                  {{ d }}
+                </p>
+              </div>
 
-            <div class="xf-mt-8 xf-mt-lg-12 xf-mt-xl-15">
-              <div class="xf-flex xf-flex-align-items-center">
-                <a
-                  v-for="(link, i) in info.links"
-                  :key="i"
-                  :href="link.link"
-                  :aria-label="link.name"
-                  target="_blank"
-                  @click.stop=""
-                >
-                  <xf-icon
-                    :src="getImageUrl(`icons/${link.name}.svg`)"
-                    class="xf-mr-2 xf-hover"
-                    :size="isMedium ? 24 : 20"
-                    :title="link.name"
-                  />
-                </a>
+              <div class="xf-mt-8 xf-mt-lg-12 xf-mt-xl-15">
+                <div class="xf-flex xf-flex-align-items-center">
+                  <a
+                    v-for="(link, i) in info.links"
+                    :key="i"
+                    :href="link.link"
+                    :aria-label="link.name"
+                    target="_blank"
+                    @click.stop=""
+                  >
+                    <xf-tooltip :text="link.tooltip">
+                      <xf-icon
+                        :src="
+                          getImageUrl(`icons/${link.name.toLowerCase()}.svg`)
+                        "
+                        class="xf-mr-2 xf-hover"
+                        :size="isMedium ? 24 : 20"
+                        :title="link.name"
+                      />
+                    </xf-tooltip>
+                  </a>
 
-                <div class="xf-ml-auto xf-flex xf-flex-align-items-center">
-                  <xf-icon
-                    v-for="(tech, i) in info.technologies"
-                    :key="`tech-${i}`"
-                    :src="getImageUrl(`icons/skills/${tech}.svg`)"
-                    class="xf-mr-1"
-                    :size="isMedium ? 24 : 20"
-                    :title="tech"
-                  />
+                  <div class="xf-ml-auto xf-flex xf-flex-align-items-center">
+                    <xf-tooltip
+                      v-for="(tech, i) in info.technologies"
+                      :key="`tech-${i}`"
+                      :text="tech"
+                    >
+                      <xf-icon
+                        :src="
+                          getImageUrl(`icons/skills/${tech.toLowerCase()}.svg`)
+                        "
+                        class="xf-mr-1"
+                        :size="isMedium ? 24 : 20"
+                      />
+                    </xf-tooltip>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div
+            class="xf-col-7"
+            :class="{
+              'xf-cursor-pointer xf-hover': info.route,
+              'xf-col-offset-1': index % 2 === 0,
+            }"
+            @click="openLink(info.route)"
+          >
+            <xf-tooltip text="View site">
+              <video v-if="info.video" ref="video" muted loop>
+                <source :src="getImageUrl(`img/${info.video}`)" />
+              </video>
+
+              <img
+                v-else-if="info.img"
+                :src="getImageUrl(`img/${info.img}`)"
+                alt=""
+              />
+            </xf-tooltip>
           </div>
         </div>
       </transition>
@@ -70,12 +93,13 @@ import { isMedium } from "@/composables/mediaQueries";
 import { getImageUrl } from "@/composables/utils";
 import { ref, watch } from "vue";
 
-import { XfIcon } from "xf-cmpt-lib";
+import { XfIcon, XfTooltip } from "xf-cmpt-lib";
 
 // ** Types **
 interface PageInfoLink {
   name: string;
   link: string;
+  tooltip: string;
 }
 
 interface PageInfo {
@@ -89,7 +113,7 @@ interface PageInfo {
 }
 
 // ** Props **
-const props = defineProps<{ info: PageInfo; inView: boolean }>();
+const props = defineProps<{ info: PageInfo; inView: boolean; index: number }>();
 
 // ** Data **
 const video = ref<HTMLVideoElement>();
@@ -125,38 +149,36 @@ watch(
       border-radius: 5px;
       border: 2px solid rgb(173, 173, 173);
       width: 100%;
+
+      &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
+        transition: all 0.2s;
+      }
     }
 
-    &:hover {
-      opacity: 0.8;
-      transform: scale(1.01);
-      transition: all 0.2s;
+    &-desc {
+      position: relative;
+
+      &-info {
+        transform: translateY(50px);
+      }
+
+      h3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        z-index: 2;
+      }
     }
 
     @include variables.lg-up {
       gap: 20px;
 
       h3 {
-        font-size: 50px !important;
+        font-size: 42px !important;
       }
-    }
-  }
-
-  &-max-width {
-    width: 100% !important;
-    max-width: 380px;
-    margin: 0 auto;
-
-    @include variables.sm-up {
-      max-width: 650px;
-    }
-
-    @include variables.md-up {
-      max-width: 800px;
-    }
-
-    @include variables.lg-up {
-      max-width: 900px;
     }
   }
 }

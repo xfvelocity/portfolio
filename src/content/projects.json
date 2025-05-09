@@ -5,17 +5,24 @@
       "Promoting a local landscaping business and showing off their work.",
       "Recently been re-written using the latest technologies to ensure the best performance"
     ],
-    "technologies": ["react", "astro", "typescript", "scss"],
+    "technologies": ["React", "Astro", "Typescript", "SCSS"],
     "video": "buildadream.mp4",
     "img": "buildadream-w800.webp",
     "route": "https://build-a-dream-2.vercel.app",
     "links": [
       {
-        "name": "github",
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://build-a-dream-2.vercel.app"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
         "link": "https://github.com/xfvelocity/build-a-dream"
       },
       {
-        "name": "figma",
+        "name": "Figma",
+        "tooltip": "View designs",
         "link": "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?type=design&node-id=651%3A126&mode=design&t=RnbldIIoz58M4fhT-1"
       }
     ]
@@ -23,17 +30,24 @@
   {
     "name": "Galacticraft",
     "desc": ["Minecraft mod blog website with Sanity CMS integration"],
-    "technologies": ["vue", "nuxt", "sanity", "typescript", "scss"],
+    "technologies": ["Vue", "Nuxt", "Sanity", "Typescript", "SCSS"],
     "video": "galacticraft.mp4",
     "img": "galacticraft-w800.webp",
     "route": "https://galacticraft.vercel.app",
     "links": [
       {
-        "name": "github",
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://galacticraft.vercel.app"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
         "link": "https://github.com/TeamGalacticraft/website"
       },
       {
-        "name": "figma",
+        "name": "Figma",
+        "tooltip": "View designs",
         "link": "https://www.figma.com/file/PxtSDSAbNfSrOe5PgdptVL/Galacticraft?type=design&node-id=304%3A2&t=omktbvzbiEgHOmIc-1"
       }
     ]
@@ -41,16 +55,23 @@
   {
     "name": "Plot Ponder",
     "desc": ["A platform to review films with your friends."],
-    "technologies": ["react", "nodejs", "mongodb", "typescript", "scss"],
+    "technologies": ["React", "NodeJs", "MongoDB", "Typescript", "SCSS"],
     "img": "plot-ponder-w800.webp",
     "route": "https://tst.plotponder.com",
     "links": [
       {
-        "name": "github",
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://tst.plotponder.com"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
         "link": "https://github.com/xfvelocity/plot-ponder"
       },
       {
-        "name": "figma",
+        "name": "Figma",
+        "tooltip": "View designs",
         "link": "https://www.figma.com/file/8LRaNUHZsYncQnifAyFobp/PlotPonder-Reviewer?type=design&node-id=0%3A1&mode=design&t=QphvmiqxX76A1eOS-1"
       }
     ]
@@ -61,16 +82,23 @@
     "desc": [
       "Custom component library to allow for consistency across projects."
     ],
-    "technologies": ["vue", "typescript", "storybook", "jest", "scss"],
+    "technologies": ["Vue", "Typescript", "Storybook", "Jest", "SCSS"],
     "img": "xf-cmpt-lib-w800.webp",
     "route": "https://www.npmjs.com/package/xf-cmpt-lib",
     "links": [
       {
-        "name": "github",
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
         "link": "https://github.com/xfvelocity/xf-cmpt-lib"
       },
       {
-        "name": "storybook",
+        "name": "Storybook",
+        "tooltip": "View documentation",
         "link": "https://xf-cmpt-lib.vercel.app"
       }
     ]
