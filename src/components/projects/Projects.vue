@@ -2,24 +2,25 @@
   <div class="project full-height">
     <div class="xf-center max-width">
       <transition name="slide-up">
-        <div class="project-content xf-grid xf-grid-12">
+        <div
+          class="project-content xf-grid xf-grid-12 xf-flex-align-items-center"
+        >
           <div
-            class="project-content-desc xf-col-6 xf-h-100 xf-flex xf-flex-direction-col"
-            :class="{ 'xf-col-offset-7': index % 2 === 0 }"
+            class="project-content-desc xf-col-12 xf-col-lg-5 xf-flex xf-flex-direction-col"
+            :class="{
+              'xf-col-offset-1 xf-col-offset-lg-8 xf-row-offset-2 xf-row-offset-lg-1':
+                index % 2 === 0,
+            }"
           >
             <div>
-              <h3 class="xf-mb-2 xf-text-30 xf-text-36-md">
+              <h3 class="xf-mb-2 xf-text-32">
                 {{ info.name }}
               </h3>
 
-              <div class="xf-text-14 xf-text-16-sm xf-text-18-lg">
-                <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-2">
-                  {{ d }}
-                </p>
-              </div>
+              <p v-html="info.desc" class="xf-mb-2 xf-text-14 xf-text-16-lg" />
             </div>
 
-            <div class="xf-mt-auto">
+            <div class="xf-mt-auto xf-pt-5">
               <div class="xf-flex xf-flex-align-items-center">
                 <a
                   v-for="(link, i) in info.links"
@@ -58,10 +59,10 @@
           </div>
 
           <div
-            class="xf-col-6"
+            class="xf-col-12 xf-col-lg-7 xf-mt-4 xf-mt-lg-0"
             :class="{
               'xf-cursor-pointer xf-hover': info.route,
-              'xf-col-offset-1': index % 2 === 0,
+              'xf-col-offset-1 xf-row-offset-1': index % 2 === 0,
             }"
             @click="openLink(info.route)"
           >
@@ -143,8 +144,8 @@ watch(
 
     img,
     video {
-      border-radius: 5px;
-      border: 2px solid rgb(173, 173, 173);
+      border-radius: 10px;
+      border: 2px solid rgb(210, 210, 210);
       width: 100%;
 
       &:hover {
