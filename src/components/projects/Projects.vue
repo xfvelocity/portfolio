@@ -2,68 +2,63 @@
   <div class="project full-height">
     <div class="xf-center max-width">
       <transition name="slide-up">
-        <div
-          class="project-content xf-grid xf-grid-12 xf-flex-align-items-center"
-        >
+        <div class="project-content xf-grid xf-grid-12">
           <div
-            class="project-content-desc xf-col-5"
-            :class="{ 'xf-col-offset-8': index % 2 === 0 }"
+            class="project-content-desc xf-col-6 xf-h-100 xf-flex xf-flex-direction-col"
+            :class="{ 'xf-col-offset-7': index % 2 === 0 }"
           >
-            <h3 class="xf-mb-1 xf-text-30 xf-text-36-md">
-              {{ info.name }}
-            </h3>
+            <div>
+              <h3 class="xf-mb-2 xf-text-30 xf-text-36-md">
+                {{ info.name }}
+              </h3>
 
-            <div class="project-content-desc-info">
               <div class="xf-text-14 xf-text-16-sm xf-text-18-lg">
-                <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-1">
+                <p v-for="(d, i) in info.desc" :key="i" class="xf-mb-2">
                   {{ d }}
                 </p>
               </div>
+            </div>
 
-              <div class="xf-mt-8 xf-mt-lg-12 xf-mt-xl-15">
-                <div class="xf-flex xf-flex-align-items-center">
-                  <a
-                    v-for="(link, i) in info.links"
-                    :key="i"
-                    :href="link.link"
-                    :aria-label="link.name"
-                    target="_blank"
-                    @click.stop=""
+            <div class="xf-mt-auto">
+              <div class="xf-flex xf-flex-align-items-center">
+                <a
+                  v-for="(link, i) in info.links"
+                  :key="i"
+                  :href="link.link"
+                  :aria-label="link.name"
+                  target="_blank"
+                  @click.stop=""
+                >
+                  <xf-tooltip :text="link.tooltip">
+                    <xf-icon
+                      :src="getImageUrl(`icons/${link.name.toLowerCase()}.svg`)"
+                      class="xf-mr-2 xf-hover"
+                      :size="isMedium ? 24 : 20"
+                    />
+                  </xf-tooltip>
+                </a>
+
+                <div class="xf-ml-auto xf-flex xf-flex-align-items-center">
+                  <xf-tooltip
+                    v-for="(tech, i) in info.technologies"
+                    :key="`tech-${i}`"
+                    :text="tech"
                   >
-                    <xf-tooltip :text="link.tooltip">
-                      <xf-icon
-                        :src="
-                          getImageUrl(`icons/${link.name.toLowerCase()}.svg`)
-                        "
-                        class="xf-mr-2 xf-hover"
-                        :size="isMedium ? 24 : 20"
-                        :title="link.name"
-                      />
-                    </xf-tooltip>
-                  </a>
-
-                  <div class="xf-ml-auto xf-flex xf-flex-align-items-center">
-                    <xf-tooltip
-                      v-for="(tech, i) in info.technologies"
-                      :key="`tech-${i}`"
-                      :text="tech"
-                    >
-                      <xf-icon
-                        :src="
-                          getImageUrl(`icons/skills/${tech.toLowerCase()}.svg`)
-                        "
-                        class="xf-mr-1"
-                        :size="isMedium ? 24 : 20"
-                      />
-                    </xf-tooltip>
-                  </div>
+                    <xf-icon
+                      :src="
+                        getImageUrl(`icons/skills/${tech.toLowerCase()}.svg`)
+                      "
+                      class="xf-mr-2"
+                      :size="isMedium ? 24 : 20"
+                    />
+                  </xf-tooltip>
                 </div>
               </div>
             </div>
           </div>
 
           <div
-            class="xf-col-7"
+            class="xf-col-6"
             :class="{
               'xf-cursor-pointer xf-hover': info.route,
               'xf-col-offset-1': index % 2 === 0,
@@ -144,6 +139,8 @@ watch(
 
 .project {
   &-content {
+    grid-auto-flow: dense;
+
     img,
     video {
       border-radius: 5px;
@@ -158,16 +155,7 @@ watch(
     }
 
     &-desc {
-      position: relative;
-
-      &-info {
-        transform: translateY(50px);
-      }
-
       h3 {
-        position: absolute;
-        top: 0;
-        left: 0;
         white-space: nowrap;
         z-index: 2;
       }

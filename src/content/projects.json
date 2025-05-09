@@ -2,8 +2,7 @@
   {
     "name": "Build A-Dream",
     "desc": [
-      "Promoting a local landscaping business and showing off their work.",
-      "Recently been re-written using the latest technologies to ensure the best performance"
+      "This website was created for a local landscaping business who was in need of an upgrade. It was built using Astro and React for excellent performance and SEO. It has helped massively with their online presence and has allowed them to grow their business."
     ],
     "technologies": ["React", "Astro", "Typescript", "SCSS"],
     "video": "buildadream.mp4",
@@ -29,7 +28,9 @@
   },
   {
     "name": "Galacticraft",
-    "desc": ["Minecraft mod blog website with Sanity CMS integration"],
+    "desc": [
+      "A blog website built for a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS for easy content management. It also takes advantage of my custom component library to ensure consistency across projects."
+    ],
     "technologies": ["Vue", "Nuxt", "Sanity", "Typescript", "SCSS"],
     "video": "galacticraft.mp4",
     "img": "galacticraft-w800.webp",
@@ -54,7 +55,9 @@
   },
   {
     "name": "Plot Ponder",
-    "desc": ["A platform to review films with your friends."],
+    "desc": [
+      "This project was built to help my friend with learning React and APIs. It is a social media PWA which allows users to review movies and TV shows. Using NodeJs and MongoDB on the backend for handling data and authentication."
+    ],
     "technologies": ["React", "NodeJs", "MongoDB", "Typescript", "SCSS"],
     "img": "plot-ponder-w800.webp",
     "route": "https://tst.plotponder.com",
@@ -80,7 +83,7 @@
   {
     "name": "Component Library",
     "desc": [
-      "Custom component library to allow for consistency across projects."
+      "This is a component library I built for my own use to maintain consistency across projects. It allows me to build and use components without limitations. It is documented with Storybook to allow for easy use and testing."
     ],
     "technologies": ["Vue", "Typescript", "Storybook", "Jest", "SCSS"],
     "img": "xf-cmpt-lib-w800.webp",

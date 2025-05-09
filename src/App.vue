@@ -7,11 +7,7 @@
         aria-label="github"
         target="_blank"
       >
-        <xf-icon
-          :src="getImageUrl('icons/github.svg')"
-          :size="38"
-          fill="grey"
-        />
+        <xf-icon :src="getImageUrl('icons/github.svg')" :size="38" />
       </a>
     </nav>
   </transition>
