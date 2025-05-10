@@ -137,5 +137,25 @@
         "link": "https://yoodee.com"
       }
     ]
+  },
+  {
+    "id": "impostors",
+    "name": "Impostors",
+    "desc": "A fortnite map I built using Unreal Engine and Verse. It is built based on the game \"Among Us\" with similar mechanics and has had over 300k plays. ",
+    "technologies": ["Unreal", "Verse"],
+    "img": "impostors.png",
+    "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
+    "links": [
+      {
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
+        "link": "https://github.com/xfvelocity/UEFN-IMPOSTERS"
+      }
+    ]
   }
 ]
