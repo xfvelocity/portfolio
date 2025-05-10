@@ -2,7 +2,7 @@
   {
     "id": "buildADream",
     "name": "Build A-Dream",
-    "desc": "This website was created for a local landscaping business who was in need of an upgrade. It was built using Astro and React for excellent performance and SEO. <br/><br/> It has helped massively with their online presence and has allowed them to grow their business.",
+    "desc": "A high-performance website for a local landscaping business requiring a digital transformation. Using Astro and React the site delivers exceptional SEO results and lightning-fast load times. <br/><br/> This upgrade has significantly improved the business's online presence and customer engagement.",
     "technologies": ["React", "Astro", "Typescript", "SCSS"],
     "video": "buildadream.webm",
     "img": "buildadream-w800.webp",
@@ -28,7 +28,7 @@
   {
     "id": "galacticraft",
     "name": "Galacticraft",
-    "desc": "A blog website built for a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS for easy content management. <br/><br/> It also takes advantage of my custom component library to ensure consistency across projects.",
+    "desc": "A blog website built for Galacticraft, a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS providing seamless content management capabilities for the mod's development team. <br/><br/> Implemented with my component library to maintain design consistency and speed up development.",
     "technologies": ["Vue", "Nuxt", "Sanity", "Typescript", "SCSS"],
     "video": "galacticraft.webm",
     "img": "galacticraft-w800.webp",
@@ -54,7 +54,7 @@
   {
     "id": "plotPonder",
     "name": "Plot Ponder",
-    "desc": "This project was built to help my friend with learning React and APIs. It is a social media PWA which allows users to review movies and TV shows. <br/><br/> Using NodeJs and MongoDB on the backend for handling data and authentication.",
+    "desc": "A social media PWA which enables users to discover and review films and TV shows. Initially created to help mentor my friend with understanding React and working with APIs. <br/><br/> The backend is built using NodeJs and MongoDB to handle user authentication and data persistence",
     "technologies": ["React", "NodeJs", "MongoDB", "Typescript", "SCSS"],
     "img": "plot-ponder-w800.webp",
     "route": "https://tst.plotponder.com",
@@ -79,7 +79,7 @@
   {
     "id": "componentLibrary",
     "name": "Component Library",
-    "desc": "This is a component library I built for my own use to maintain consistency across projects. It allows me to build and use components without limitations. <br/><br/> It is documented with Storybook to allow for easy use and testing.",
+    "desc": "Custom component library built for my personal use in projects to maintain design and functionality consistency across projects. <br/><br/> Documented with Storybook, featuring interactive demonstrations.",
     "technologies": ["Vue", "Typescript", "Storybook", "Jest", "SCSS"],
     "img": "xf-cmpt-lib-w800.webp",
     "route": "https://www.npmjs.com/package/xf-cmpt-lib",
@@ -104,7 +104,7 @@
   {
     "id": "parkingFinder",
     "name": "Parking Finder",
-    "desc": "An app created for helping users find the cheapest parking spaces. It is built using Ionic and Capacitor to allow for native app support. It uses Google Maps API to display the parking spaces. <br /><br/> The backend is using Nodejs and MongoDB to handle any data and authentication. ",
+    "desc": "An app created for helping users find parking spaces at the cheapest price. Allows users to refine their results through filters or contribute to the collection of data. Developed with Ionic and Capacitor frameworks to deliver a seamless native experience across iOS and Android platforms, featuring interactive Google Maps integration. <br /><br/> The backend is using Nodejs and MongoDB to handle data contributions, scraping of data and user authentication. ",
     "technologies": [
       "Vue",
       "Typescript",
@@ -136,7 +136,7 @@
   {
     "id": "yoodee",
     "name": "Yoodee",
-    "desc": "Lead the development of this website for Yoodee, a social media review app. Built with Nuxt and Strapi for easy content management allowing marketing to have full control over the content. <br /><br/> This website helped attract over 20k users to the platform.",
+    "desc": "Led the development of this website for Yoodee, a social media review app. Built with Nuxt and Strapi for easy content management allowing marketing to have full control over the content. <br /><br/> This promotional website helped attract over 20,000 users to the platform.",
     "technologies": ["Nuxt", "Typescript", "SCSS", "Cypress", "Strapi"],
     "img": "yoodee-w800.webp",
     "route": "https://yoodee.com",
@@ -151,7 +151,7 @@
   {
     "id": "impostors",
     "name": "Impostors",
-    "desc": "A fortnite map I built using Unreal Engine and Verse. It is built based on the game \"Among Us\" with similar mechanics and has had over 300k plays. ",
+    "desc": "A fortnite map built using Unreal Engine and Verse programming language. This map adapts the popular game \"Among Us\", bringing the same gameplay mechanic into Fornite. <br/><br/> It so far has achieved over 300,000 plays.  ",
     "technologies": ["Unreal", "Verse"],
     "img": "impostors-w800.webp",
     "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
