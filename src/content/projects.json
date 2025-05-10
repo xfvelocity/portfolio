@@ -104,7 +104,7 @@
   {
     "id": "parkingFinder",
     "name": "Parking Finder",
-    "desc": "",
+    "desc": "An app created for helping users find the cheapest parking spaces. It is built using Ionic and Capacitor to allow for native app support. It uses Google Maps API to display the parking spaces. <br /><br/> The backend is using Nodejs and MongoDB to handle any data and authentication. ",
     "technologies": [
       "Vue",
       "Typescript",
@@ -113,22 +113,32 @@
       "NodeJs",
       "MongoDB"
     ],
-    "img": "xf-cmpt-lib-w800.webp",
-    "route": "https://app.parkingfinder.com",
+    "img": "parking-finder-w800.webp",
+    "route": "https://app.parkingfinder.uk",
     "links": [
       {
         "name": "Open",
         "tooltip": "View site",
-        "link": "https://app.parkingfinder.com"
+        "link": "https://app.parkingfinder.uk"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
+        "link": "https://github.com/xfvelocity/parking-finder"
+      },
+      {
+        "name": "Figma",
+        "tooltip": "View designs",
+        "link": "https://www.figma.com/design/KUQEEroLTszFbi3EH68SIJ/ParkingFinder?node-id=156-278&t=ONBsO3HCfXQyAGUI-1"
       }
     ]
   },
   {
     "id": "yoodee",
     "name": "Yoodee",
-    "desc": "",
+    "desc": "Lead the development of this website for Yoodee, a social media review app. Built with Nuxt and Strapi for easy content management allowing marketing to have full control over the content. <br /><br/> This website helped attract over 20k users to the platform.",
     "technologies": ["Nuxt", "Typescript", "SCSS", "Cypress", "Strapi"],
-    "img": "xf-cmpt-lib-w800.webp",
+    "img": "yoodee-w800.webp",
     "route": "https://yoodee.com",
     "links": [
       {
@@ -143,7 +153,7 @@
     "name": "Impostors",
     "desc": "A fortnite map I built using Unreal Engine and Verse. It is built based on the game \"Among Us\" with similar mechanics and has had over 300k plays. ",
     "technologies": ["Unreal", "Verse"],
-    "img": "impostors.png",
+    "img": "impostors-w800.webp",
     "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
     "links": [
       {
