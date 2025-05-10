@@ -5,17 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm run lint && vite build",
     "preview": "vite preview",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "lint": "vue-tsc --noEmit && eslint . --fix --ignore-pattern .gitignore",
+    "prepare": "husky"
   },
   "dependencies": {
     "vue": "^3.5.13",
     "xf-cmpt-lib": "^1.2.4"
   },
   "devDependencies": {
-    "@types/node": "^22.15.16",
-    "@vitejs/plugin-vue": "^5.2.3",
+    "@types/node": "^22.15.17",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.26.0",
+    "eslint-plugin-vue": "^10.1.0",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "sass": "^1.87.0",

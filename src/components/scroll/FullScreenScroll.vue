@@ -39,7 +39,7 @@ import type { PropType } from "vue";
 
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
-type Section = {
+export type Section = {
   id: string;
   name: string;
 };

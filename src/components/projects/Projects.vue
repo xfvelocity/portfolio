@@ -99,8 +99,9 @@ interface PageInfoLink {
 }
 
 interface PageInfo {
+  id: string;
   name: string;
-  desc: string[];
+  desc: string;
   technologies: string[];
   img?: string;
   video?: string;

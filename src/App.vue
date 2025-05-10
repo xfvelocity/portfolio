@@ -46,7 +46,9 @@ import { getImageUrl } from "@/composables/utils";
 import projects from "@/content/projects.json";
 
 import { XfIcon } from "xf-cmpt-lib";
-import FullScreenScroll from "./components/scroll/FullScreenScroll.vue";
+import FullScreenScroll, {
+  type Section,
+} from "./components/scroll/FullScreenScroll.vue";
 import Header from "@/components/header/Header.vue";
 import About from "@/components/about/About.vue";
 import Projects from "@/components/projects/Projects.vue";
@@ -54,17 +56,17 @@ import Contact from "@/components/contact/Contact.vue";
 import Background from "@/components/background/Background.vue";
 
 //  ** Computed **
-const sections = computed<string>(() => {
-  const sectionsList: string[] = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
+const sections = computed<Section[]>(() => {
+  const sectionsList: Section[] = [
+    { id: "home", name: "Home" },
+    { id: "about", name: "About" },
+    { id: "contact", name: "Contact" },
   ];
 
   sectionsList.splice(
     2,
     0,
-    ...projects.map((p) => ({ id: p.id, label: p.name })),
+    ...projects.map((p) => ({ id: p.id, name: p.name })),
   );
 
   return sectionsList;
