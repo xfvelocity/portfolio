@@ -1,7 +1,7 @@
 export const getImageUrl = (filename: string): string => {
   const path = `/src/assets/${filename}`;
   const imageModules = import.meta.glob(
-    "/src/assets/**/*.{png,jpg,jpeg,svg,webp,gif,mp4}",
+    "/src/assets/**/*.{png,jpg,jpeg,svg,webp,gif,mp4,webm}",
     { eager: true },
   ) as Record<string, { default: string }>;
 

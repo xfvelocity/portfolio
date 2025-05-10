@@ -67,15 +67,32 @@
             @click="openLink(info.route)"
           >
             <xf-tooltip text="View site">
-              <video v-if="info.video" ref="video" muted loop>
-                <source :src="getImageUrl(`img/${info.video}`)" />
-              </video>
+              <div class="xf-w-100 xf-position-relative">
+                <video
+                  v-if="info.video"
+                  ref="video"
+                  :poster="info.img ? getImageUrl(`img/${info.img}`) : ''"
+                  :class="{ 'xf-d-none': !videoLoaded }"
+                  muted
+                  loop
+                  @loadeddata="onVideoLoaded"
+                >
+                  <source :src="getImageUrl(`img/${info.video}`)" />
+                </video>
 
-              <img
-                v-else-if="info.img"
-                :src="getImageUrl(`img/${info.img}`)"
-                alt=""
-              />
+                <img
+                  v-if="info.img && info.video && !videoLoaded"
+                  class="xf-d-block"
+                  :src="getImageUrl(`img/${info.img}`)"
+                  alt=""
+                />
+
+                <img
+                  v-else-if="info.img && !info.video"
+                  :src="getImageUrl(`img/${info.img}`)"
+                  alt=""
+                />
+              </div>
             </xf-tooltip>
           </div>
         </div>
@@ -114,6 +131,7 @@ const props = defineProps<{ info: PageInfo; inView: boolean; index: number }>();
 
 // ** Data **
 const video = ref<HTMLVideoElement>();
+const videoLoaded = ref<boolean>(false);
 
 // ** Methods **
 const openLink = (route: string): void => {
@@ -122,13 +140,24 @@ const openLink = (route: string): void => {
   }
 };
 
+const onVideoLoaded = (): void => {
+  videoLoaded.value = true;
+};
+
 // ** Watchers **
 watch(
   () => props.inView,
   () => {
     setTimeout(() => {
       if (props.inView && video.value) {
-        video.value.play();
+        const playPromise = video.value.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.error(error);
+            videoLoaded.value = false;
+          });
+        }
       }
     }, 500);
   },
