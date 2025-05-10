@@ -76,7 +76,6 @@
       }
     ]
   },
-
   {
     "id": "componentLibrary",
     "name": "Component Library",
@@ -99,6 +98,43 @@
         "name": "Storybook",
         "tooltip": "View documentation",
         "link": "https://xf-cmpt-lib.vercel.app"
+      }
+    ]
+  },
+  {
+    "id": "parkingFinder",
+    "name": "Parking Finder",
+    "desc": "",
+    "technologies": [
+      "Vue",
+      "Typescript",
+      "SCSS",
+      "Capacitor",
+      "NodeJs",
+      "MongoDB"
+    ],
+    "img": "xf-cmpt-lib-w800.webp",
+    "route": "https://app.parkingfinder.com",
+    "links": [
+      {
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://app.parkingfinder.com"
+      }
+    ]
+  },
+  {
+    "id": "yoodee",
+    "name": "Yoodee",
+    "desc": "",
+    "technologies": ["Nuxt", "Typescript", "SCSS", "Cypress", "Strapi"],
+    "img": "xf-cmpt-lib-w800.webp",
+    "route": "https://yoodee.com",
+    "links": [
+      {
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://yoodee.com"
       }
     ]
   }
