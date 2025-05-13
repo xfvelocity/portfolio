@@ -1,9 +1,18 @@
 <template>
-  <div class="infinite-grid-container">
-    <div v-for="(row, index) in rows" :key="`row-${row}`" class="grid-row">
+  <div
+    class="sliding-grid xf-w-100 xf-overflow-hidden xf-flex xf-flex-direction-col xf-gap-4"
+  >
+    <div
+      v-for="(row, index) in rows"
+      :key="`row-${row}`"
+      class="xf-w-100 xf-overflow-hidden xf-position-relative"
+    >
+      <!-- Gradient overlay for left side -->
+      <div class="sliding-grid-overlay sliding-grid-left" />
+
       <div
-        class="sliding-track"
-        :class="{ reverse: index % 2 === 0 }"
+        class="sliding-grid-track xf-flex xf-w-max-content"
+        :class="{ 'siding-grid-track-reverse': index % 2 === 0 }"
         :style="{
           '--animation-duration': `${getRowDuration(index)}s`,
         }"
@@ -12,7 +21,7 @@
         <div
           v-for="(item, i) in row"
           :key="`item-${row}-${i}`"
-          class="grid-item xf-mx-2"
+          class="sliding-grid-item xf-mx-2"
         >
           <slot :item="item" />
         </div>
@@ -21,11 +30,14 @@
         <div
           v-for="(item, i) in row"
           :key="`dup-${row}-${i}`"
-          class="grid-item xf-mx-2"
+          class="sliding-grid-item xf-mx-2"
         >
           <slot :item="item" />
         </div>
       </div>
+
+      <!-- Gradient overlay for right side -->
+      <div class="sliding-grid-overlay sliding-grid-left" />
     </div>
   </div>
 </template>
@@ -42,47 +54,51 @@ defineProps({
 });
 
 // ** Methods **
-// Calculate row-specific animation duration
 const getRowDuration = (row: number): number => {
   return 30 + row * 5;
 };
 </script>
 
 <style lang="scss" scoped>
-.infinite-grid-container {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+.sliding-grid {
+  &-track {
+    animation: slideLeft var(--animation-duration) linear infinite;
 
-.grid-row {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.sliding-track {
-  display: flex;
-  width: max-content;
-  animation: slideLeft var(--animation-duration) linear infinite;
-
-  &.reverse {
-    animation: slideRight var(--animation-duration) linear infinite;
+    &-reverse {
+      animation: slideRight var(--animation-duration) linear infinite;
+    }
   }
-}
 
-.grid-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.3s ease-out;
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-out;
 
-  &:hover {
-    transform: scale(1.05);
-    z-index: 10;
+    &:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  &-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(5, 8, 22, 1), rgba(5, 8, 22, 0));
+  }
+
+  &-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(5, 8, 22, 1), rgba(5, 8, 22, 0));
   }
 }
 

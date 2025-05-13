@@ -4,8 +4,8 @@
       <SlidingGrid
         :rows="[
           ['HTML', 'CSS', 'SCSS', 'Javascript', 'Typescript', 'Vue'],
-          ['Nuxt', 'React', 'NodeJs', 'MongoDB', 'Jest'],
-          ['Cypress', 'Strapi', 'Sanity', 'Storybook', 'Capacitor'],
+          ['Nuxt', 'React', 'NodeJs', 'MongoDB', 'Jest', 'Cypress'],
+          ['Unreal', 'Verse', 'Strapi', 'Sanity', 'Storybook', 'Capacitor'],
         ]"
       >
         <template #default="{ item }">
@@ -43,8 +43,6 @@
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
 import { getImageUrl } from "@/composables/utils";
-
-import technologies from "@/content/technologies.json";
 
 import { XfIcon } from "xf-cmpt-lib";
 import SlidingGrid from "../sliding-grid/SlidingGrid.vue";
