@@ -3,9 +3,17 @@
     <div class="xf-center max-width">
       <SlidingGrid
         :rows="[
-          ['HTML', 'CSS', 'SCSS', 'Javascript', 'Typescript', 'Vue'],
-          ['Nuxt', 'React', 'NodeJs', 'MongoDB', 'Jest', 'Cypress'],
-          ['Unreal', 'Verse', 'Strapi', 'Sanity', 'Storybook', 'Capacitor'],
+          ['HTML', 'CSS', 'SCSS', 'Javascript', 'Typescript', 'Vue', 'Vuetify'],
+          ['Nuxt', 'React', 'NodeJs', 'MongoDB', 'Jest', 'Cypress', 'Pinia'],
+          [
+            'Unreal',
+            'Verse',
+            'Strapi',
+            'Sanity',
+            'Storybook',
+            'Capacitor',
+            'Tailwindcss',
+          ],
         ]"
       >
         <template #default="{ item }">
