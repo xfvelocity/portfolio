@@ -1,7 +1,8 @@
 <template>
   <div class="full-height">
     <div class="xf-center max-width">
-      <div class="about xf-grid xf-gap-3">
+      <SlidingGrid />
+      <!-- <div class="about xf-grid xf-gap-3">
         <div
           v-for="(tech, i) in technologies"
           :key="i"
@@ -13,7 +14,7 @@
           />
           <span class="xf-ml-2 xf-fw-700 xf-text-18-md">{{ tech }}</span>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -25,6 +26,7 @@ import { getImageUrl } from "@/composables/utils";
 import technologies from "@/content/technologies.json";
 
 import { XfIcon } from "xf-cmpt-lib";
+import SlidingGrid from "../sliding-grid/SlidingGrid.vue";
 </script>
 
 <style lang="scss" scoped>
