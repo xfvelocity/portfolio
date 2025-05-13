@@ -37,7 +37,7 @@
       </div>
 
       <!-- Gradient overlay for right side -->
-      <div class="sliding-grid-overlay sliding-grid-left" />
+      <div class="sliding-grid-overlay sliding-grid-right" />
     </div>
   </div>
 </template>
