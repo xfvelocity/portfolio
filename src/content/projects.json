@@ -151,7 +151,7 @@
   {
     "id": "impostors",
     "name": "Impostors",
-    "desc": "A fortnite map built using Unreal Engine and Verse programming language. This map adapts the popular game \"Among Us\", bringing the same gameplay mechanic into Fornite. <br/><br/> It so far has achieved over 300,000 plays.  ",
+    "desc": "A fortnite map built using Unreal Engine and Verse programming language. This map adapts the popular game \"Among Us\", bringing the same gameplay mechanic into Fornite. <br/><br/> It so far has achieved over 500,000 plays.  ",
     "technologies": ["Unreal", "Verse"],
     "img": "impostors-w800.webp",
     "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
