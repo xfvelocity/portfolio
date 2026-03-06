@@ -14,7 +14,7 @@
             :key="i"
             class="contact-icon"
             :href="option.route"
-            :aria-label="option.icon"
+            :aria-label="option.label"
           >
             <xf-icon
               class="xf-center"
@@ -37,6 +37,7 @@ import { XfIcon } from "xf-cmpt-lib";
 
 interface ContactOptions {
   icon: string;
+  label: string;
   route: string;
 }
 
@@ -44,11 +45,13 @@ interface ContactOptions {
 const contactOptions: ContactOptions[] = [
   {
     icon: "phone",
+    label: "Call Alex Long",
     route: "tel:07411820679",
   },
   {
     icon: "envelope",
-    route: "mailto:alexlong2001@outlook.com",
+    label: "Email Alex Long",
+    route: "mailto:contact@alexlong.dev",
   },
 ];
 </script>

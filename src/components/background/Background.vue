@@ -5,6 +5,8 @@
     viewBox="0 0 1764 1449"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    role="presentation"
   >
     <circle cx="3.5" cy="23.5" r="3.5" fill="white" />
     <circle cx="324.5" cy="61.5" r="3.5" fill="white" />
@@ -48,6 +50,7 @@ svg {
   circle {
     transform-origin: center;
     animation: 300s linear rotate infinite;
+    will-change: transform;
   }
 
   @keyframes rotate {

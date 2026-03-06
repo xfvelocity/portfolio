@@ -31,6 +31,7 @@
           v-for="(item, i) in row"
           :key="`dup-${row}-${i}`"
           class="sliding-grid-item xf-mx-2"
+          aria-hidden="true"
         >
           <slot :item="item" />
         </div>

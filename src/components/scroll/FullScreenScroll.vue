@@ -10,6 +10,7 @@
       class="fullscreen-section xf-position-relative xf-w-100 xf-overflow-hidden"
       :class="{ active: currentSectionIndex === index }"
       :id="section.id"
+      :aria-label="section.name"
     >
       <slot
         :name="section.id"

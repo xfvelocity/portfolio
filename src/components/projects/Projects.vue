@@ -26,8 +26,9 @@
                   v-for="(link, i) in info.links"
                   :key="i"
                   :href="link.link"
-                  :aria-label="link.name"
+                  :aria-label="link.tooltip"
                   target="_blank"
+                  rel="noopener noreferrer"
                   @click.stop=""
                 >
                   <xf-tooltip :text="link.tooltip">
@@ -75,22 +76,34 @@
                   :class="{ 'xf-d-none': !videoLoaded }"
                   muted
                   loop
+                  playsinline
+                  preload="none"
+                  :aria-label="`${info.name} demo`"
                   @loadeddata="onVideoLoaded"
                 >
-                  <source :src="getImageUrl(`img/${info.video}`)" />
+                  <source
+                    :src="getImageUrl(`img/${info.video}`)"
+                    type="video/webm"
+                  />
+                  <source
+                    :src="
+                      getImageUrl(`img/${info.video.replace('.webm', '.mp4')}`)
+                    "
+                    type="video/mp4"
+                  />
                 </video>
 
                 <img
                   v-if="info.img && info.video && !videoLoaded"
                   class="xf-d-block"
                   :src="getImageUrl(`img/${info.img}`)"
-                  alt=""
+                  :alt="`${info.name} project screenshot`"
                 />
 
                 <img
                   v-else-if="info.img && !info.video"
                   :src="getImageUrl(`img/${info.img}`)"
-                  alt=""
+                  :alt="`${info.name} project screenshot`"
                 />
               </div>
             </xf-tooltip>
