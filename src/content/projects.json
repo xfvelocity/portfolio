@@ -11,7 +11,6 @@
       "NodeJs",
       "MongoDB"
     ],
-    "video": "buildadream.webm",
     "img": "buildadream-w800.webp",
     "route": "https://buildadream.co.uk",
     "links": [
@@ -27,8 +26,6 @@
     "name": "Galacticraft",
     "desc": "A blog website built for Galacticraft, a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS providing seamless content management capabilities for the mod's development team. <br/><br/> Implemented with my component library to maintain design consistency and speed up development.",
     "technologies": ["Nuxt", "Typescript", "SCSS", "Sanity"],
-    "video": "galacticraft.webm",
-    "img": "galacticraft-w800.webp",
     "route": "https://galacticraft.vercel.app",
     "links": [
       {

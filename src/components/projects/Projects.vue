@@ -59,55 +59,15 @@
             </div>
           </div>
 
-          <div
+          <project-frame
             class="xf-col-12 xf-col-lg-7"
             :class="{
               'xf-cursor-pointer xf-hover': info.route,
               'xf-col-offset-1 xf-row-offset-1': index % 2 === 0,
             }"
+            :project="info"
             @click="openLink(info.route)"
-          >
-            <xf-tooltip text="View site">
-              <div class="xf-w-100 xf-position-relative">
-                <video
-                  v-if="info.video"
-                  ref="video"
-                  :poster="info.img ? getImageUrl(`img/${info.img}`) : ''"
-                  :class="{ 'xf-d-none': !videoLoaded }"
-                  muted
-                  loop
-                  playsinline
-                  preload="none"
-                  :aria-label="`${info.name} demo`"
-                  @loadeddata="onVideoLoaded"
-                >
-                  <source
-                    :src="getImageUrl(`img/${info.video}`)"
-                    type="video/webm"
-                  />
-                  <source
-                    :src="
-                      getImageUrl(`img/${info.video.replace('.webm', '.mp4')}`)
-                    "
-                    type="video/mp4"
-                  />
-                </video>
-
-                <img
-                  v-if="info.img && info.video && !videoLoaded"
-                  class="xf-d-block"
-                  :src="getImageUrl(`img/${info.img}`)"
-                  :alt="`${info.name} project screenshot`"
-                />
-
-                <img
-                  v-else-if="info.img && !info.video"
-                  :src="getImageUrl(`img/${info.img}`)"
-                  :alt="`${info.name} project screenshot`"
-                />
-              </div>
-            </xf-tooltip>
-          </div>
+          />
         </div>
       </transition>
     </div>
@@ -117,9 +77,10 @@
 <script lang="ts" setup>
 import { isMedium } from "@/composables/mediaQueries";
 import { getImageUrl } from "@/composables/utils";
-import { ref, watch } from "vue";
 
 import { XfIcon, XfTooltip } from "xf-cmpt-lib";
+
+import ProjectFrame from "@/components/projects/ProjectFrame.vue";
 
 // ** Types **
 interface PageInfoLink {
@@ -134,7 +95,6 @@ interface PageInfo {
   desc: string;
   technologies: string[];
   img?: string;
-  video?: string;
   links: PageInfoLink[];
   route: string;
 }
@@ -142,40 +102,12 @@ interface PageInfo {
 // ** Props **
 const props = defineProps<{ info: PageInfo; inView: boolean; index: number }>();
 
-// ** Data **
-const video = ref<HTMLVideoElement>();
-const videoLoaded = ref<boolean>(false);
-
 // ** Methods **
 const openLink = (route: string): void => {
   if (route) {
     window.open(route);
   }
 };
-
-const onVideoLoaded = (): void => {
-  videoLoaded.value = true;
-};
-
-// ** Watchers **
-watch(
-  () => props.inView,
-  () => {
-    setTimeout(() => {
-      if (props.inView && video.value) {
-        const playPromise = video.value.play();
-
-        if (playPromise !== undefined) {
-          playPromise.catch((error) => {
-            console.error(error);
-            videoLoaded.value = false;
-          });
-        }
-      }
-    }, 500);
-  },
-  { immediate: true },
-);
 </script>
 
 <style lang="scss" scoped>
@@ -184,19 +116,6 @@ watch(
 .project {
   &-content {
     grid-auto-flow: dense;
-
-    img,
-    video {
-      border-radius: 10px;
-      border: 2px solid rgb(210, 210, 210);
-      width: 100%;
-
-      &:hover {
-        opacity: 0.8;
-        transform: scale(1.01);
-        transition: all 0.2s;
-      }
-    }
 
     &-desc {
       h3 {
