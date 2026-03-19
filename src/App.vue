@@ -1,11 +1,12 @@
 <template>
   <transition name="slide-down" appear>
-    <nav class="nav xf-flex xf-p-6">
+    <nav class="nav xf-flex xf-p-6" aria-label="Primary navigation">
       <a
         class="xf-hover xf-ml-auto"
         href="https://github.com/xfvelocity"
-        aria-label="github"
+        aria-label="View GitHub profile"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <xf-icon :src="getImageUrl('icons/github.svg')" :size="38" />
       </a>
