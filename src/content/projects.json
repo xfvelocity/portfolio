@@ -2,26 +2,23 @@
   {
     "id": "buildADream",
     "name": "Build A-Dream",
-    "desc": "A high-performance website for a local landscaping business requiring a digital transformation. Using Astro and React the site delivers exceptional SEO results and lightning-fast load times. <br/><br/> This upgrade has significantly improved the business's online presence and customer engagement.",
-    "technologies": ["React", "Astro", "Typescript", "SCSS"],
+    "desc": "We built Build A-Dream a clean, conversion-focused website designed to showcase their portfolio and generate enquiries. The site features a full-screen gallery, individual project case studies, a detailed services breakdown, and a streamlined contact form. Built for speed and fully responsive, it's optimised to rank locally and convert visitors into paying customers. CMS integration allows the team to easily update their work examples.",
+    "technologies": [
+      "Nuxt",
+      "Typescript",
+      "SCSS",
+      "Sanity",
+      "NodeJs",
+      "MongoDB"
+    ],
     "video": "buildadream.webm",
     "img": "buildadream-w800.webp",
-    "route": "https://build-a-dream-2.vercel.app",
+    "route": "https://buildadream.co.uk",
     "links": [
       {
         "name": "Open",
         "tooltip": "View site",
-        "link": "https://build-a-dream-2.vercel.app"
-      },
-      {
-        "name": "Github",
-        "tooltip": "View code",
-        "link": "https://github.com/xfvelocity/build-a-dream"
-      },
-      {
-        "name": "Figma",
-        "tooltip": "View designs",
-        "link": "https://www.figma.com/file/Ti101e0dfTHaOC6k9Plg4I/Build-A-Dream?type=design&node-id=651%3A126&mode=design&t=RnbldIIoz58M4fhT-1"
+        "link": "https://buildadream.co.uk"
       }
     ]
   },
@@ -29,7 +26,7 @@
     "id": "galacticraft",
     "name": "Galacticraft",
     "desc": "A blog website built for Galacticraft, a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS providing seamless content management capabilities for the mod's development team. <br/><br/> Implemented with my component library to maintain design consistency and speed up development.",
-    "technologies": ["Vue", "Nuxt", "Sanity", "Typescript", "SCSS"],
+    "technologies": ["Nuxt", "Typescript", "SCSS", "Sanity"],
     "video": "galacticraft.webm",
     "img": "galacticraft-w800.webp",
     "route": "https://galacticraft.vercel.app",
@@ -55,7 +52,7 @@
     "id": "plotPonder",
     "name": "Plot Ponder",
     "desc": "A social media PWA which enables users to discover and review films and TV shows. Initially created to help mentor my friend with understanding React and working with APIs. <br/><br/> The backend is built using NodeJs and MongoDB to handle user authentication and data persistence",
-    "technologies": ["React", "NodeJs", "MongoDB", "Typescript", "SCSS"],
+    "technologies": ["React", "Typescript", "SCSS", "NodeJs", "MongoDB"],
     "img": "plot-ponder-w800.webp",
     "route": "https://tst.plotponder.com",
     "links": [
@@ -80,7 +77,7 @@
     "id": "componentLibrary",
     "name": "Component Library",
     "desc": "Custom component library built for my personal use in projects to maintain design and functionality consistency across projects. <br/><br/> Documented with Storybook, featuring interactive demonstrations.",
-    "technologies": ["Vue", "Typescript", "Storybook", "Jest", "SCSS"],
+    "technologies": ["Vue", "Typescript", "SCSS", "Storybook"],
     "img": "xf-cmpt-lib-w800.webp",
     "route": "https://www.npmjs.com/package/xf-cmpt-lib",
     "links": [
