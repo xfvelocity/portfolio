@@ -22,6 +22,21 @@
     ]
   },
   {
+    "id": "yoodee",
+    "name": "Yoodee",
+    "desc": "Led the development of this website for Yoodee, a social media review app. Built with Nuxt and Strapi for easy content management allowing marketing to have full control over the content. <br /><br/> This promotional website helped attract over 20,000 users to the platform.",
+    "technologies": ["Nuxt", "Typescript", "SCSS", "Cypress", "Strapi"],
+    "img": "yoodee-w800.webp",
+    "route": "https://yoodee.vercel.app",
+    "links": [
+      {
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://yoodee.vercel.app"
+      }
+    ]
+  },
+  {
     "id": "galacticraft",
     "name": "Galacticraft",
     "desc": "A blog website built for Galacticraft, a popular Minecraft mod with over 15 million downloads. It is built with Nuxt and Sanity CMS providing seamless content management capabilities for the mod's development team. <br/><br/> Implemented with my component library to maintain design consistency and speed up development.",
@@ -42,6 +57,31 @@
         "name": "Figma",
         "tooltip": "View designs",
         "link": "https://www.figma.com/file/PxtSDSAbNfSrOe5PgdptVL/Galacticraft?type=design&node-id=304%3A2&t=omktbvzbiEgHOmIc-1"
+      }
+    ]
+  },
+  {
+    "id": "componentLibrary",
+    "name": "Component Library",
+    "desc": "Custom component library built for my personal use in projects to maintain design and functionality consistency across projects. <br/><br/> Documented with Storybook, featuring interactive demonstrations.",
+    "technologies": ["Vue", "Typescript", "SCSS", "Storybook"],
+    "img": "xf-cmpt-lib-w800.webp",
+    "route": "https://www.npmjs.com/package/xf-cmpt-lib",
+    "links": [
+      {
+        "name": "Open",
+        "tooltip": "View site",
+        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
+      },
+      {
+        "name": "Github",
+        "tooltip": "View code",
+        "link": "https://github.com/xfvelocity/xf-cmpt-lib"
+      },
+      {
+        "name": "Storybook",
+        "tooltip": "View documentation",
+        "link": "https://xf-cmpt-lib.vercel.app"
       }
     ]
   },
@@ -70,28 +110,24 @@
       }
     ]
   },
+
   {
-    "id": "componentLibrary",
-    "name": "Component Library",
-    "desc": "Custom component library built for my personal use in projects to maintain design and functionality consistency across projects. <br/><br/> Documented with Storybook, featuring interactive demonstrations.",
-    "technologies": ["Vue", "Typescript", "SCSS", "Storybook"],
-    "img": "xf-cmpt-lib-w800.webp",
-    "route": "https://www.npmjs.com/package/xf-cmpt-lib",
+    "id": "impostors",
+    "name": "Impostors",
+    "desc": "A fortnite map built using Unreal Engine and Verse programming language. This map adapts the popular game \"Among Us\", bringing the same gameplay mechanic into Fornite. <br/><br/> It so far has achieved over 500,000 plays.  ",
+    "technologies": ["Unreal", "Verse"],
+    "img": "impostors-w800.webp",
+    "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
     "links": [
       {
         "name": "Open",
         "tooltip": "View site",
-        "link": "https://www.npmjs.com/package/xf-cmpt-lib"
+        "link": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US"
       },
       {
         "name": "Github",
         "tooltip": "View code",
-        "link": "https://github.com/xfvelocity/xf-cmpt-lib"
-      },
-      {
-        "name": "Storybook",
-        "tooltip": "View documentation",
-        "link": "https://xf-cmpt-lib.vercel.app"
+        "link": "https://github.com/xfvelocity/UEFN-IMPOSTERS"
       }
     ]
   },
@@ -124,41 +160,6 @@
         "name": "Figma",
         "tooltip": "View designs",
         "link": "https://www.figma.com/design/KUQEEroLTszFbi3EH68SIJ/ParkingFinder?node-id=156-278&t=ONBsO3HCfXQyAGUI-1"
-      }
-    ]
-  },
-  {
-    "id": "yoodee",
-    "name": "Yoodee",
-    "desc": "Led the development of this website for Yoodee, a social media review app. Built with Nuxt and Strapi for easy content management allowing marketing to have full control over the content. <br /><br/> This promotional website helped attract over 20,000 users to the platform.",
-    "technologies": ["Nuxt", "Typescript", "SCSS", "Cypress", "Strapi"],
-    "img": "yoodee-w800.webp",
-    "route": "https://yoodee.com",
-    "links": [
-      {
-        "name": "Open",
-        "tooltip": "View site",
-        "link": "https://yoodee.com"
-      }
-    ]
-  },
-  {
-    "id": "impostors",
-    "name": "Impostors",
-    "desc": "A fortnite map built using Unreal Engine and Verse programming language. This map adapts the popular game \"Among Us\", bringing the same gameplay mechanic into Fornite. <br/><br/> It so far has achieved over 500,000 plays.  ",
-    "technologies": ["Unreal", "Verse"],
-    "img": "impostors-w800.webp",
-    "route": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US",
-    "links": [
-      {
-        "name": "Open",
-        "tooltip": "View site",
-        "link": "https://www.fortnite.com/@xfcreative/7242-6380-7460?lang=en-US"
-      },
-      {
-        "name": "Github",
-        "tooltip": "View code",
-        "link": "https://github.com/xfvelocity/UEFN-IMPOSTERS"
       }
     ]
   }
